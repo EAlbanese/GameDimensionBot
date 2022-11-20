@@ -1,0 +1,11 @@
+[Bot]
+Token = 
+Username = 
+DiscordGuild = 
+
+[Channels]
+Introduction = 
+
+[Roles]
+Admin = 
+Moderator = 
