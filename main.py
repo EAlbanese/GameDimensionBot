@@ -1,15 +1,22 @@
-import os
 import configparser
+import os
+
 import discord
-from discord import Embed, EmbedField, Option, Member
+from discord import Button, Embed, EmbedField, Member, Option, OptionChoice
+
+import database
 
 config = configparser.ConfigParser()
 config.read("config.ini")
 
 TOKEN = config.get('Bot', 'Token')
-DISCORD_GUILD = config.get('Bot', 'DiscordGuild')
+DEBUG_GUILDS = None if config.get('Bot', 'DebugGuilds') == "" else list(
+    map(lambda id: int(id), config.get('Bot', 'DebugGuilds').split(',')))
 
-bot = discord.Bot(debug_guilds=[DISCORD_GUILD])
+bot = discord.Bot(debug_guild=DEBUG_GUILDS)
+db = database.Database("database.db")
+
+db.create_tables()
 
 
 @bot.event
@@ -17,24 +24,55 @@ async def on_ready():
     print(f'{bot.user} is connected')
 
 
+# Moderation commands
 @bot.slash_command(description="Shows information about the user")
 async def modlogs(interaction: discord.ApplicationContext, member: Option(Member, 'Select the user')):
     embed = Embed(
-        title=f'Modlogs for {member.display_name}#{member.discriminator}',
-        fields=[
-            EmbedField(
-                name='Name', value=f'{member.display_name}#{member.discriminator}'),
-            EmbedField(name='User Id', value=f'{member.id}'),
-        ],
+        title=f'Modlogs for {member.display_name}#{member.discriminator}'
     )
-    embed.set_thumbnail(url=member.display_avatar.url),
+    embed.set_thumbnail(url=member.display_avatar.url)
+    embed.set_footer(text=f'UID: {member.id}')
+    penalties = db.get_penalties_by_user(
+        interaction.guild_id, interaction.user.id)
+    if len(penalties) == 0:
+        embed.add_field(name='No logs found', value='User is good')
+    for penalty in penalties:
+        embed.add_field(
+            name=f'Case {penalty[0]}', value=f'**Type:** {penalty[1]}\n**Moderator:** <@{penalty[4]}>\n**Reason:** {penalty[5]}')
     await interaction.respond(embed=embed, ephemeral=True)
 
 
+@bot.slash_command(description="Punish a user")
+async def punish(
+        interaction: discord.ApplicationContext,
+        member: Option(Member, 'Select the user'),
+        type: Option(str, 'The type of punishment', choices=[
+            OptionChoice(name='warn', value='1'),
+            OptionChoice(name='timeout', value='2'),
+            OptionChoice(name='kick', value='3'),
+            OptionChoice(name='ban', value='4'),
+        ]),
+        reason: Option(str, 'The reason for the punishment', max_length=100),
+        duration: Option(str, 'The duration of the punishment', required=False)):
+
+    db.create_penalty(
+        interaction.guild_id,
+        type,
+        member.id,
+        interaction.author.id,
+        reason
+    )
+
+    await interaction.respond(f'<@{member.id}> received punishment {type} with reason `{reason}`' + ((' for ' + duration) if duration is not None else ''), ephemeral=True)
+
+
+# Welcomer
 @bot.event
 async def on_member_join(member):
     channel = bot.get_channel(1038812807216496640)
     await channel.send(f'Hey <@{member.user.id}>, welcome to **Game Dimension**!')
+
+# Information category Embeds
 
 
 @bot.slash_command(description="Introduction")
@@ -122,4 +160,22 @@ async def team(interaction: discord.ApplicationContext):
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
+
+# Ticket System
+# @bot.slash_command(description="ticket-en")
+# async def ticketenglish(interaction: discord.ApplicationContext):
+#     embed = Embed(
+#         title=f'Support Ticket',
+#         description='If you have a concern, feel free to open one of the following tickets. A team member will be with you in no time.',
+#     )
+#     button = Button(
+#         emoji=':no_entry_sign:',
+#         label='Report a User',
+#         style='primary'
+#     )
+#     await interaction.respond("Created rules embed", ephemeral=True)
+#     await interaction.channel.send(embed=embed, button=button)
+
+
 bot.run(TOKEN)
+db.connection.close()

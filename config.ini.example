@@ -1,7 +1,7 @@
 [Bot]
 Token = 
 Username = 
-DiscordGuild = 
+DebugGuilds = 
 
 [Channels]
 Introduction = 
