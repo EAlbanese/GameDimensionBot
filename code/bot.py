@@ -3,8 +3,8 @@ import math
 from datetime import datetime
 
 import database as database
-import discord
-from discord import Embed, EmbedField, Member, Option
+from discord import (ApplicationContext, Bot, Embed, EmbedField, Member,
+                     Option, Permissions)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
 
@@ -15,7 +15,7 @@ TOKEN = config.get('Bot', 'Token')
 DEBUG_GUILDS = None if config.get('Bot', 'DebugGuilds') == "" else list(
     map(lambda id: int(id), config.get('Bot', 'DebugGuilds').split(',')))
 
-bot = discord.Bot(debug_guild=DEBUG_GUILDS)
+bot = Bot(debug_guild=DEBUG_GUILDS)
 db = database.Database("bot.db")
 
 db.create_tables()
@@ -27,8 +27,8 @@ async def on_ready():
 
 
 # Moderation commands
-@bot.slash_command(description="Shows information about the user")
-async def modlogs(interaction: discord.ApplicationContext, member: Option(Member, 'Select the user')):
+@bot.slash_command(description="Shows information about the user", default_member_permissions=Permissions.none())
+async def modlogs(interaction: ApplicationContext, member: Option(Member, 'Select the user')):
     embed = Embed(title=f'Modlogs for {member.display_name}#{member.discriminator}')
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text=f'UID: {member.id}')
@@ -48,7 +48,7 @@ def parse_duration_end(duration_string):
     seconds = timeparse(duration_string)
     return datetime.fromtimestamp(datetime.now().timestamp() + seconds)
 
-async def punish(interaction: discord.ApplicationContext, type: PunishmentType, guild_id: int, member: Member, mod_id: int, reason: str, punishment_end: datetime = datetime.now()):
+async def punish(interaction: ApplicationContext, type: PunishmentType, guild_id: int, member: Member, mod_id: int, reason: str, punishment_end: datetime = datetime.now()):
     db.create_penalty(type.value, guild_id, member.id, mod_id, reason)
 
     embed = Embed(
@@ -68,16 +68,16 @@ async def punish(interaction: discord.ApplicationContext, type: PunishmentType, 
 
 @bot.slash_command(description="Warn a user")
 async def warn(
-    interaction: discord.ApplicationContext,
+    interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
     reason: Option(str, 'The reason for the warn', max_length=100)
 ):
     await punish(interaction, PunishmentType.WARN, interaction.guild_id, member, interaction.author.id, reason)
 
 
-@bot.slash_command(description="Timeout a user")
+@bot.slash_command(description="Timeout a user", default_member_permissions=Permissions.none())
 async def timeout(
-    interaction: discord.ApplicationContext,
+    interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
     reason: Option(str, 'The reason for the timeout', max_length=100),
     duration: Option(str, 'The duration for the timeout', max_length=10)
@@ -90,9 +90,9 @@ async def timeout(
 
     await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 
-@bot.slash_command(description="Kick a user")
+@bot.slash_command(description="Kick a user", default_member_permissions=Permissions.none())
 async def kick(
-    interaction: discord.ApplicationContext,
+    interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
     reason: Option(str, 'The reason for the kick', max_length=100)
 ):
@@ -103,9 +103,9 @@ async def kick(
 
     await punish(interaction, PunishmentType.KICK, interaction.guild_id, member, interaction.author.id, reason)
 
-@bot.slash_command(description="Ban a user")
+@bot.slash_command(description="Ban a user", default_member_permissions=Permissions.none())
 async def ban(
-    interaction: discord.ApplicationContext,
+    interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
     reason: Option(str, 'The reason for the ban', max_length=100),
     duration: Option(str, 'The duration for the ban', max_length=10)
@@ -129,7 +129,7 @@ async def on_member_join(member):
 
 
 @ bot.slash_command(description="Introduction")
-async def introduction(interaction: discord.ApplicationContext):
+async def introduction(interaction: ApplicationContext):
     embed = Embed(
         title=f'Introduction',
         description='Welcome to Game Dimension <:pikachu_love:1042727900996173884> \n \n We are a community server where you can have fun with your friends.',
@@ -159,7 +159,7 @@ async def introduction(interaction: discord.ApplicationContext):
 
 
 @ bot.slash_command(description="Rules")
-async def rules(interaction: discord.ApplicationContext):
+async def rules(interaction: ApplicationContext):
     embed = Embed(
         title=f'Rules',
         description='By joining the Game Dimension server you accept all the rules below. If someone does not follow the rules, please report it to <@&1038814047270866974> or <@&1038821661224484995> and they will check it.',
@@ -192,7 +192,7 @@ async def rules(interaction: discord.ApplicationContext):
 
 
 @ bot.slash_command(description="Team")
-async def team(interaction: discord.ApplicationContext):
+async def team(interaction: ApplicationContext):
     embed = Embed(
         title=f'Game DImension Team',
         fields=[
@@ -225,7 +225,7 @@ async def team(interaction: discord.ApplicationContext):
 
 
 @ bot.slash_command(description="Instructions to manage your voice call")
-async def tempbotinstructions(interaction: discord.ApplicationContext):
+async def tempbotinstructions(interaction: ApplicationContext):
     embed = Embed(
         title=f'Instructions to manage your voice call',
         description='Welcome this is our voice channel management bot. You can manage your channel with the buttons above.',
@@ -248,7 +248,7 @@ async def tempbotinstructions(interaction: discord.ApplicationContext):
 
 # Ticket System
 # @bot.slash_command(description="ticket-en")
-# async def ticketenglish(interaction: discord.ApplicationContext):
+# async def ticketenglish(interaction: ApplicationContext):
 #     embed = Embed(
 #         title=f'Support Ticket',
 #         description='If you have a concern, feel free to open one of the following tickets. A team member will be with you in no time.',
