@@ -1,0 +1,2 @@
+py-cord==2.2.2
+pytimeparse==1.1.8
