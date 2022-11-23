@@ -14,7 +14,7 @@ DEBUG_GUILDS = None if config.get('Bot', 'DebugGuilds') == "" else list(
     map(lambda id: int(id), config.get('Bot', 'DebugGuilds').split(',')))
 
 bot = discord.Bot(debug_guild=DEBUG_GUILDS)
-db = database.Database("database.db")
+db = database.Database("bot.db")
 
 db.create_tables()
 
@@ -56,8 +56,8 @@ async def punish(
         duration: Option(str, 'The duration of the punishment', required=False)):
 
     db.create_penalty(
-        interaction.guild_id,
         type,
+        interaction.guild_id,
         member.id,
         interaction.author.id,
         reason
@@ -73,6 +73,8 @@ async def on_member_join(member):
     await channel.send(f'Hey <@{member.user.id}>, welcome to **Game Dimension**!')
 
 # Information category Embeds
+
+
 @bot.slash_command(description="Introduction")
 async def introduction(interaction: discord.ApplicationContext):
     embed = Embed(
@@ -158,7 +160,9 @@ async def team(interaction: discord.ApplicationContext):
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
-#Temp channel Bot "How to use" embed
+# Temp channel Bot "How to use" embed
+
+
 @bot.slash_command(description="Instructions to manage your voice call")
 async def tempbotinstructions(interaction: discord.ApplicationContext):
     embed = Embed(
@@ -171,7 +175,7 @@ async def tempbotinstructions(interaction: discord.ApplicationContext):
                 name='2. Example', value=f'Click pen icon to rename the channel to your activity or set it to your liking.'),
             EmbedField(
                 name='3. Example', value=f'Click the crown icon to claim the channel if the owner left the call.'),
-                EmbedField(
+            EmbedField(
                 name='4. Example', value=f'Click the ban button to ban someone from your voice call.'),
         ],
     )
