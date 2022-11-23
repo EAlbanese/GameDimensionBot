@@ -1,5 +1,6 @@
 import configparser
 import os
+from enums import PunishmentType
 
 import discord
 from discord import Button, Embed, EmbedField, Member, Option, OptionChoice
@@ -33,41 +34,61 @@ async def modlogs(interaction: discord.ApplicationContext, member: Option(Member
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text=f'UID: {member.id}')
     penalties = db.get_penalties_by_user(
-        interaction.guild_id, interaction.user.id)
+        interaction.guild_id, member.id)
     if len(penalties) == 0:
-        embed.add_field(name='No logs found', value='User is good')
+        embed.add_field(name='No logs found',
+                        value='User is good')
     for penalty in penalties:
         embed.add_field(
-            name=f'Case {penalty[0]}', value=f'**Type:** {penalty[1]}\n**Moderator:** <@{penalty[4]}>\n**Reason:** {penalty[5]}')
+            name=f'Case {penalty[0]}', value=f'**Type:** {PunishmentType(penalty[1]).name}\n**Moderator:** <@{penalty[4]}>\n**Reason:** {penalty[5]}', inline=False)
     await interaction.respond(embed=embed, ephemeral=True)
 
 
-@bot.slash_command(description="Punish a user")
-async def punish(
-        interaction: discord.ApplicationContext,
-        member: Option(Member, 'Select the user'),
-        type: Option(str, 'The type of punishment', choices=[
-            OptionChoice(name='warn', value='1'),
-            OptionChoice(name='timeout', value='2'),
-            OptionChoice(name='kick', value='3'),
-            OptionChoice(name='ban', value='4'),
-        ]),
-        reason: Option(str, 'The reason for the punishment', max_length=100),
-        duration: Option(str, 'The duration of the punishment', required=False)):
+async def punish(interaction: discord.ApplicationContext, type: PunishmentType, guild_id: int, member_id: int, mod_id: int, reason: str, duration: str = None):
 
-    db.create_penalty(
-        type,
-        interaction.guild_id,
-        member.id,
-        interaction.author.id,
-        reason
-    )
+    # TODO: Parse time and duration unit from duration variable.
 
-    await interaction.respond(f'<@{member.id}> received punishment {type} with reason `{reason}`' + ((' for ' + duration) if duration is not None else ''), ephemeral=True)
+    db.create_penalty(type.value, guild_id, member_id, mod_id, reason)
+    await interaction.respond(f'<@{member_id}> received punishment **{type.name}** with reason `{reason}`' + ((' for ' + duration) if duration is not None else ''), ephemeral=True)
 
+
+@bot.slash_command(description="Warn a user")
+async def warn(
+    interaction: discord.ApplicationContext,
+    member: Option(Member, 'Select the user'),
+    reason: Option(str, 'The reason for the warn', max_length=100)
+):
+    await punish(interaction, PunishmentType.WARN, interaction.guild_id,
+                 member.id, interaction.author.id, reason)
+
+
+@bot.slash_command(description="Timeout a user")
+async def timeout(
+    interaction: discord.ApplicationContext,
+    member: Option(Member, 'Select the user'),
+    reason: Option(str, 'The reason for the timeout', max_length=100),
+    duration: Option(str, 'The duration for the timeout', max_length=10)
+):
+    await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id,
+                 member.id, interaction.author.id, reason)  # TODO: Add duration
+    await member.timeout(reason=reason, duration=15)
+
+
+@bot.slash_command(description="Ban a user")
+async def ban(
+    interaction: discord.ApplicationContext,
+    member: Option(Member, 'Select the user'),
+    reason: Option(str, 'The reason for the ban', max_length=100),
+    duration: Option(str, 'The duration for the ban', max_length=10)
+):
+    await punish(interaction, PunishmentType.BAN, interaction.guild_id,
+                 member.id, interaction.author.id, reason)  # TODO: Add duration
+    await member.ban(reason=reason, delete_message_days=7)
 
 # Welcomer
-@bot.event
+
+
+@ bot.event
 async def on_member_join(member):
     channel = bot.get_channel(1038812807216496640)
     await channel.send(f'Hey <@{member.user.id}>, welcome to **Game Dimension**!')
@@ -75,7 +96,7 @@ async def on_member_join(member):
 # Information category Embeds
 
 
-@bot.slash_command(description="Introduction")
+@ bot.slash_command(description="Introduction")
 async def introduction(interaction: discord.ApplicationContext):
     embed = Embed(
         title=f'Introduction',
@@ -97,7 +118,7 @@ async def introduction(interaction: discord.ApplicationContext):
     await interaction.channel.send(embed=embed)
 
 
-@bot.slash_command(description="Rules")
+@ bot.slash_command(description="Rules")
 async def rules(interaction: discord.ApplicationContext):
     embed = Embed(
         title=f'Rules',
@@ -130,7 +151,7 @@ async def rules(interaction: discord.ApplicationContext):
     await interaction.channel.send(embed=embed)
 
 
-@bot.slash_command(description="Team")
+@ bot.slash_command(description="Team")
 async def team(interaction: discord.ApplicationContext):
     embed = Embed(
         title=f'Game DImension Team',
@@ -163,7 +184,7 @@ async def team(interaction: discord.ApplicationContext):
 # Temp channel Bot "How to use" embed
 
 
-@bot.slash_command(description="Instructions to manage your voice call")
+@ bot.slash_command(description="Instructions to manage your voice call")
 async def tempbotinstructions(interaction: discord.ApplicationContext):
     embed = Embed(
         title=f'Instructions to manage your voice call',
