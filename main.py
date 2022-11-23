@@ -73,8 +73,6 @@ async def on_member_join(member):
     await channel.send(f'Hey <@{member.user.id}>, welcome to **Game Dimension**!')
 
 # Information category Embeds
-
-
 @bot.slash_command(description="Introduction")
 async def introduction(interaction: discord.ApplicationContext):
     embed = Embed(
@@ -158,6 +156,28 @@ async def team(interaction: discord.ApplicationContext):
     embed.set_thumbnail(
         url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
     await interaction.respond("Created rules embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
+
+#Temp channel Bot "How to use" embed
+@bot.slash_command(description="Instructions to manage your voice call")
+async def tempbotinstructions(interaction: discord.ApplicationContext):
+    embed = Embed(
+        title=f'Instructions to manage your voice call',
+        description='Welcome this is our voice channel management bot. You can manage your channel with the buttons above.',
+        fields=[
+            EmbedField(
+                name='1. Example', value=f'Click the lock icon to close your channel from everyone.'),
+            EmbedField(
+                name='2. Example', value=f'Click pen icon to rename the channel to your activity or set it to your liking.'),
+            EmbedField(
+                name='3. Example', value=f'Click the crown icon to claim the channel if the owner left the call.'),
+                EmbedField(
+                name='4. Example', value=f'Click the ban button to ban someone from your voice call.'),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
+    await interaction.respond("Instructions to manage your voice call", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
 
