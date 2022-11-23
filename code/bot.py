@@ -1,11 +1,12 @@
 import configparser
-import os
-from enums import PunishmentType
+import math
+from datetime import datetime
 
+import database as database
 import discord
-from discord import Button, Embed, EmbedField, Member, Option, OptionChoice
-
-import database
+from discord import Embed, EmbedField, Member, Option
+from enums import PunishmentType
+from pytimeparse.timeparse import timeparse
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -28,28 +29,41 @@ async def on_ready():
 # Moderation commands
 @bot.slash_command(description="Shows information about the user")
 async def modlogs(interaction: discord.ApplicationContext, member: Option(Member, 'Select the user')):
-    embed = Embed(
-        title=f'Modlogs for {member.display_name}#{member.discriminator}'
-    )
+    embed = Embed(title=f'Modlogs for {member.display_name}#{member.discriminator}')
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text=f'UID: {member.id}')
     penalties = db.get_penalties_by_user(
         interaction.guild_id, member.id)
     if len(penalties) == 0:
-        embed.add_field(name='No logs found',
-                        value='User is good')
+        embed.add_field(name='No logs found', value='User is good')
     for penalty in penalties:
         embed.add_field(
-            name=f'Case {penalty[0]}', value=f'**Type:** {PunishmentType(penalty[1]).name}\n**Moderator:** <@{penalty[4]}>\n**Reason:** {penalty[5]}', inline=False)
+            name=f'⚖️ Case {penalty[0]}',
+            value=f'**Type:** {PunishmentType(penalty[1]).name}\n**Moderator:** <@{penalty[4]}>\n**Reason:** {penalty[5]}',
+            inline=False
+        )
     await interaction.respond(embed=embed, ephemeral=True)
 
+def parse_duration_end(duration_string):
+    seconds = timeparse(duration_string)
+    return datetime.fromtimestamp(datetime.now().timestamp() + seconds)
 
-async def punish(interaction: discord.ApplicationContext, type: PunishmentType, guild_id: int, member_id: int, mod_id: int, reason: str, duration: str = None):
+async def punish(interaction: discord.ApplicationContext, type: PunishmentType, guild_id: int, member: Member, mod_id: int, reason: str, punishment_end: datetime = datetime.now()):
+    db.create_penalty(type.value, guild_id, member.id, mod_id, reason)
 
-    # TODO: Parse time and duration unit from duration variable.
+    embed = Embed(
+        title=f'Created {type.name} for {member.display_name}#{member.discriminator}',
+        fields=[
+            EmbedField(
+                name='Reason',
+                value=reason
+            )
+        ]
+    )
+    if punishment_end.timestamp() > datetime.now().timestamp():
+        embed.add_field(name='End', value=f'<t:{math.ceil(punishment_end.timestamp())}:R>')
 
-    db.create_penalty(type.value, guild_id, member_id, mod_id, reason)
-    await interaction.respond(f'<@{member_id}> received punishment **{type.name}** with reason `{reason}`' + ((' for ' + duration) if duration is not None else ''), ephemeral=True)
+    await interaction.respond(embed=embed, ephemeral=True)
 
 
 @bot.slash_command(description="Warn a user")
@@ -58,8 +72,7 @@ async def warn(
     member: Option(Member, 'Select the user'),
     reason: Option(str, 'The reason for the warn', max_length=100)
 ):
-    await punish(interaction, PunishmentType.WARN, interaction.guild_id,
-                 member.id, interaction.author.id, reason)
+    await punish(interaction, PunishmentType.WARN, interaction.guild_id, member, interaction.author.id, reason)
 
 
 @bot.slash_command(description="Timeout a user")
@@ -69,10 +82,26 @@ async def timeout(
     reason: Option(str, 'The reason for the timeout', max_length=100),
     duration: Option(str, 'The duration for the timeout', max_length=10)
 ):
-    await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id,
-                 member.id, interaction.author.id, reason)  # TODO: Add duration
-    await member.timeout(reason=reason, duration=15)
+    punishment_end = parse_duration_end(duration)
+    try:
+        await member.timeout(punishment_end, reason=reason)
+    except:
+        return await interaction.respond('Looks like I don\'t have timeout permissions.')
 
+    await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
+
+@bot.slash_command(description="Kick a user")
+async def kick(
+    interaction: discord.ApplicationContext,
+    member: Option(Member, 'Select the user'),
+    reason: Option(str, 'The reason for the kick', max_length=100)
+):
+    try:
+        await member.kick(reason=reason)
+    except:
+        return await interaction.respond('Looks like I don\'t have kick permissions.')
+
+    await punish(interaction, PunishmentType.KICK, interaction.guild_id, member, interaction.author.id, reason)
 
 @bot.slash_command(description="Ban a user")
 async def ban(
@@ -81,10 +110,13 @@ async def ban(
     reason: Option(str, 'The reason for the ban', max_length=100),
     duration: Option(str, 'The duration for the ban', max_length=10)
 ):
-    await punish(interaction, PunishmentType.BAN, interaction.guild_id,
-                 member.id, interaction.author.id, reason)  # TODO: Add duration
-    await member.ban(reason=reason, delete_message_days=7)
+    punishment_end = parse_duration_end(duration)
+    try:
+        await member.ban(reason=reason, delete_message_days=7)
+    except:
+        return await interaction.respond('Looks like I don\'t have ban permissions.')
 
+    await punish(interaction, PunishmentType.BAN, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 # Welcomer
 
 
@@ -103,16 +135,24 @@ async def introduction(interaction: discord.ApplicationContext):
         description='Welcome to Game Dimension <:pikachu_love:1042727900996173884> \n \n We are a community server where you can have fun with your friends.',
         fields=[
             EmbedField(
-                name='Rules', value=f'Before you can start to have fun on our server, you have to accept our rules, click here <#1038812962598699008>'),
-            EmbedField(name='Announcements', value=f'These following three channels will be one of the most important if you will be active on the server. The <#1038813102185123922> channel is there to be informed about the latest updates of the server, such as new roles, new channels or new team members. \n In the <#1038813117179756544> we will announce events, giveaways, tournaments or other announcements that we will do with you as a community. \n Last but not least comes the <#1038813153447919688>, if you are interested in patch-notes about your games, you will find all relevant info here. Last but not least comes the <There is a separate role for each channel, so if you are interested, pick the role and you will always be informed.'),
+                name='Rules',
+                value=f'Before you can start to have fun on our server, you have to accept our rules, click here <#1038812962598699008>'
+            ),
             EmbedField(
-                name='Selfroles', value=f'If you want, you can now check out our <#1038813219420110869> channel to choose your own roles. These give your profile that certain something'),
+                name='Announcements',
+                value=f'These following three channels will be one of the most important if you will be active on the server. The <#1038813102185123922> channel is there to be informed about the latest updates of the server, such as new roles, new channels or new team members. \n In the <#1038813117179756544> we will announce events, giveaways, tournaments or other announcements that we will do with you as a community. \n Last but not least comes the <#1038813153447919688>, if you are interested in patch-notes about your games, you will find all relevant info here. Last but not least comes the <There is a separate role for each channel, so if you are interested, pick the role and you will always be informed.'
+            ),
             EmbedField(
-                name='Support', value=f'We ask you to choose a **Support language** in the <#1038813219420110869> , so that you can better communicate with the team. We offer an English and a German team.'),
+                name='Selfroles',
+                value=f'If you want, you can now check out our <#1038813219420110869> channel to choose your own roles. These give your profile that certain something'
+            ),
+            EmbedField(
+                name='Support',
+                value=f'We ask you to choose a **Support language** in the <#1038813219420110869> , so that you can better communicate with the team. We offer an English and a German team.'
+            ),
         ],
     )
-    embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
+    embed.set_thumbnail(url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
     embed.set_image(url='https://media.discordapp.net/attachments/1043197337499078716/1043197378737492060/e343da6ee754a06c2f6a946cdc049d74fa773510d8dd8b3641e6bd72f6f58dd1.png')
     await interaction.respond("Created introduction embed", ephemeral=True)
     await interaction.channel.send(embed=embed)

@@ -1,3 +1,4 @@
+import datetime
 import sqlite3
 
 
@@ -11,18 +12,19 @@ class Database:
     def create_tables(self):
         try:
             cursor = self.connection.cursor()
-            cursor.execute(
-                'CREATE TABLE IF NOT EXISTS penalties (id INTEGER PRIMARY KEY AUTOINCREMENT, type INTEGER NOT NULL, server_id INTEGER NOT NULL, user_id INTEGER NOT NULL , moderator_id INTEGER NOT NULL, reason TEXT NOT NULL, end_date INTEGER);')
+            cursor.execute('CREATE TABLE IF NOT EXISTS penalties (id INTEGER PRIMARY KEY AUTOINCREMENT, type INTEGER NOT NULL, server_id INTEGER NOT NULL, user_id INTEGER NOT NULL , moderator_id INTEGER NOT NULL, reason TEXT NOT NULL, end_date INTEGER);')
 
             self.connection.commit()
         except Exception as ex:
             print(f'EXCEPTION: {ex}')
 
-    def create_penalty(self, type: int, server_id: int, user_id: int, moderator_id: int, reason: str):
-        print(f'Create with reason: {reason}')
-        cursor = self.connection.cursor()
-        cursor.execute(
-            f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason, end_date) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\', 0);')
+    def create_penalty(self, type: int, server_id: int, user_id: int, moderator_id: int, reason: str, penalty_end: datetime.datetime = None):
+        cursor = self.connection.cursor() # {(', end_date' if penalty_end != None else '')} / f', {penalty_end}' if penalty_end != None else ''}
+        
+        if penalty_end != None:
+            cursor.execute(f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason, end_date) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\', {penalty_end.timestamp()});')
+        else:
+            cursor.execute(f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\');')
         self.connection.commit()
 
     def delete_penalty(self, type: int, server_id: int, user_id: int):
