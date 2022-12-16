@@ -3,10 +3,11 @@ import math
 from datetime import datetime
 
 import database as database
-from discord import (ApplicationContext, Bot, Embed, EmbedField, Member,
-                     Option, Permissions)
+from discord import (ApplicationContext, Bot, Embed,
+                     EmbedField, Member, Option, Permissions, Button, PartialEmoji)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
+from views import TicketCreateView, MyModal
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -29,7 +30,8 @@ async def on_ready():
 # Moderation commands
 @bot.slash_command(description="Shows information about the user", default_member_permissions=Permissions.none())
 async def modlogs(interaction: ApplicationContext, member: Option(Member, 'Select the user')):
-    embed = Embed(title=f'Modlogs for {member.display_name}#{member.discriminator}')
+    embed = Embed(
+        title=f'Modlogs for {member.display_name}#{member.discriminator}')
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text=f'UID: {member.id}')
     penalties = db.get_penalties_by_user(
@@ -44,9 +46,11 @@ async def modlogs(interaction: ApplicationContext, member: Option(Member, 'Selec
         )
     await interaction.respond(embed=embed, ephemeral=True)
 
+
 def parse_duration_end(duration_string):
     seconds = timeparse(duration_string)
     return datetime.fromtimestamp(datetime.now().timestamp() + seconds)
+
 
 async def punish(interaction: ApplicationContext, type: PunishmentType, guild_id: int, member: Member, mod_id: int, reason: str, punishment_end: datetime = datetime.now()):
     db.create_penalty(type.value, guild_id, member.id, mod_id, reason)
@@ -61,7 +65,8 @@ async def punish(interaction: ApplicationContext, type: PunishmentType, guild_id
         ]
     )
     if punishment_end.timestamp() > datetime.now().timestamp():
-        embed.add_field(name='End', value=f'<t:{math.ceil(punishment_end.timestamp())}:R>')
+        embed.add_field(
+            name='End', value=f'<t:{math.ceil(punishment_end.timestamp())}:R>')
 
     await interaction.respond(embed=embed, ephemeral=True)
 
@@ -90,6 +95,7 @@ async def timeout(
 
     await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 
+
 @bot.slash_command(description="Kick a user", default_member_permissions=Permissions.none())
 async def kick(
     interaction: ApplicationContext,
@@ -102,6 +108,7 @@ async def kick(
         return await interaction.respond('Looks like I don\'t have kick permissions.')
 
     await punish(interaction, PunishmentType.KICK, interaction.guild_id, member, interaction.author.id, reason)
+
 
 @bot.slash_command(description="Ban a user", default_member_permissions=Permissions.none())
 async def ban(
@@ -152,7 +159,8 @@ async def introduction(interaction: ApplicationContext):
             ),
         ],
     )
-    embed.set_thumbnail(url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
     embed.set_image(url='https://media.discordapp.net/attachments/1043197337499078716/1043197378737492060/e343da6ee754a06c2f6a946cdc049d74fa773510d8dd8b3641e6bd72f6f58dd1.png')
     await interaction.respond("Created introduction embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
@@ -247,19 +255,14 @@ async def tempbotinstructions(interaction: ApplicationContext):
 
 
 # Ticket System
-# @bot.slash_command(description="ticket-en")
-# async def ticketenglish(interaction: ApplicationContext):
-#     embed = Embed(
-#         title=f'Support Ticket',
-#         description='If you have a concern, feel free to open one of the following tickets. A team member will be with you in no time.',
-#     )
-#     button = Button(
-#         emoji=':no_entry_sign:',
-#         label='Report a User',
-#         style='primary'
-#     )
-#     await interaction.respond("Created rules embed", ephemeral=True)
-#     await interaction.channel.send(embed=embed, button=button)
+@bot.slash_command(description="ticket-en")
+async def ticketenglish(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Support Ticket',
+        description='If you have a concern, feel free to open one of the following tickets. A team member will be with you in no time.',
+    )
+    await interaction.respond("Created ticket embed", ephemeral=True)
+    await interaction.channel.send(embed=embed, view=TicketCreateView())
 
 
 bot.run(TOKEN)

@@ -19,12 +19,15 @@ class Database:
             print(f'EXCEPTION: {ex}')
 
     def create_penalty(self, type: int, server_id: int, user_id: int, moderator_id: int, reason: str, penalty_end: datetime.datetime = None):
-        cursor = self.connection.cursor() # {(', end_date' if penalty_end != None else '')} / f', {penalty_end}' if penalty_end != None else ''}
-        
+        # {(', end_date' if penalty_end != None else '')} / f', {penalty_end}' if penalty_end != None else ''}
+        cursor = self.connection.cursor()
+
         if penalty_end != None:
-            cursor.execute(f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason, end_date) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\', {penalty_end.timestamp()});')
+            cursor.execute(
+                f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason, end_date) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\', {penalty_end.timestamp()});')
         else:
-            cursor.execute(f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\');')
+            cursor.execute(
+                f'INSERT INTO penalties (type, server_id, user_id, moderator_id, reason) VALUES ({type}, {server_id}, {user_id}, {moderator_id}, \'{reason}\');')
         self.connection.commit()
 
     def delete_penalty(self, type: int, server_id: int, user_id: int):
