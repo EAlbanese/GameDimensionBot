@@ -7,7 +7,7 @@ from discord import (ApplicationContext, Bot, Embed,
                      EmbedField, Member, Option, Permissions, Button, PartialEmoji)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
-from views import TicketCreateView, MyModal
+from views import TicketCreateView, ReportUserModal, SupportModal, BotProblemsModal
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -255,8 +255,8 @@ async def tempbotinstructions(interaction: ApplicationContext):
 
 
 # Ticket System
-@bot.slash_command(description="ticket-en")
-async def ticketenglish(interaction: ApplicationContext):
+@bot.slash_command(description="ticket")
+async def ticket(interaction: ApplicationContext):
     embed = Embed(
         title=f'Support Ticket',
         description='If you have a concern, feel free to open one of the following tickets. A team member will be with you in no time.',
