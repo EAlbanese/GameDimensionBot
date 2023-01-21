@@ -259,7 +259,7 @@ async def tempbotinstructions(interaction: ApplicationContext):
 async def supportticket(interaction: ApplicationContext):
     embed = Embed(
         title=f'Support Ticket',
-        description='If you have a concern, feel free to open one of the following tickets. A team member will be with you in no time.',
+        description='If you need help, feel free to open one of the following tickets. A team member will be with you in no time.',
     )
     await interaction.respond("Created ticket embed", ephemeral=True)
     await interaction.channel.send(embed=embed, view=SupportTicketCreateView())
@@ -269,7 +269,7 @@ async def supportticket(interaction: ApplicationContext):
 async def adminticket(interaction: ApplicationContext):
     embed = Embed(
         title=f'Admin Ticket',
-        description='If you have a concern, feel free to open one of the following tickets. A team admin will be with you in no time.',
+        description='If you need help, feel free to open one of the following tickets. A team admin will be with you in no time.',
     )
     await interaction.respond("Created ticket embed", ephemeral=True)
     await interaction.channel.send(embed=embed, view=AddminTicketCreatView())
