@@ -28,11 +28,14 @@ class ReportUserModal(ui.Modal):
             label="Which user and why do you want to report him", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
-        embed = Embed(title="Modal Results", description="test")
+        embed = Embed(title="User Report",
+                      description="✅ Thank you for contacting support. Our team will take good care of your concern.")
         embed.add_field(
             name="Which user and why do you want to report him", value=self.children[0].value)
+
         category = await interaction.guild.fetch_channel(1038810106260901899)
         staffrole = interaction.guild.get_role(1038821661224484995)
+
         ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
             interaction.user: PermissionOverwrite(read_messages=True),
             interaction.guild.default_role: PermissionOverwrite(
@@ -40,8 +43,7 @@ class ReportUserModal(ui.Modal):
             staffrole: PermissionOverwrite(read_messages=True)
         })
         await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
-        # await ticketchannel.send(f"<@{interaction.user.id}> <@{staffrole.id}>", embed=embed, view=TicketManageView()) <-- Am ende das benutzen
-        await ticketchannel.send(f"<@{interaction.user.id}>", embed=embed, view=TicketManageView())
+        await ticketchannel.send(f"<@{interaction.user.id}> <@{staffrole.id}>", embed=embed, view=TicketManageView())
 
 
 class SupportModal(ui.Modal):
@@ -52,10 +54,20 @@ class SupportModal(ui.Modal):
             label="Where do you need help?", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
-        embed = Embed(title="Modal Results")
+        embed = Embed(
+            title="Support", description="✅ Thank you for contacting support. Our team will take good care of your concern.")
         embed.add_field(name="Where do you need help?",
                         value=self.children[0].value)
-        await interaction.response.send_message(embeds=[embed])
+        category = await interaction.guild.fetch_channel(1038810106260901899)
+        staffrole = interaction.guild.get_role(1038821661224484995)
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            staffrole: PermissionOverwrite(read_messages=True)
+        })
+        await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@{staffrole.id}>", embed=embed, view=TicketManageView())
 
 
 class BotProblemsModal(ui.Modal):
@@ -66,13 +78,102 @@ class BotProblemsModal(ui.Modal):
             label="What bot problem do you have?", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
-        embed = Embed(title="Modal Results")
+        embed = Embed(title="Bot Problems",
+                      description="✅ Thank you for contacting support. Our team will take good care of your concern.")
         embed.add_field(name="What bot problem do you have?",
                         value=self.children[0].value)
-        await interaction.response.send_message(embeds=[embed])
+        category = await interaction.guild.fetch_channel(1038810106260901899)
+        staffrole = interaction.guild.get_role(1038821661224484995)
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            staffrole: PermissionOverwrite(read_messages=True)
+        })
+        await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@{staffrole.id}>", embed=embed, view=TicketManageView())
 
 
-class TicketCreateView(ui.View):
+class ApplicationModal(ui.Modal):
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+
+        self.add_item(ui.InputText(
+            label="For what role you want to apply?", style=InputTextStyle.long))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(title="Application",
+                      description="✅ Thank you for applying to join our team. Our staff will take care of your application.")
+        embed.add_field(
+            name="For what role you want to apply?", value=self.children[0].value)
+
+        category = await interaction.guild.fetch_channel(1038810106260901899)
+        adminrole = interaction.guild.get_role(1038814047270866974)
+
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            adminrole: PermissionOverwrite(read_messages=True)
+        })
+        await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@{adminrole.id}>", embed=embed, view=TicketManageView())
+
+
+class StreamerModal(ui.Modal):
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+
+        self.add_item(ui.InputText(
+            label="What platform are you streaming on?", style=InputTextStyle.long))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(title="Streamer",
+                      description="✅ Thank you for supporting us through your streams. Our team will take care of this ticket.")
+        embed.add_field(
+            name="What platform are you streaming on?", value=self.children[0].value)
+
+        category = await interaction.guild.fetch_channel(1038810106260901899)
+        adminrole = interaction.guild.get_role(1038814047270866974)
+
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            adminrole: PermissionOverwrite(read_messages=True)
+        })
+        await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@{adminrole.id}>", embed=embed, view=TicketManageView())
+
+
+class StaffComplaintModal(ui.Modal):
+
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+
+        self.add_item(ui.InputText(
+            label="Who from team do you want to report?", style=InputTextStyle.long))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(title="Staff complaint",
+                      description="✅ Thank you for creating a ticket and reporting someone on staff. We are sorry and our admins will do the best they can. ")
+        embed.add_field(
+            name="Who from team do you want to report?", value=self.children[0].value)
+
+        category = await interaction.guild.fetch_channel(1038810106260901899)
+        adminrole = interaction.guild.get_role(1038814047270866974)
+
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            adminrole: PermissionOverwrite(read_messages=True)
+        })
+        await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@{adminrole.id}>", embed=embed, view=TicketManageView())
+
+
+class SupportTicketCreateView(ui.View):
     @ ui.button(emoji="🚫", label="Report a User", style=ButtonStyle.primary)
     async def first_button_callback(self, button, interaction):
         await interaction.response.send_modal(ReportUserModal(title="User Report"))
@@ -84,3 +185,17 @@ class TicketCreateView(ui.View):
     @ ui.button(emoji="🛠️", label="Bot Problems", style=ButtonStyle.primary)
     async def third_button_callback(self, button, interaction):
         await interaction.response.send_modal(BotProblemsModal(title="Bot Problems"))
+
+
+class AddminTicketCreatView(ui.View):
+    @ ui.button(emoji="📝", label="Application", style=ButtonStyle.primary)
+    async def first_button_callback(self, button, interaction):
+        await interaction.response.send_modal(ReportUserModal(title="Application"))
+
+    @ ui.button(emoji="🎥", label="Streamer", style=ButtonStyle.primary)
+    async def second_button_callback(self, button, interaction):
+        await interaction.response.send_modal(SupportModal(title="Streamer"))
+
+    @ ui.button(emoji="⛔", label="Team complaint", style=ButtonStyle.primary)
+    async def third_button_callback(self, button, interaction):
+        await interaction.response.send_modal(BotProblemsModal(title="Team complaint"))
