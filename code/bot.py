@@ -7,7 +7,7 @@ from discord import (ApplicationContext, Bot, Embed,
                      EmbedField, Member, Option, Permissions, Button, PartialEmoji)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
-from views import SupportTicketCreateView, AddminTicketCreatView, ReportUserModal, SupportModal, BotProblemsModal
+from views import SupportTicketCreateView, AddminTicketCreatView, ReportUserModal, SupportModal, BotProblemsModal, SocialLinksView
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -273,6 +273,17 @@ async def adminticket(interaction: ApplicationContext):
     )
     await interaction.respond("Created ticket embed", ephemeral=True)
     await interaction.channel.send(embed=embed, view=AddminTicketCreatView())
+
+
+# Social Link Buttons
+@bot.slash_command(description="socials")
+async def social(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Our Socials',
+        description='We would be very happy if you would follow us. ❤️',
+    )
+    await interaction.respond("Created social embed", ephemeral=True)
+    await interaction.channel.send(embed=embed, view=SocialLinksView())
 
 
 bot.run(TOKEN)
