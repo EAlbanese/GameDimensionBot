@@ -171,27 +171,3 @@ class AddminTicketCreatView(ui.View):
     @ ui.button(emoji="⛔", label="Team complaint", style=ButtonStyle.primary)
     async def third_button_callback(self, button, interaction):
         await interaction.response.send_modal(BotProblemsModal(title="Team complaint"))
-
-
-# Social Links Buttons
-
-class SocialLinksView(ui.View):
-    @ui.button(label="TikTok", style=ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens TikTok")
-
-    @ui.button(label="Instagram", style=ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens Instagram")
-
-    @ui.button(label="YouTube", style=ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens YouTube")
-
-    @ui.button(label="Twitch", style=ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens Twitch")
-
-    @ui.button(label="Twitter", style=ButtonStyle.primary)
-    async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens Twitter")

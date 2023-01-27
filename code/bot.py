@@ -4,10 +4,13 @@ from datetime import datetime
 
 import database as database
 from discord import (ApplicationContext, Bot, Embed,
-                     EmbedField, Member, Option, Permissions, Button, PartialEmoji)
+                     EmbedField, Member, Option, Permissions, Button, PartialEmoji, Game, File, Intents)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
-from views import SupportTicketCreateView, AddminTicketCreatView, ReportUserModal, SupportModal, BotProblemsModal, SocialLinksView
+from views import SupportTicketCreateView, AddminTicketCreatView, ReportUserModal, SupportModal, BotProblemsModal
+from PIL import Image, ImageDraw, ImageFont
+import requests
+import io
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -16,7 +19,9 @@ TOKEN = config.get('Bot', 'Token')
 DEBUG_GUILDS = None if config.get('Bot', 'DebugGuilds') == "" else list(
     map(lambda id: int(id), config.get('Bot', 'DebugGuilds').split(',')))
 
-bot = Bot(debug_guild=DEBUG_GUILDS)
+intents = Intents.default()
+intents.members = True
+bot = Bot(debug_guild=DEBUG_GUILDS, intents=intents)
 db = database.Database("bot.db")
 
 db.create_tables()
@@ -25,6 +30,7 @@ db.create_tables()
 @bot.event
 async def on_ready():
     print(f'{bot.user} is connected')
+    await bot.change_presence(activity=Game('in another Dimension'))
 
 
 # Moderation commands
@@ -127,8 +133,9 @@ async def ban(
 # Welcomer
 
 
-@ bot.event
+@bot.event
 async def on_member_join(member):
+    print("FUCK MY LIFE")
     channel = bot.get_channel(1038812807216496640)
     await channel.send(f'Hey <@{member.user.id}>, welcome to **Game Dimension**!')
 
@@ -276,15 +283,38 @@ async def adminticket(interaction: ApplicationContext):
     await interaction.channel.send(embed=embed, view=AddminTicketCreatView())
 
 
-# Social Link Buttons
-@bot.slash_command(description="socials")
-async def social(interaction: ApplicationContext):
-    embed = Embed(
-        title=f'Our Socials',
-        description='We would be very happy if you would follow us. ❤️',
-    )
-    await interaction.respond("Created social embed", ephemeral=True)
-    await interaction.channel.send(embed=embed, view=SocialLinksView())
+@bot.slash_command(description="test")
+async def test(interaction: ApplicationContext):
+    await interaction.response.send_message("Fuck you")
+    # Open the background image
+    bg_img = Image.open("resources/bg.png")
+
+    # Create an ImageDraw object
+    draw = ImageDraw.Draw(bg_img)
+
+    # Define the font and font size
+    font = ImageFont.truetype("resources/font.ttf", 80)
+
+    text = f"Username#0000 just joined the server"
+
+    # Draw the text on the background
+    draw.text((bg_img.width/2-draw.textlength(text, font=font)/2, bg_img.height-325), text,
+              font=font, fill=(255, 255, 255))
+
+    # Open the image you want to add
+    avatar_request = requests.get(
+        f"{interaction.user.display_avatar.url}")
+    avatar_img = Image.open(io.BytesIO(avatar_request.content))
+    img_pos = (int(bg_img.width/2-avatar_img.width/2), 150)
+
+    # Paste the image on the background
+    bg_img.paste(avatar_img, img_pos)
+
+    # Save the final image
+    buf = io.BytesIO()
+    bg_img.save(buf, format='PNG')
+    buf.seek(0)
+    await interaction.channel.send(files=[File(buf, "welcome.png")])
 
 
 bot.run(TOKEN)
