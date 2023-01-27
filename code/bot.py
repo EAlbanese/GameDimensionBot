@@ -160,8 +160,9 @@ async def introduction(interaction: ApplicationContext):
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
-    embed.set_image(url='https://media.discordapp.net/attachments/1043197337499078716/1043197378737492060/e343da6ee754a06c2f6a946cdc049d74fa773510d8dd8b3641e6bd72f6f58dd1.png')
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
+    embed.set_image(
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358325813289/GameDimension_Banner.png?width=1095&height=616')
     await interaction.respond("Created introduction embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
@@ -194,7 +195,7 @@ async def rules(interaction: ApplicationContext):
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
@@ -249,7 +250,7 @@ async def tempbotinstructions(interaction: ApplicationContext):
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
     await interaction.respond("Instructions to manage your voice call", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
