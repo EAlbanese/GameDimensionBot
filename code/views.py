@@ -122,32 +122,6 @@ class ApplicationModal(ui.Modal):
         await ticketchannel.send(f"<@{interaction.user.id}> <@{adminrole.id}>", embed=embed, view=TicketManageView())
 
 
-class StreamerModal(ui.Modal):
-    def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-
-        self.add_item(ui.InputText(
-            label="What platform are you streaming on?", style=InputTextStyle.long))
-
-    async def callback(self, interaction: Interaction):
-        embed = Embed(title="Streamer",
-                      description="✅ Thank you for supporting us through your streams. Our team will take care of this ticket.")
-        embed.add_field(
-            name="What platform are you streaming on?", value=self.children[0].value)
-
-        category = await interaction.guild.fetch_channel(1038810106260901899)
-        adminrole = interaction.guild.get_role(1038814047270866974)
-
-        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name}", category=category, overwrites={
-            interaction.user: PermissionOverwrite(read_messages=True),
-            interaction.guild.default_role: PermissionOverwrite(
-                read_messages=False),
-            adminrole: PermissionOverwrite(read_messages=True)
-        })
-        await interaction.response.send_message(f"Created ticket in <#{ticketchannel.id}>", ephemeral=True)
-        await ticketchannel.send(f"<@{interaction.user.id}> <@{adminrole.id}>", embed=embed, view=TicketManageView())
-
-
 class StaffComplaintModal(ui.Modal):
 
     def __init__(self, *args, **kwargs) -> None:
@@ -194,14 +168,9 @@ class AddminTicketCreatView(ui.View):
     async def first_button_callback(self, button, interaction):
         await interaction.response.send_modal(ReportUserModal(title="Application"))
 
-    @ ui.button(emoji="🎥", label="Streamer", style=ButtonStyle.primary)
-    async def second_button_callback(self, button, interaction):
-        await interaction.response.send_modal(SupportModal(title="Streamer"))
-
     @ ui.button(emoji="⛔", label="Team complaint", style=ButtonStyle.primary)
     async def third_button_callback(self, button, interaction):
         await interaction.response.send_modal(BotProblemsModal(title="Team complaint"))
-
 
 
 # Social Links Buttons
@@ -209,17 +178,20 @@ class AddminTicketCreatView(ui.View):
 class SocialLinksView(ui.View):
     @ui.button(label="TikTok", style=ButtonStyle.primary)
     async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens TikTok") 
+        await interaction.response.send_message("Opens TikTok")
+
     @ui.button(label="Instagram", style=ButtonStyle.primary)
     async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens Instagram") 
+        await interaction.response.send_message("Opens Instagram")
+
     @ui.button(label="YouTube", style=ButtonStyle.primary)
     async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens YouTube") 
+        await interaction.response.send_message("Opens YouTube")
+
     @ui.button(label="Twitch", style=ButtonStyle.primary)
     async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens Twitch") 
+        await interaction.response.send_message("Opens Twitch")
+
     @ui.button(label="Twitter", style=ButtonStyle.primary)
     async def button_callback(self, button, interaction):
-        await interaction.response.send_message("Opens Twitter") 
-
+        await interaction.response.send_message("Opens Twitter")
