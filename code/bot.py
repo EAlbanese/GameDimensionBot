@@ -9,7 +9,7 @@ from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
 from views import SupportTicketCreateView, AddminTicketCreatView, ReportUserModal, SupportModal, BotProblemsModal
 from PIL import Image, ImageDraw, ImageFont
-import requests
+# import requests
 import io
 
 config = configparser.ConfigParser()
@@ -142,8 +142,8 @@ async def on_member_join(member):
 # Information category Embeds
 
 
-@ bot.slash_command(description="Introduction")
-async def introduction(interaction: ApplicationContext):
+@ bot.slash_command(description="Introduction EN")
+async def introductionen(interaction: ApplicationContext):
     embed = Embed(
         title=f'Introduction',
         description='Welcome to Game Dimension <:pikachu_love:1042727900996173884> \n \n We are a community server where you can have fun with your friends.',
@@ -161,8 +161,8 @@ async def introduction(interaction: ApplicationContext):
                 value=f'If you want, you can now check out our <#1038813219420110869> channel to choose your own roles. These give your profile that certain something'
             ),
             EmbedField(
-                name='Support',
-                value=f'We ask you to choose a **Support language** in the <#1038813219420110869> , so that you can better communicate with the team. We offer an English and a German team.'
+                name='Language',
+                value=f'In the config channel, you can select the server language. If you realize you would rather be with the English or German community, you can change your role at any time. Just go to the <#1067140820681109575> channel.'
             ),
         ],
     )
@@ -174,8 +174,40 @@ async def introduction(interaction: ApplicationContext):
     await interaction.channel.send(embed=embed)
 
 
-@ bot.slash_command(description="Rules")
-async def rules(interaction: ApplicationContext):
+@ bot.slash_command(description="Introduction DE")
+async def introductionde(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Einführung',
+        description='Willkommen auf Game Dimension <:pikachu_love:1042727900996173884> \n \n Wir sind ein Community-Server, wo du mit deinen Freunden Spaß haben kannst.',
+        fields=[
+            EmbedField(
+                name='Regeln',
+                value=f'Bevor du anfangen kannst, auf unserem Server Spaß zu haben, musst du unsere Regeln akzeptieren, klicke hier <#1067025598574235648>'
+            ),
+            EmbedField(
+                name='Ankündigungen',
+                value=f'Die folgenden drei Channels sind mit die wichtigsten, wenn ihr auf dem Server aktiv seid. Der <#1067026210250559498> Kanal ist dazu da, um über die neuesten Updates des Servers informiert zu werden, wie zum Beispiel neue Rollen, neue Kanäle oder neue Teammitglieder. \n Im <#1038813117179756544> werden wir Events, Giveaways, Turniere oder andere Ankündigungen ankündigen, die wir mit euch als Community machen werden. \n Last but not least kommt die <#1038813153447919688>, wenn ihr an Patch-Notes zu euren Spielen interessiert seid, findet ihr hier alle relevanten Infos. Zu guter Letzt kommt noch der <#10131579198>. Für jeden Kanal gibt es eine eigene Rolle, wenn ihr also Interesse habt, wählt die Rolle und ihr werdet immer informiert.'
+            ),
+            EmbedField(
+                name='Selfroles',
+                value=f'Wenn du möchtest, kannst du dir jetzt in unserem <#1038813219420110869>-Kanal deine eigenen Rollen aussuchen. Diese geben deinem Profil das gewisse Etwas'
+            ),
+            EmbedField(
+                name='Sprache',
+                value=f'Im config Channel, kannst du die Server Sprache auswählen. Wenn du merkst, du möchtest lieber mit der Englischen oder Deutschen Community sein, dann kannst du deine Rolle jederzeit ändern. Geh dafür einfach in den <#1067140820681109575> Channel.'
+            ),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
+    embed.set_image(
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358325813289/GameDimension_Banner.png?width=1095&height=616')
+    await interaction.respond("Created introduction embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
+
+
+@ bot.slash_command(description="Rules EN")
+async def rulesen(interaction: ApplicationContext):
     embed = Embed(
         title=f'Rules',
         description='By joining the Game Dimension server you accept all the rules below. If someone does not follow the rules, please report it to <@&1038814047270866974> or <@&1038821661224484995> and they will check it.',
@@ -207,33 +239,97 @@ async def rules(interaction: ApplicationContext):
     await interaction.channel.send(embed=embed)
 
 
-@ bot.slash_command(description="Team")
-async def team(interaction: ApplicationContext):
+@bot.slash_command(description="Rules DE")
+async def rulesde(interaction: ApplicationContext):
     embed = Embed(
-        title=f'Game DImension Team',
+        title=f'Regelwerk',
+        description='Mit dem Beitritt zum Game Dimension Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde es bitte an <@&1038814047270866974> oder <@&1038821661224484995> und sie werden es überprüfen.',
         fields=[
             EmbedField(
-                name='Owner', value=f'『✦』<@480523441439506443> english/german speaking \n『✦』<@479537494384181248> english/german speaking'),
-            EmbedField(name='Administrator',
-                       value=f'『✦』<@187599309070401541> english/german speaking'),
+                name='1) Sei respektvoll', value=f'Sei respektvoll, freundlich und einladend zu allen Mitgliedern auf dem Server, um den Server zu einer angenehmen Erfahrung für alle zu machen. Beleidigungen, Diskriminierung, Mobbing oder unangemessene Reaktionen sind Gründe für einen permanenten Bann.'),
+            EmbedField(name='2) Belästigung', value=f'Unterlasse jegliche Form der Belästigung. Wir dulden keinen Rassismus, keine Homophobie, keine Transphobie, keinen Sexismus und keine diskriminierenden Kommentare jeglicher Art. (Dies gilt auch für Belästigungen durch Direktnachrichten).'),
             EmbedField(
-                name='Head Manager', value=f'『✦』<@91665388970311782> english/german speaking \n :incoming_envelope: Is searched german speaking (0/1)'),
+                name='3) Werbung', value=f'Mache keine Werbung für deinen/andere Discord-Server oder jede Art von unaufgeforderter Werbung (einschließlich Direktnachrichten).'),
             EmbedField(
-                name='Manager', value=f'『✦』<@880829080524685402> english speaking \n 『✦』<@1023325930044784680> english speaking \n 『✦』<@805504937567322122> german speaking \n :incoming_envelope: Is searched german speaking (0/1)'),
+                name='4) Streaming von kostenpflichtigen Streaming-Diensten verboten', value=f'Das Streaming von kostenpflichtigen Streaming-Diensten ist verboten und wird mit einer Verwarnung geahndet.'),
             EmbedField(
-                name='Head Moderator', value=f':incoming_envelope: Is searched english speaking (0/1) \n :incoming_envelope: Is searched german speaking (0/1)'),
+                name='5) Kanäle für den vorgesehenen Zweck nutzen', value=f'Bitte verwende die Kanäle für den vorgesehenen Zweck. Verwende den Kanal <#1067028493881311292> für normale Gespräche usw.'),
             EmbedField(
-                name='Moderator', value=f'『✦』<@704020919365926983> english speaking \n :incoming_envelope: Is searched english speaking (1/2) \n :incoming_envelope: Is searched german speaking (0/2)'),
+                name='6) Eigene Rollen richtig verwenden', value=f'Die Verwendung unangemessener Selbstrollen gilt als Trolling und wird mit einer Zeitüberschreitung geahndet.'),
             EmbedField(
-                name='Test-Supporter / Supporter', value=f'『✦』<@465349397803171841> english speaking \n 『✦』<@694143135101616168> english speaking \n 『✦』<@854034741934161971> english speaking \n 『✦』<@763433366875013151> english speaking \n :incoming_envelope: Is searched german speaking (0/3)'),
+                name='7) Keine NSFW-Inhalte erlaubt', value=f'Poste keine expliziten Inhalte (NSFW). Dazu gehören alle sexuellen Themen, Handlungen oder Absichten in den Text- und Sprachkanälen sowie in Direktnachrichten.'),
             EmbedField(
-                name='Content Creator', value=f'『✦』<@612664092741730344> \n 『✦』<@485148322609496074>'),
+                name='8) Kein Spamming', value=f'Bitte spame keine Emojis oder Spam-Nachrichten in Kanälen. Dies wird zu einer sofortigen Stummschaltung führen. Wenn ihr 3 Mal spammt, werdet ihr gekickt. Spamming besteht darin, die gleichen Nachrichten immer wieder zu senden.'),
             EmbedField(
-                name='Designer', value=f':incoming_envelope: Is searched english/german speaking (0/2) \n \n \n If you need help, feel free to open a <#1038810882349736056> and our staff will take care of your request. \n \n If you want to apply, you can apply under <#1038810904822808726> and get a chance to join the team.'),
+                name='9) Team', value=f'Höre auf die Teammitglieder, wenn sie etwas sagen. Wenn du mit der Entscheidung nicht einverstanden bist, kannst du  die Owner oder einem anderen Mitglied schreiben und uns deine Meinung sagen.'),
+            EmbedField(
+                name='10) Terms of use', value=f'Terms of use and guidelines: \n Riot Terms of Use: https://www.riotgames.com/en/terms-of-service \n Discord terms of use: https://discordapp.com/terms \n Discord guidleines: https://discord.com/guidelines'),
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1043197337499078716/1043197379123363901/4273a4704084d68cd6475fe20ce291fc329a5d5ea75c415352c0c355a5f00c8f.gif'),
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
+    await interaction.respond("Created rules embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
+
+
+@ bot.slash_command(description="Team EN")
+async def teamen(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Game Dimension Staff',
+        fields=[
+            EmbedField(
+                name='Owner', value=f'『✦』<@480523441439506443> \n『✦』<@479537494384181248>'),
+            EmbedField(name='Administrator',
+                       value=f'『✦』<@187599309070401541>'),
+            # EmbedField(
+            #     name='Head Manager', value=f'『✦』<@91665388970311782>'),
+            EmbedField(
+                name='Manager', value=f'『✦』<@704020919365926983>'),
+            EmbedField(
+                name='Head Moderator', value=f':incoming_envelope: Is searched (0/1)'),
+            EmbedField(
+                name='Moderator', value=f'『✦』<@465349397803171841> \n 『✦』<@520696535311188000> \n '),
+            EmbedField(
+                name='Test-Supporter / Supporter', value=f'『✦』<@694143135101616168> \n 『✦』<@880829080524685402> \n 『✦』<@854034741934161971>'),
+            EmbedField(
+                name='Content Creator', value=f'『✦』<@612664092741730344> \n 『✦』<@485148322609496074>'),
+            EmbedField(
+                name='Designer', value=f'『✦』<@353887773088022539> \n \n \n If you need help, feel free to open a <#1038810882349736056> and our staff will take care of your request. \n \n If you want to apply, you can apply under <#1038810904822808726> and get a chance to join the team.'),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
+    await interaction.respond("Created rules embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
+
+
+@ bot.slash_command(description="Team DE")
+async def teamde(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Game Dimension Team',
+        fields=[
+            EmbedField(
+                name='Owner', value=f'『✦』<@480523441439506443> \n『✦』<@479537494384181248>'),
+            EmbedField(name='Administrator',
+                       value=f'『✦』<@187599309070401541>'),
+            # EmbedField(
+            #     name='Head Manager', value=f'『✦』<@91665388970311782>'),
+            EmbedField(
+                name='Manager', value=f':incoming_envelope: Is searched (0/1)'),
+            EmbedField(
+                name='Head Moderator', value=f':incoming_envelope: Is searched (0/1)'),
+            EmbedField(
+                name='Moderator', value=f'『✦』<@520696535311188000> \n '),
+            EmbedField(
+                name='Test-Supporter / Supporter', value=f':incoming_envelope: Is searched (0/1)'),
+            EmbedField(
+                name='Content Creator', value=f':incoming_envelope: Is searched (0/1)'),
+            EmbedField(
+                name='Designer', value=f':incoming_envelope: Is searched (0/1) \n \n \n Wenn du Hilfe brauchst, kannst du eine <#1067027312308133978> eröffnen und unsere Mitarbeiter werden sich um dein Anliegen kümmern. \n \n Wenn Sie sich bewerben möchten, können Sie sich unter <#1067027382285910026> bewerben und erhalten eine Chance, dem Team beizutreten.'),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
