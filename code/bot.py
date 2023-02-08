@@ -7,7 +7,7 @@ from discord import (ApplicationContext, Bot, Embed,
                      EmbedField, Member, Option, Permissions, Button, PartialEmoji, Game, File, Intents)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
-from views import SupportTicketCreateView, AddminTicketCreatView, ReportUserModal, SupportModal, BotProblemsModal
+from views import SupportTicketCreateView, MinecraftTicketCreateView, ReportUserModal, SupportModal
 from PIL import Image, ImageDraw, ImageFont
 # import requests
 import io
@@ -30,24 +30,25 @@ db.create_tables()
 @bot.event
 async def on_ready():
     print(f'{bot.user} is connected')
-    await bot.change_presence(activity=Game('in another Dimension'))
+    await bot.change_presence(activity=Game('in der Zone'))
 
 
 # Moderation commands
 @bot.slash_command(description="Shows information about the user", default_member_permissions=Permissions.none())
 async def modlogs(interaction: ApplicationContext, member: Option(Member, 'Select the user')):
     embed = Embed(
-        title=f'Modlogs for {member.display_name}#{member.discriminator}')
+        title=f'Modlogs über {member.display_name}#{member.discriminator}')
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text=f'UID: {member.id}')
     penalties = db.get_penalties_by_user(
         interaction.guild_id, member.id)
     if len(penalties) == 0:
-        embed.add_field(name='No logs found', value='User is good')
+        embed.add_field(name='Keine Logs gefunden',
+                        value='Member fällt nicht auf')
     for penalty in penalties:
         embed.add_field(
             name=f'⚖️ Case {penalty[0]}',
-            value=f'**Type:** {PunishmentType(penalty[1]).name}\n**Moderator:** <@{penalty[4]}>\n**Reason:** {penalty[5]}',
+            value=f'**Type:** {PunishmentType(penalty[1]).name}\n**Moderator:** <@{penalty[4]}>\n**Grund:** {penalty[5]}',
             inline=False
         )
     await interaction.respond(embed=embed, ephemeral=True)
@@ -65,7 +66,7 @@ async def punish(interaction: ApplicationContext, type: PunishmentType, guild_id
         title=f'Created {type.name} for {member.display_name}#{member.discriminator}',
         fields=[
             EmbedField(
-                name='Reason',
+                name='Grund',
                 value=reason
             )
         ]
@@ -77,57 +78,57 @@ async def punish(interaction: ApplicationContext, type: PunishmentType, guild_id
     await interaction.respond(embed=embed, ephemeral=True)
 
 
-@bot.slash_command(description="Warn a user")
+@bot.slash_command(description="Member warnen")
 async def warn(
     interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
-    reason: Option(str, 'The reason for the warn', max_length=100)
+    reason: Option(str, 'Grund für den Warn', max_length=100)
 ):
     await punish(interaction, PunishmentType.WARN, interaction.guild_id, member, interaction.author.id, reason)
 
 
-@bot.slash_command(description="Timeout a user", default_member_permissions=Permissions.none())
+@bot.slash_command(description="Member timouten", default_member_permissions=Permissions.none())
 async def timeout(
     interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
-    reason: Option(str, 'The reason for the timeout', max_length=100),
-    duration: Option(str, 'The duration for the timeout', max_length=10)
+    reason: Option(str, 'Grund für den Timeout', max_length=100),
+    duration: Option(str, 'Dauer des Timoutes', max_length=10)
 ):
     punishment_end = parse_duration_end(duration)
     try:
         await member.timeout(punishment_end, reason=reason)
     except:
-        return await interaction.respond('Looks like I don\'t have timeout permissions.')
+        return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu timeouten.')
 
     await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 
 
-@bot.slash_command(description="Kick a user", default_member_permissions=Permissions.none())
+@bot.slash_command(description="Member kicken", default_member_permissions=Permissions.none())
 async def kick(
     interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
-    reason: Option(str, 'The reason for the kick', max_length=100)
+    reason: Option(str, 'Grund für den Kick', max_length=100)
 ):
     try:
         await member.kick(reason=reason)
     except:
-        return await interaction.respond('Looks like I don\'t have kick permissions.')
+        return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu kicken.')
 
     await punish(interaction, PunishmentType.KICK, interaction.guild_id, member, interaction.author.id, reason)
 
 
-@bot.slash_command(description="Ban a user", default_member_permissions=Permissions.none())
+@bot.slash_command(description="Member bannen", default_member_permissions=Permissions.none())
 async def ban(
     interaction: ApplicationContext,
     member: Option(Member, 'Select the user'),
-    reason: Option(str, 'The reason for the ban', max_length=100),
-    duration: Option(str, 'The duration for the ban', max_length=10)
+    reason: Option(str, 'Grund für den Bann', max_length=100),
+    duration: Option(str, 'Dauer des Bannes', max_length=10)
 ):
     punishment_end = parse_duration_end(duration)
     try:
         await member.ban(reason=reason, delete_message_days=7)
     except:
-        return await interaction.respond('Looks like I don\'t have ban permissions.')
+        return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu bannen.')
 
     await punish(interaction, PunishmentType.BAN, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 # Welcomer
@@ -137,113 +138,50 @@ async def ban(
 async def on_member_join(member):
     print("FUCK MY LIFE")
     channel = bot.get_channel(1038812807216496640)
-    await channel.send(f'Hey <@{member.user.id}>, welcome to **Game Dimension**!')
+    await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
 
 # Information category Embeds
 
 
-@ bot.slash_command(description="Introduction EN")
-async def introductionen(interaction: ApplicationContext):
-    embed = Embed(
-        title=f'Introduction',
-        description='Welcome to Game Dimension <:pikachu_love:1042727900996173884> \n \n We are a community server where you can have fun with your friends.',
-        fields=[
-            EmbedField(
-                name='Rules',
-                value=f'Before you can start to have fun on our server, you have to accept our rules, click here <#1038812962598699008>'
-            ),
-            EmbedField(
-                name='Announcements',
-                value=f'These following three channels will be one of the most important if you will be active on the server. The <#1038813102185123922> channel is there to be informed about the latest updates of the server, such as new roles, new channels or new team members. \n In the <#1038813117179756544> we will announce events, giveaways, tournaments or other announcements that we will do with you as a community. \n Last but not least comes the <#1038813153447919688>, if you are interested in patch-notes about your games, you will find all relevant info here. Last but not least comes the <There is a separate role for each channel, so if you are interested, pick the role and you will always be informed.'
-            ),
-            EmbedField(
-                name='Selfroles',
-                value=f'If you want, you can now check out our <#1038813219420110869> channel to choose your own roles. These give your profile that certain something'
-            ),
-            EmbedField(
-                name='Language',
-                value=f'In the config channel, you can select the server language. If you realize you would rather be with the English or German community, you can change your role at any time. Just go to the <#1067140820681109575> channel.'
-            ),
-        ],
-    )
-    embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
-    embed.set_image(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358325813289/GameDimension_Banner.png?width=1095&height=616')
-    await interaction.respond("Created introduction embed", ephemeral=True)
-    await interaction.channel.send(embed=embed)
-
-
-@ bot.slash_command(description="Introduction DE")
-async def introductionde(interaction: ApplicationContext):
+@ bot.slash_command(description="Einführung")
+async def introduction(interaction: ApplicationContext):
     embed = Embed(
         title=f'Einführung',
-        description='Willkommen auf Game Dimension <:pikachu_love:1042727900996173884> \n \n Wir sind ein Community-Server, wo du mit deinen Freunden Spaß haben kannst.',
+        description='Willkommen auf Game Town <:pikachu_love:1042727900996173884> \n \n Wir sind ein Community-Server, wo du mit deinen Freunden Spaß haben kannst.',
         fields=[
             EmbedField(
                 name='Regeln',
-                value=f'Bevor du anfangen kannst, auf unserem Server Spaß zu haben, musst du unsere Regeln akzeptieren, klicke hier <#1067025598574235648>'
+                value=f'Bevor du anfangen kannst, auf unserem Server Spaß zu haben, musst du unsere Regeln akzeptieren, klicke hier <#1072470606706126848>'
             ),
             EmbedField(
                 name='Ankündigungen',
-                value=f'Die folgenden drei Channels sind mit die wichtigsten, wenn ihr auf dem Server aktiv seid. Der <#1067026210250559498> Kanal ist dazu da, um über die neuesten Updates des Servers informiert zu werden, wie zum Beispiel neue Rollen, neue Kanäle oder neue Teammitglieder. \n Im <#1038813117179756544> werden wir Events, Giveaways, Turniere oder andere Ankündigungen ankündigen, die wir mit euch als Community machen werden. \n Last but not least kommt die <#1038813153447919688>, wenn ihr an Patch-Notes zu euren Spielen interessiert seid, findet ihr hier alle relevanten Infos. Zu guter Letzt kommt noch der <#10131579198>. Für jeden Kanal gibt es eine eigene Rolle, wenn ihr also Interesse habt, wählt die Rolle und ihr werdet immer informiert.'
+                value=f'In dem <#1072470253491200090> Channel werden wir Giveaways, Events und Updates verkünden. Wenn du dich für eins der folgenden Ankündigungen interessierst, dann such dir die passende Rolle dazu aus, damit du nichts verpasst.'
             ),
             EmbedField(
-                name='Selfroles',
-                value=f'Wenn du möchtest, kannst du dir jetzt in unserem <#1038813219420110869>-Kanal deine eigenen Rollen aussuchen. Diese geben deinem Profil das gewisse Etwas'
+                name='Chats',
+                value=f'Im <#1072478704724344873> kannst du dich mit deinen Freunden unterhalten und Spass haben. Falls du leute suchst, mit denen du spielen möchtest, dann Frag im <#1072480036915007530> nach ob wer lust hat.'
             ),
             EmbedField(
-                name='Sprache',
-                value=f'Im config Channel, kannst du die Server Sprache auswählen. Wenn du merkst, du möchtest lieber mit der Englischen oder Deutschen Community sein, dann kannst du deine Rolle jederzeit ändern. Geh dafür einfach in den <#1067140820681109575> Channel.'
+                name='Booster',
+                value=f'Wir freuen uns über jegliche Unterstützung von dir. Falls du den Server geboostet hast, kannst du ein <#1072473811162771486> und du hast das Anrecht auf eine custom Rolle nach deiner Wahl.'
+            ),
+            EmbedField(
+                name='Support',
+                value=f'Falls du Fragen oder Hilfe brauchst kannst du jederzeit ein Ticket im <#1072473811162771486> Channel erstellen. Unser Team wird sich um dich kümmern.'
             ),
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
-    embed.set_image(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358325813289/GameDimension_Banner.png?width=1095&height=616')
+        url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616')
     await interaction.respond("Created introduction embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
 
-@ bot.slash_command(description="Rules EN")
-async def rulesen(interaction: ApplicationContext):
-    embed = Embed(
-        title=f'Rules',
-        description='By joining the Game Dimension server you accept all the rules below. If someone does not follow the rules, please report it to <@&1038814047270866974> or <@&1038821661224484995> and they will check it.',
-        fields=[
-            EmbedField(
-                name='1) Be respectful', value=f'Be respectful, friendly and welcoming to all members on the server to make the server a pleasant experience for all. Insults, discrimination, bullying, or inappropriate Reactions are grounds for a permanent ban.'),
-            EmbedField(name='2) Harassment', value=f'Refrain from any form of harassment. We do not allow racism, homophobia, transphobia, sexism, or discriminatory comments of any kind. (This includes harassment through direct messages).'),
-            EmbedField(
-                name='3) Advertising', value=f'Do not advertise your/other Discord servers or any type of unsolicited advertising (including direct messages).'),
-            EmbedField(
-                name='4) Streaming of paid streaming services prohibited', value=f'Streaming paid streaming services is forbidden and will be punished with a warning.'),
-            EmbedField(
-                name='5) Use channels for their intended purpose', value=f'Please use the channels for the intended purpose. Use the channel <#1038812094344200212> for normal talking, etc.'),
-            EmbedField(
-                name='6) Use Self-Roles correctly', value=f'Using inappropriate self-roles is considered trolling and will be penalized with a timeout.'),
-            EmbedField(
-                name='7) No NSFW content allowed', value=f'Do not post explicit content (NSFW). This includes any sexual topics, actions or intentions in the text and voice channels as well as direct messages.'),
-            EmbedField(
-                name='8) No spamming', value=f'Please do not spam emojis or spam messages in channels. This will result in an immediate mute. 3 times, and then you will be kicked. Spamming consists of sending the same messages over and over again.'),
-            EmbedField(
-                name='9) Staff', value=f'Listen to the rankers when they say something. If you don\'t agree with the decision, you can write to me or another member and tell us what you think.'),
-            EmbedField(
-                name='10) Terms of use', value=f'Terms of use and guidelines: \n Riot Terms of Use: https://www.riotgames.com/en/terms-of-service \n Discord terms of use: https://discordapp.com/terms \n Discord guidleines: https://discord.com/guidelines'),
-        ],
-    )
-    embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
-    await interaction.respond("Created rules embed", ephemeral=True)
-    await interaction.channel.send(embed=embed)
-
-
-@bot.slash_command(description="Rules DE")
-async def rulesde(interaction: ApplicationContext):
+@bot.slash_command(description="Regelwerk")
+async def rules(interaction: ApplicationContext):
     embed = Embed(
         title=f'Regelwerk',
-        description='Mit dem Beitritt zum Game Dimension Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde es bitte an <@&1038814047270866974> oder <@&1038821661224484995> und sie werden es überprüfen.',
+        description='Mit dem Beitritt zum Game Town Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde dies bitte an unser <@&1072489048515559506> und wir werden es überprüfen.',
         fields=[
             EmbedField(
                 name='1) Sei respektvoll', value=f'Sei respektvoll, freundlich und einladend zu allen Mitgliedern auf dem Server, um den Server zu einer angenehmen Erfahrung für alle zu machen. Beleidigungen, Diskriminierung, Mobbing oder unangemessene Reaktionen sind Gründe für einen permanenten Bann.'),
@@ -253,7 +191,7 @@ async def rulesde(interaction: ApplicationContext):
             EmbedField(
                 name='4) Streaming von kostenpflichtigen Streaming-Diensten verboten', value=f'Das Streaming von kostenpflichtigen Streaming-Diensten ist verboten und wird mit einer Verwarnung geahndet.'),
             EmbedField(
-                name='5) Kanäle für den vorgesehenen Zweck nutzen', value=f'Bitte verwende die Kanäle für den vorgesehenen Zweck. Verwende den Kanal <#1067028493881311292> für normale Gespräche usw.'),
+                name='5) Kanäle für den vorgesehenen Zweck nutzen', value=f'Bitte verwende die Kanäle für den vorgesehenen Zweck. Verwende den Kanal <#1072478704724344873> für normale Gespräche usw.'),
             EmbedField(
                 name='6) Eigene Rollen richtig verwenden', value=f'Die Verwendung unangemessener Selbstrollen gilt als Trolling und wird mit einer Zeitüberschreitung geahndet.'),
             EmbedField(
@@ -267,116 +205,62 @@ async def rulesde(interaction: ApplicationContext):
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
+        url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616'),
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
 
-@ bot.slash_command(description="Team EN")
-async def teamen(interaction: ApplicationContext):
+@ bot.slash_command(description="Team")
+async def team(interaction: ApplicationContext):
     embed = Embed(
-        title=f'Game Dimension Staff',
+        title=f'Game Town Team',
         fields=[
             EmbedField(
-                name='Owner', value=f'『✦』<@480523441439506443> \n『✦』<@479537494384181248>'),
+                name='Owner', value=f'⟫<@479537494384181248> \n⟫<@187599309070401541>'),
             EmbedField(name='Administrator',
-                       value=f'『✦』<@187599309070401541>'),
-            # EmbedField(
-            #     name='Head Manager', value=f'『✦』<@91665388970311782>'),
+                       value=f'Nicht besetzt'),
             EmbedField(
-                name='Manager', value=f'『✦』<@704020919365926983>'),
+                name='Head Manager', value=f'Nicht besetzt'),
             EmbedField(
-                name='Head Moderator', value=f':incoming_envelope: Is searched (0/1)'),
+                name='Manager', value=f'Nicht besetzt'),
             EmbedField(
-                name='Moderator', value=f'『✦』<@465349397803171841> \n 『✦』<@520696535311188000> \n '),
+                name='Head Moderator', value=f'Nicht besetzt'),
             EmbedField(
-                name='Test-Supporter / Supporter', value=f'『✦』<@694143135101616168> \n 『✦』<@880829080524685402> \n 『✦』<@854034741934161971>'),
+                name='Moderator', value=f'Nicht besetzt'),
             EmbedField(
-                name='Content Creator', value=f'『✦』<@612664092741730344> \n 『✦』<@485148322609496074>'),
+                name='Test-Supporter / Supporter', value=f'Nicht besetzt'),
             EmbedField(
-                name='Designer', value=f'『✦』<@353887773088022539> \n \n \n If you need help, feel free to open a <#1038810882349736056> and our staff will take care of your request. \n \n If you want to apply, you can apply under <#1038810904822808726> and get a chance to join the team.'),
+                name='Content Creator', value=f'Nicht besetzt'),
+            EmbedField(
+                name='Designer', value=f'Nicht besetzt \n \n \n Wenn du Hilfe brauchst, kannst du eine <#1072473811162771486> eröffnen und unsere Mitarbeiter werden sich um dein Anliegen kümmern.'),
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
+        url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616'),
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
-
-
-@ bot.slash_command(description="Team DE")
-async def teamde(interaction: ApplicationContext):
-    embed = Embed(
-        title=f'Game Dimension Team',
-        fields=[
-            EmbedField(
-                name='Owner', value=f'『✦』<@480523441439506443> \n『✦』<@479537494384181248>'),
-            EmbedField(name='Administrator',
-                       value=f'『✦』<@187599309070401541>'),
-            # EmbedField(
-            #     name='Head Manager', value=f'『✦』<@91665388970311782>'),
-            EmbedField(
-                name='Manager', value=f':incoming_envelope: Is searched (0/1)'),
-            EmbedField(
-                name='Head Moderator', value=f':incoming_envelope: Is searched (0/1)'),
-            EmbedField(
-                name='Moderator', value=f'『✦』<@520696535311188000> \n '),
-            EmbedField(
-                name='Test-Supporter / Supporter', value=f':incoming_envelope: Is searched (0/1)'),
-            EmbedField(
-                name='Content Creator', value=f':incoming_envelope: Is searched (0/1)'),
-            EmbedField(
-                name='Designer', value=f':incoming_envelope: Is searched (0/1) \n \n \n Wenn du Hilfe brauchst, kannst du eine <#1067027312308133978> eröffnen und unsere Mitarbeiter werden sich um dein Anliegen kümmern. \n \n Wenn Sie sich bewerben möchten, können Sie sich unter <#1067027382285910026> bewerben und erhalten eine Chance, dem Team beizutreten.'),
-        ],
-    )
-    embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
-    await interaction.respond("Created rules embed", ephemeral=True)
-    await interaction.channel.send(embed=embed)
-
-# Temp channel Bot "How to use" embed
-
-
-@ bot.slash_command(description="Instructions to manage your voice call")
-async def tempbotinstructions(interaction: ApplicationContext):
-    embed = Embed(
-        title=f'Instructions to manage your voice call',
-        description='Welcome this is our voice channel management bot. You can manage your channel with the buttons above.',
-        fields=[
-            EmbedField(
-                name='1. Example', value=f'Click the lock icon to close your channel from everyone.'),
-            EmbedField(
-                name='2. Example', value=f'Click pen icon to rename the channel to your activity or set it to your liking.'),
-            EmbedField(
-                name='3. Example', value=f'Click the crown icon to claim the channel if the owner left the call.'),
-            EmbedField(
-                name='4. Example', value=f'Click the ban button to ban someone from your voice call.'),
-        ],
-    )
-    embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1038809022310129765/1068437358552289290/GameDimension_Profile_pic.png?width=616&height=616'),
-    await interaction.respond("Instructions to manage your voice call", ephemeral=True)
-    await interaction.channel.send(embed=embed)
-
 
 # Ticket System
-@bot.slash_command(description="supportticket")
+
+
+@bot.slash_command(description="Server Support")
 async def supportticket(interaction: ApplicationContext):
     embed = Embed(
         title=f'Support Ticket',
-        description='If you need help, feel free to open one of the following tickets. A team member will be with you in no time.',
+        description='Falls du Hilfe brauchst, jemanden aus dem Team melden oder dich Bewerben möchtest, dann öffne eines der folgenden Tickets. Ein Teammitglied wird in kürze bei dir sein. \n \n ⛔ Für das missbrauchen des Ticket-Systems gibt es Verwarnungen.',
     )
     await interaction.respond("Created ticket embed", ephemeral=True)
     await interaction.channel.send(embed=embed, view=SupportTicketCreateView())
 
 
 @bot.slash_command(description="adminticket")
-async def adminticket(interaction: ApplicationContext):
+async def minecraftticket(interaction: ApplicationContext):
     embed = Embed(
-        title=f'Admin Ticket',
-        description='If you need help, feel free to open one of the following tickets. A team admin will be with you in no time.',
+        title=f'Minecraft Support Ticket',
+        description='Falls du Hilfe auf dem Minecraft Server brauchst oder jemanden melden, dann öffne eines der folgenden Tickets. Ein Teammitglied wird in kürze bei dir sein. \n \n ⛔ Für das missbrauchen des Ticket-Systems gibt es Verwarnungen.',
     )
     await interaction.respond("Created ticket embed", ephemeral=True)
-    await interaction.channel.send(embed=embed, view=AddminTicketCreatView())
+    await interaction.channel.send(embed=embed, view=MinecraftTicketCreateView())
 
 
 @bot.slash_command(description="test")
