@@ -24,7 +24,8 @@ intents.members = True
 bot = Bot(debug_guild=DEBUG_GUILDS, intents=intents)
 db = database.Database("bot.db")
 
-db.create_tables()
+db.create_moderation_table()
+db.create_ticket_table()
 
 
 @bot.event
