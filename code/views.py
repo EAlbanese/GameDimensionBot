@@ -17,10 +17,10 @@ class TicketManageView(ui.View):
     async def first_button_callback(self, button,  interaction: Interaction):
         channel = await interaction.guild.fetch_channel(1072486758157135922)
 
-        threadId = db.get_ticket_thread_id()
-        thread = interaction.guild.get_thread(threadId)
+        thread = interaction.guild.get_thread(interaction.message.channel.id)
 
-        ticketId = db.get_ticket_id(threadId)
+        ticketId = db.get_ticket_id_by_thread_id(
+            interaction.message.channel.id)
         ticketinfo = db.get_ticket_info(ticketId)
         ticketClosedBy = interaction.user.display_name
         memberName = interaction.guild.get_member(ticketinfo[2])
@@ -28,18 +28,47 @@ class TicketManageView(ui.View):
 
         embed = Embed(title=f"🔒 Ticket wurde geschlossen")
         embed.add_field(name="🎫 Ticket ID",
-                        value=f'{ticketinfo[0]} \n\n **🎫 Thread ID** \n {ticketinfo[1]} \n\n **👤 Ticket geöffnet von** \n {memberName} \n\n **✅ Ticket geclaimt von** \n {moderatorName} \n\n **🔒 Ticket geschlossen von** \n {ticketClosedBy}')
+                        value=f'{ticketinfo[0]}', inline=False)
+        embed.add_field(name="🎫 Thread ID",
+                        value=f'{ticketinfo[1]}', inline=False)
+        embed.add_field(name="👤 Ticket geöffnet von",
+                        value=f'{memberName}', inline=False)
+        embed.add_field(name="✅ Ticket geclaimt von",
+                        value=f'{moderatorName}', inline=False)
+        embed.add_field(name="🔒 Ticket geschlossen von",
+                        value=f'{ticketClosedBy}', inline=False)
 
         await channel.send(embed=embed, view=TicketLogsView())
         await thread.edit(archived=True, locked=True)
         await interaction.response.defer()
 
+    @ui.button(label="Claim Ticket", style=ButtonStyle.primary)
+    async def second_button_callback(self, button, interaction: Interaction):
+        staffrole = interaction.guild.get_role(1072489048515559506)
+
+        thread = interaction.guild.get_thread(interaction.message.channel.id)
+        count = db.get_ticket_id_by_thread_id(interaction.message.channel.id)
+
+        if staffrole not in interaction.user.roles:
+            await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
+            return
+        db.update_claimed_ticket(interaction.user.id, count)
+        embed = Embed(title="Ticket Status geändert: Wir sind dabei!",
+                      description=f"<@{interaction.user.id}> kümmert sich um dein Ticket.")
+        embed.author.name = interaction.user.display_name
+        embed.author.icon_url = interaction.user.display_avatar
+        await interaction.response.send_message(embed=embed)
+        await thread.edit(name=f"{count} - {interaction.user.name}")
+
 
 class TicketLogsView(ui.View):
     @ui.button(label="🔓 Ticket erneut öffnen", style=ButtonStyle.primary)
     async def reopenTicket(self, button,  interaction: Interaction):
-        threadId = db.get_ticket_thread_id()
-        thread = interaction.guild.get_thread(threadId)
+
+        thread = interaction.guild.get_thread(
+            int(interaction.message.embeds[0].fields[1].value))
+
+        print(thread)
 
         await thread.edit(archived=False, locked=False)
         await interaction.response.send_message(f"<#{thread.id}> Ticket wurde wieder geöffnet", ephemeral=True)
@@ -60,10 +89,9 @@ class SupportModal(ui.Modal):
         channel = await interaction.guild.fetch_channel(1072473811162771486)
 
         create_date = datetime.datetime.now()
-        print(create_date)
-        db.create_ticket(interaction.user.id, create_date)
 
-        count = db.get_ticket_id(create_date.timestamp())
+        db.create_ticket(interaction.user.id, round(create_date.timestamp()))
+        count = db.get_ticket_id(round(create_date.timestamp()))
 
         response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
         variableManager.threadID = response.id
@@ -93,9 +121,8 @@ class TeamComplaintModal(ui.Modal):
         owner = interaction.guild.get_role(1072487003632971838)
 
         create_date = datetime.datetime.now()
-        db.create_ticket(interaction.user.id, create_date)
-
-        count = db.get_ticket_id(create_date)
+        db.create_ticket(interaction.user.id, round(create_date.timestamp()))
+        count = db.get_ticket_id(round(create_date.timestamp()))
 
         response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
         variableManager.threadID = response.id
@@ -124,9 +151,8 @@ class BewerbungModal(ui.Modal):
         adminrole = interaction.guild.get_role(1072489048515559506)
 
         create_date = datetime.datetime.now()
-        db.create_ticket(interaction.user.id, create_date)
-
-        count = db.get_ticket_id(create_date)
+        db.create_ticket(interaction.user.id, round(create_date.timestamp()))
+        count = db.get_ticket_id(round(create_date.timestamp()))
 
         response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
         variableManager.threadID = response.id
@@ -155,9 +181,8 @@ class ReportUserModal(ui.Modal):
         adminrole = interaction.guild.get_role(1072489048515559506)
 
         create_date = datetime.datetime.now()
-        db.create_ticket(interaction.user.id, create_date)
-
-        count = db.get_ticket_id(create_date)
+        db.create_ticket(interaction.user.id, round(create_date.timestamp()))
+        count = db.get_ticket_id(round(create_date.timestamp()))
 
         response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
         variableManager.threadID = response.id
@@ -186,9 +211,8 @@ class MinecraftSupportModal(ui.Modal):
         adminrole = interaction.guild.get_role(1072489048515559506)
 
         create_date = datetime.datetime.now()
-        db.create_ticket(interaction.user.id, create_date)
-
-        count = db.get_ticket_id(create_date)
+        db.create_ticket(interaction.user.id, round(create_date.timestamp()))
+        count = db.get_ticket_id(round(create_date.timestamp()))
 
         response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
         variableManager.threadID = response.id
