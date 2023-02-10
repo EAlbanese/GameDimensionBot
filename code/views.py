@@ -222,3 +222,81 @@ class MinecraftTicketCreateView(ui.View):
     @ ui.button(emoji="🆘", label="Minecraft Hilfe", style=ButtonStyle.primary)
     async def third_button_callback(self, button, interaction):
         await interaction.response.send_modal(MinecraftSupportModal(title="Minecraft Hilfe"))
+
+
+# Bug report
+class BugReportModal(ui.Modal):
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+
+        self.add_item(ui.InputText(
+            label="Dein Username (Username#0000)", style=InputTextStyle.short))
+        self.add_item(ui.InputText(
+            label="Bug Titel", style=InputTextStyle.short))
+        self.add_item(ui.InputText(
+            label="Wie oft ist das aufgetreten?", style=InputTextStyle.long))
+        self.add_item(ui.InputText(
+            label="Beschreibe dein Vorgehen bis zum Bug", style=InputTextStyle.short))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(title="❗ Neuer Bug-Report ❗")
+        embed.add_field(
+            name="Username", value=self.children[0].value, inline=False)
+        embed.add_field(
+            name="Bug Titel", value=self.children[1].value, inline=False)
+        embed.add_field(
+            name="Beschreibe dein Vorgehen bis zum Bug", value=self.children[2].value, inline=False)
+        embed.add_field(
+            name="Wie oft ist das aufgetreten?", value=self.children[3].value, inline=False)
+
+        draixon = await interaction.client.fetch_user(479537494384181248)
+
+        await interaction.response.send_message(f"✅ Bug wurde erfolgreich gemeldet. Vielen Dank ❤️", ephemeral=True)
+        await draixon.send(embed=embed)
+
+
+class BugReportCreateView(ui.View):
+    @ui.button(emoji="🗑️", label="Abbrechen", style=ButtonStyle.danger)
+    async def cancel_bugreport(self, button, interaction: Interaction):
+        await interaction.message.delete()
+
+    @ui.button(emoji="📬", label="Bug melden", style=ButtonStyle.success)
+    async def report_bug(self, button, interaction):
+        await interaction.response.send_modal(BugReportModal(title="Bug melden"))
+
+
+# Suggestion
+class SuggestionModal(ui.Modal):
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+
+        self.add_item(ui.InputText(
+            label="Dein Username (Username#0000)", style=InputTextStyle.short))
+        self.add_item(ui.InputText(
+            label="Verbesserungsvorschlag Titel", style=InputTextStyle.short))
+        self.add_item(ui.InputText(
+            label="Was kann ich verbesser?", style=InputTextStyle.long))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(title="🛠️ Neuer Verbesserungsvorschlag 🛠️")
+        embed.add_field(
+            name="Username", value=self.children[0].value, inline=False)
+        embed.add_field(
+            name="Verbesserungsvorschlag Titel", value=self.children[1].value, inline=False)
+        embed.add_field(
+            name="Was kann ich verbesser?", value=self.children[2].value, inline=False)
+
+        draixon = await interaction.client.fetch_user(479537494384181248)
+
+        await interaction.response.send_message(f"✅ Vorschlag wurde erfolgreich eingereicht. Vielen Dank ❤️", ephemeral=True)
+        await draixon.send(embed=embed)
+
+
+class SuggestionView(ui.View):
+    @ui.button(emoji="🗑️", label="Abbrechen", style=ButtonStyle.danger)
+    async def cancel_bugreport(self, button, interaction: Interaction):
+        await interaction.message.delete()
+
+    @ui.button(emoji="📬", label="Vorschlag erstellen", style=ButtonStyle.success)
+    async def report_bug(self, button, interaction):
+        await interaction.response.send_modal(SuggestionModal(title="Vorschlag erstellen"))
