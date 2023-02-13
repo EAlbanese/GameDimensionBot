@@ -1,0 +1,597 @@
+-- Logs begin at Sun 2023-02-05 14:01:37 UTC, end at Mon 2023-02-13 14:49:32 UTC. --
+Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]: Traceback (most recent call last):
+Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541062]: Traceback (most recent call last):
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541062]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541062]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541062]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541068]: Traceback (most recent call last):
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541068]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541068]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541068]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541071]: Traceback (most recent call last):
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541071]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541071]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541071]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541074]: Traceback (most recent call last):
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541074]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541074]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:32:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541074]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:32:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541077]: Traceback (most recent call last):
+Feb 13 07:32:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541077]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:32:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541077]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:32:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541077]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:33:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541175]: Traceback (most recent call last):
+Feb 13 07:33:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541175]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:33:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541175]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:33:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541175]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:33:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541193]: Traceback (most recent call last):
+Feb 13 07:33:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541193]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:33:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541193]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:33:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541193]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541276]: Traceback (most recent call last):
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541276]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541276]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541276]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541294]: Traceback (most recent call last):
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541294]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541294]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:34:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541294]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541298]: Traceback (most recent call last):
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541298]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541298]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541298]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541301]: Traceback (most recent call last):
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541301]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541301]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541301]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541304]: Traceback (most recent call last):
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541304]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541304]:     from PIL import Image, ImageDraw, ImageFont
+Feb 13 07:34:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541304]: ModuleNotFoundError: No module named 'PIL'
+Feb 13 07:42:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541882]: Game Town#4930 is connected
+Feb 13 07:45:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541973]: Game Town#4930 is connected
+Feb 13 07:54:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[542216]: Game Town#4930 is connected
+Feb 13 07:55:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[542932]: Game Town#4930 is connected
+Feb 13 07:55:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[542932]: 2023-02-13 07:55:49.982769
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Ignoring exception in command supportticket:
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Traceback (most recent call last):
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     ret = await coro(arg)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await self.callback(ctx, **kwargs)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 254, in supportticket
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     return await self.interaction.response.send_message(
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await self._locked_response(
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await coro
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     raise NotFound(response, data)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: The above exception was the direct cause of the following exception:
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Traceback (most recent call last):
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await ctx.command.invoke(ctx)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await injected(ctx)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Ignoring exception in command minecraftticket:
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Traceback (most recent call last):
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     ret = await coro(arg)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await self.callback(ctx, **kwargs)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     return await self.interaction.response.send_message(
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await self._locked_response(
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await coro
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     raise NotFound(response, data)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: The above exception was the direct cause of the following exception:
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Traceback (most recent call last):
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await ctx.command.invoke(ctx)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await injected(ctx)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Ignoring exception in command supportticket:
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Traceback (most recent call last):
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     ret = await coro(arg)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await self.callback(ctx, **kwargs)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 254, in supportticket
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     return await self.interaction.response.send_message(
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await self._locked_response(
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await coro
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 215, in request
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     raise HTTPException(response, data)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: The above exception was the direct cause of the following exception:
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Traceback (most recent call last):
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await ctx.command.invoke(ctx)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     await injected(ctx)
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+Feb 13 08:16:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[543107]: Game Town#4930 is connected
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]: Ignoring exception in view <MinecraftTicketCreateView timeout=180.0 children=2> for item <Button style=<ButtonStyle.primary: 1> url=None disabled=False label='Minecraft Hilfe' emoji=<PartialEmoji animated=False name='🆘' id=None> row=None>:
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]: Traceback (most recent call last):
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:   File "/usr/local/lib/python3.8/dist-packages/discord/ui/view.py", line 414, in _scheduled_task
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:     await item.callback(interaction)
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:   File "/Application/Elia_GameDimensionBot/code/views.py", line 252, in third_button_callback
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:     await interaction.response.send_modal(MinecraftSupportModal(title="Minecraft Hilfe"))
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:   File "/Application/Elia_GameDimensionBot/code/views.py", line 205, in __init__
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:     self.add_item(ui.InputText(
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:   File "/usr/local/lib/python3.8/dist-packages/discord/ui/input_text.py", line 66, in __init__
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]:     raise ValueError("label must be 45 characters or fewer")
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]: ValueError: label must be 45 characters or fewer
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]: Game Town#4930 is connected
+Feb 13 08:35:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[544732]: None
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command minecraftticket:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command minecraftticket:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command minecraftticket:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command minecraftticket:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command minecraftticket:
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:40:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command supportticket:
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 254, in supportticket
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Ignoring exception in command minecraftticket:
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     ret = await coro(arg)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self.callback(ctx, **kwargs)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 264, in minecraftticket
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     return await self.interaction.response.send_message(
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await self._locked_response(
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await coro
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise NotFound(response, data)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: The above exception was the direct cause of the following exception:
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Traceback (most recent call last):
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await ctx.command.invoke(ctx)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     await injected(ctx)
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: Game Town#4930 is connected
+Feb 13 08:51:02 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[546578]: None
+Feb 13 09:51:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[548074]: Game Town#4930 is connected
+Feb 13 09:51:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[548074]: None
+Feb 13 09:54:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[552530]: Game Town#4930 is connected
+Feb 13 09:58:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[552845]: Game Town#4930 is connected
+Feb 13 09:58:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[552845]: None
+Feb 13 10:01:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553345]: Game Town#4930 is connected
+Feb 13 10:02:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553623]: Game Town#4930 is connected
+Feb 13 10:02:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553623]: None
+Feb 13 10:04:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553684]: Game Town#4930 is connected
+Feb 13 10:04:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553684]: None
+Feb 13 10:05:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553843]: Game Town#4930 is connected
+Feb 13 10:05:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553843]: None
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]: Game Town#4930 is connected
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]: Traceback (most recent call last):
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 343, in <module>
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:     bot.run(TOKEN)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 717, in run
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:     return future.result()
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 696, in runner
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:     await self.start(*args, **kwargs)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 660, in start
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:     await self.connect(reconnect=reconnect)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 553, in connect
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:     await self.ws.poll_event()
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:   File "/usr/local/lib/python3.8/dist-packages/discord/gateway.py", line 624, in poll_event
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]:     raise ConnectionClosed(
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[553933]: discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4004
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]: Traceback (most recent call last):
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 406, in static_login
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     data = await self.request(Route("GET", "/users/@me"))
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 359, in request
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     raise HTTPException(response, data)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]: discord.errors.HTTPException: 401 Unauthorized (error code: 0): 401: Unauthorized
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]: The above exception was the direct cause of the following exception:
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]: Traceback (most recent call last):
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 343, in <module>
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     bot.run(TOKEN)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 717, in run
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     return future.result()
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 696, in runner
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     await self.start(*args, **kwargs)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 659, in start
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     await self.login(token)
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 514, in login
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     data = await self.http.static_login(token.strip())
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 410, in static_login
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]:     raise LoginFailure("Improper token has been passed.") from exc
+Feb 13 10:35:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555878]: discord.errors.LoginFailure: Improper token has been passed.
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]: Traceback (most recent call last):
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 406, in static_login
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     data = await self.request(Route("GET", "/users/@me"))
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 359, in request
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     raise HTTPException(response, data)
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]: discord.errors.HTTPException: 401 Unauthorized (error code: 0): 401: Unauthorized
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]: The above exception was the direct cause of the following exception:
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]: Traceback (most recent call last):
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 343, in <module>
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     bot.run(TOKEN)
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 717, in run
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     return future.result()
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 696, in runner
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     await self.start(*args, **kwargs)
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 659, in start
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     await self.login(token)
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 514, in login
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     data = await self.http.static_login(token.strip())
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 410, in static_login
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]:     raise LoginFailure("Improper token has been passed.") from exc
+Feb 13 10:35:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555886]: discord.errors.LoginFailure: Improper token has been passed.
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]: Traceback (most recent call last):
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 406, in static_login
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     data = await self.request(Route("GET", "/users/@me"))
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 359, in request
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     raise HTTPException(response, data)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]: discord.errors.HTTPException: 401 Unauthorized (error code: 0): 401: Unauthorized
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]: The above exception was the direct cause of the following exception:
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]: Traceback (most recent call last):
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 343, in <module>
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     bot.run(TOKEN)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 717, in run
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     return future.result()
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 696, in runner
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     await self.start(*args, **kwargs)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 659, in start
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     await self.login(token)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 514, in login
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     data = await self.http.static_login(token.strip())
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 410, in static_login
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]:     raise LoginFailure("Improper token has been passed.") from exc
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555892]: discord.errors.LoginFailure: Improper token has been passed.
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]: Traceback (most recent call last):
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 406, in static_login
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     data = await self.request(Route("GET", "/users/@me"))
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 359, in request
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     raise HTTPException(response, data)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]: discord.errors.HTTPException: 401 Unauthorized (error code: 0): 401: Unauthorized
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]: The above exception was the direct cause of the following exception:
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]: Traceback (most recent call last):
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 343, in <module>
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     bot.run(TOKEN)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 717, in run
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     return future.result()
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 696, in runner
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     await self.start(*args, **kwargs)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 659, in start
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     await self.login(token)
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 514, in login
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     data = await self.http.static_login(token.strip())
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 410, in static_login
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]:     raise LoginFailure("Improper token has been passed.") from exc
+Feb 13 10:35:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555896]: discord.errors.LoginFailure: Improper token has been passed.
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]: Traceback (most recent call last):
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 406, in static_login
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     data = await self.request(Route("GET", "/users/@me"))
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 359, in request
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     raise HTTPException(response, data)
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]: discord.errors.HTTPException: 401 Unauthorized (error code: 0): 401: Unauthorized
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]: The above exception was the direct cause of the following exception:
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]: Traceback (most recent call last):
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 343, in <module>
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     bot.run(TOKEN)
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 717, in run
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     return future.result()
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 696, in runner
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     await self.start(*args, **kwargs)
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 659, in start
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     await self.login(token)
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 514, in login
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     data = await self.http.static_login(token.strip())
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:   File "/usr/local/lib/python3.8/dist-packages/discord/http.py", line 410, in static_login
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]:     raise LoginFailure("Improper token has been passed.") from exc
+Feb 13 10:35:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555900]: discord.errors.LoginFailure: Improper token has been passed.
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]: Traceback (most recent call last):
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "/usr/local/lib/python3.8/dist-packages/discord/__init__.py", line 19, in <module>
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:     import logging
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "/usr/lib/python3.8/logging/__init__.py", line 26, in <module>
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:     import sys, os, time, io, re, traceback, warnings, weakref, collections.abc
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "/usr/lib/python3.8/traceback.py", line 5, in <module>
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:     import linecache
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "/usr/lib/python3.8/linecache.py", line 11, in <module>
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:     import tokenize
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "/usr/lib/python3.8/tokenize.py", line 34, in <module>
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:     from token import *
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "<frozen importlib._bootstrap_external>", line 844, in exec_module
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "<frozen importlib._bootstrap_external>", line 976, in get_code
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]:   File "<frozen importlib._bootstrap_external>", line 640, in _compile_bytecode
+Feb 13 10:35:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555955]: KeyboardInterrupt
+Feb 13 10:35:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555957]: Game Town#4930 is connected
+Feb 13 10:36:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555969]: Game Town#4930 is connected
+Feb 13 10:36:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[555969]: None
+Feb 13 10:37:35 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556046]: Game Town#4930 is connected
+Feb 13 10:37:46 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556121]: Game Town#4930 is connected
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: Ignoring exception in command supportticket:
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: Traceback (most recent call last):
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 124, in wrapped
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     ret = await coro(arg)
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 974, in _invoke
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     await self.callback(ctx, **kwargs)
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 254, in supportticket
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     await interaction.respond("Created ticket embed", ephemeral=True)
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/context.py", line 282, in respond
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     return await self.interaction.response.send_message(
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 825, in send_message
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     await self._locked_response(
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/interactions.py", line 1090, in _locked_response
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     await coro
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/webhook/async_.py", line 213, in request
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     raise NotFound(response, data)
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: The above exception was the direct cause of the following exception:
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: Traceback (most recent call last):
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/bot.py", line 1088, in invoke_application_command
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     await ctx.command.invoke(ctx)
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 374, in invoke
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     await injected(ctx)
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:   File "/usr/local/lib/python3.8/dist-packages/discord/commands/core.py", line 132, in wrapped
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]:     raise ApplicationCommandInvokeError(exc) from exc
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: discord.errors.ApplicationCommandInvokeError: Application Command raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+Feb 13 10:38:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556156]: Game Town#4930 is connected
+Feb 13 10:39:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556212]: Game Town#4930 is connected
+Feb 13 10:39:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556323]: Game Town#4930 is connected
+Feb 13 10:39:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556323]: None
+Feb 13 12:30:21 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556358]: Game Town#4930 is connected
+Feb 13 12:30:21 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[556358]: None
+Feb 13 12:30:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[564355]: Game Town#4930 is connected
+Feb 13 12:30:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[564355]: None
+Feb 13 14:00:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[564409]: Game Town#4930 is connected
+Feb 13 14:00:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.client:logging in using static token
+Feb 13 14:00:49 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:00:49 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-m1dq",{"micros":134121,"calls":["id_created",{"micros":1092,"calls":[]},"session_lookup_time",{"micros":1294,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-52",{"micros":131049,"calls":["start_session",{"micros":84782,"calls":["discord-api-6cd4fdbbb8-w4458",{"micros":73667,"calls":["get_user",{"micros":21718},"get_guilds",{"micros":4546},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":2900},"authorized_ip_coro",{"micros":13}]}]},"starting_guild_connect",{"micros":56,"calls":[]},"presence_started",{"micros":280,"calls":[]},"guilds_started",{"micros":153,"calls":[]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":45751,"calls":[]},"connect_finished",{"micros":45757,"calls":[]},"build_ready",{"micros":18,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: af59fb5ed02dc1af08826a1918291751).
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: INFO:discord.client:Closing the event loop.
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: Game Town#4930 is connected
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571145]: None
+Feb 13 14:01:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.client:logging in using static token
+Feb 13 14:01:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:01:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-vl9c",{"micros":117460,"calls":["id_created",{"micros":1203,"calls":[]},"session_lookup_time",{"micros":4633,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-65",{"micros":111134,"calls":["start_session",{"micros":105824,"calls":["discord-api-6cd4fdbbb8-n4ggj",{"micros":97603,"calls":["get_user",{"micros":34831},"get_guilds",{"micros":11857},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":1322},"authorized_ip_coro",{"micros":16}]}]},"starting_guild_connect",{"micros":58,"calls":[]},"presence_started",{"micros":4277,"calls":[]},"guilds_started",{"micros":157,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":796,"calls":[]},"connect_finished",{"micros":800,"calls":[]},"build_ready",{"micros":15,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 299ca8bae03dfcd58de4781b78b916bf).
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: INFO:discord.client:Closing the event loop.
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[571214]: Game Town#4930 is connected
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.client:logging in using static token
+Feb 13 14:16:59 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:17:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-pq1m",{"micros":178359,"calls":["id_created",{"micros":992,"calls":[]},"session_lookup_time",{"micros":386,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-86",{"micros":176217,"calls":["start_session",{"micros":146835,"calls":["discord-api-6cd4fdbbb8-27q9j",{"micros":139837,"calls":["get_user",{"micros":22355},"get_guilds",{"micros":15786},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":4551},"authorized_ip_coro",{"micros":8}]}]},"starting_guild_connect",{"micros":67,"calls":[]},"presence_started",{"micros":241,"calls":[]},"guilds_started",{"micros":152,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":28879,"calls":[]},"connect_finished",{"micros":28894,"calls":[]},"build_ready",{"micros":24,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":2,"calls":[]}]}]}] (Session ID: 0077ef4c9de295e260845c79f37b68a6).
+Feb 13 14:17:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:17:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 13 14:17:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:17:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: INFO:discord.client:Closing the event loop.
+Feb 13 14:17:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572491]: Game Town#4930 is connected
+Feb 13 14:17:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.client:logging in using static token
+Feb 13 14:17:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:17:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-scpl",{"micros":75651,"calls":["id_created",{"micros":1024,"calls":[]},"session_lookup_time",{"micros":3319,"calls":[]},"session_lookup_finished",{"micros":17,"calls":[]},"discord-sessions-blue-prd-2-205",{"micros":70932,"calls":["start_session",{"micros":69129,"calls":["discord-api-6cd4fdbbb8-mmxhp",{"micros":63687,"calls":["get_user",{"micros":10426},"get_guilds",{"micros":6202},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":2448},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":63,"calls":[]},"presence_started",{"micros":280,"calls":[]},"guilds_started",{"micros":123,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":1301,"calls":[]},"connect_finished",{"micros":1307,"calls":[]},"build_ready",{"micros":26,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: d3584ebbc7947d28108b087444a2873c).
+Feb 13 14:17:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:17:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 14:17:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:17:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: INFO:discord.client:Closing the event loop.
+Feb 13 14:17:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572543]: Game Town#4930 is connected
+Feb 13 14:17:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.client:logging in using static token
+Feb 13 14:17:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:17:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-xq0c",{"micros":96135,"calls":["id_created",{"micros":1020,"calls":[]},"session_lookup_time",{"micros":2399,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-156",{"micros":92119,"calls":["start_session",{"micros":48222,"calls":["discord-api-6cd4fdbbb8-lf7wz",{"micros":42788,"calls":["get_user",{"micros":13381},"get_guilds",{"micros":4936},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":1544},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":54,"calls":[]},"presence_started",{"micros":247,"calls":[]},"guilds_started",{"micros":159,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":43390,"calls":[]},"connect_finished",{"micros":43398,"calls":[]},"build_ready",{"micros":35,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":2,"calls":[]}]}]}] (Session ID: 61e138e9a1232d02679461dd8d4af933).
+Feb 13 14:17:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:17:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 13 14:17:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:17:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: INFO:discord.client:Closing the event loop.
+Feb 13 14:17:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572588]: Game Town#4930 is connected
+Feb 13 14:17:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.client:logging in using static token
+Feb 13 14:17:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:17:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-m9ts",{"micros":60379,"calls":["id_created",{"micros":1046,"calls":[]},"session_lookup_time",{"micros":5029,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-blue-prd-2-3",{"micros":53825,"calls":["start_session",{"micros":50032,"calls":["discord-api-6cd4fdbbb8-dz5bk",{"micros":45205,"calls":["get_user",{"micros":9220},"get_guilds",{"micros":9307},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":286},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":61,"calls":[]},"presence_started",{"micros":209,"calls":[]},"guilds_started",{"micros":194,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3301,"calls":[]},"connect_finished",{"micros":3307,"calls":[]},"build_ready",{"micros":19,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: c6ff86fdfa9d103fba853beff7fb9707).
+Feb 13 14:17:46 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: WARNING:discord.http:We are being rate limited. Retrying in 14.62 seconds. Handled under the bucket "None:None:/applications/{application_id}/commands"
+Feb 13 14:46:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:46:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 14:46:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:46:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: INFO:discord.client:Closing the event loop.
+Feb 13 14:46:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[572621]: Game Town#4930 is connected
+Feb 13 14:46:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.client:logging in using static token
+Feb 13 14:46:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:46:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-2hks",{"micros":124112,"calls":["id_created",{"micros":1644,"calls":[]},"session_lookup_time",{"micros":2073,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-6",{"micros":120074,"calls":["start_session",{"micros":117082,"calls":["discord-api-6cd4fdbbb8-57mrd",{"micros":111207,"calls":["get_user",{"micros":27197},"get_guilds",{"micros":11808},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":6},"authorized_ip_coro",{"micros":10}]}]},"starting_guild_connect",{"micros":55,"calls":[]},"presence_started",{"micros":287,"calls":[]},"guilds_started",{"micros":142,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":2480,"calls":[]},"connect_finished",{"micros":2485,"calls":[]},"build_ready",{"micros":20,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 69b88bc34ad465322b236bdf775cd92c).
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: INFO:discord.client:Closing the event loop.
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: Game Town#4930 is connected
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: create_ticket done
+Feb 13 14:47:40 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574780]: 27
+Feb 13 14:47:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.client:logging in using static token
+Feb 13 14:47:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:47:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-qx7z",{"micros":82888,"calls":["id_created",{"micros":1488,"calls":[]},"session_lookup_time",{"micros":5672,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-234",{"micros":74434,"calls":["start_session",{"micros":44610,"calls":["discord-api-6cd4fdbbb8-vhsd9",{"micros":39542,"calls":["get_user",{"micros":10420},"get_guilds",{"micros":3055},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":541},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":59,"calls":[]},"presence_started",{"micros":21772,"calls":[]},"guilds_started",{"micros":139,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":7825,"calls":[]},"connect_finished",{"micros":7830,"calls":[]},"build_ready",{"micros":21,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 60180ada974de2f7542cfa809d832e15).
+Feb 13 14:48:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:48:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 14:48:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:48:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: INFO:discord.client:Closing the event loop.
+Feb 13 14:48:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: Game Town#4930 is connected
+Feb 13 14:48:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.client:logging in using static token
+Feb 13 14:48:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:48:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-lclg",{"micros":93545,"calls":["id_created",{"micros":1209,"calls":[]},"session_lookup_time",{"micros":10640,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-32",{"micros":80570,"calls":["start_session",{"micros":79078,"calls":["discord-api-6cd4fdbbb8-vw4t7",{"micros":71208,"calls":["get_user",{"micros":17624},"get_guilds",{"micros":2941},"send_scheduled_deletion_message",{"micros":7},"guild_join_requests",{"micros":4541},"authorized_ip_coro",{"micros":8}]}]},"starting_guild_connect",{"micros":57,"calls":[]},"presence_started",{"micros":285,"calls":[]},"guilds_started",{"micros":156,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":960,"calls":[]},"connect_finished",{"micros":966,"calls":[]},"build_ready",{"micros":23,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":2,"calls":[]}]}]}] (Session ID: b7f922083903ce4d085a439639cc9e0f).

@@ -82,6 +82,7 @@ class SupportModal(ui.Modal):
             label="Wo benötigst du Hilfe?", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
+        await interaction.response.defer()
         embed = Embed(
             title="Anliegen", description="✅ Danke, dass du dich an den Support gewandt hast. Unser Team wird sich gut darum kümmern!")
         embed.add_field(name="Wo benötigst du Hilfe?",
@@ -90,14 +91,18 @@ class SupportModal(ui.Modal):
 
         create_date = datetime.datetime.now()
 
-        db.create_ticket(interaction.user.id, round(create_date.timestamp()))
+        db.create_ticket(interaction.user.id,
+                         round(create_date.timestamp()))
         count = db.get_ticket_id(round(create_date.timestamp()))
 
         response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
+        print(response)
         variableManager.threadID = response.id
         thread = interaction.guild.get_thread(variableManager.threadID)
+        print(thread)
 
         db.update_ticket(variableManager.threadID, count)
+        print("update_ticket done")
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{variableManager.threadID}>", ephemeral=True)
         await thread.send(f"<@{interaction.user.id}> <@&{1072489048515559506}>", embed=embed, view=TicketManageView())
@@ -199,13 +204,13 @@ class MinecraftSupportModal(ui.Modal):
         super().__init__(*args, **kwargs)
 
         self.add_item(ui.InputText(
-            label="Wo brauchst du auf dem Minecraft Server Hilfe?", style=InputTextStyle.long))
+            label="Wo auf dem Server brauchst du Hilfe?", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
         embed = Embed(title="Minecraft Hilfe",
                       description="✅ Danke, dass du dich an den Support gewandt hast. Unser Team wird sich gut darum kümmern!")
         embed.add_field(
-            name="Wo brauchst du auf dem Minecraft Server Hilfe?", value=self.children[0].value)
+            name="Wo auf dem Server brauchst du Hilfe?", value=self.children[0].value)
 
         channel = await interaction.guild.fetch_channel(1072479021008429066)
         adminrole = interaction.guild.get_role(1072489048515559506)

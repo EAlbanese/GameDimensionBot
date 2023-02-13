@@ -11,6 +11,7 @@ from views import SupportTicketCreateView, MinecraftTicketCreateView, ReportUser
 from PIL import Image, ImageDraw, ImageFont
 # import requests
 import io
+import logging
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -28,11 +29,13 @@ db = database.Database("bot.db")
 db.create_moderation_table()
 db.create_ticket_table()
 
+logging.basicConfig(level=logging.INFO)
+
 
 @bot.event
 async def on_ready():
     print(f'{bot.user} is connected')
-    await bot.change_presence(activity=Game('in der Zone'))
+    await bot.change_presence(activity=Game(''))
 
 
 # Moderation commands
