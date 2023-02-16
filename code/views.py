@@ -15,63 +15,20 @@ class variableManager(ui.View):
 class TicketManageView(ui.View):
     @ui.button(label="Ticket schliessen", style=ButtonStyle.primary)
     async def first_button_callback(self, button,  interaction: Interaction):
-        channel = await interaction.guild.fetch_channel(1072486758157135922)
-
-        thread = interaction.guild.get_thread(interaction.message.channel.id)
-
-        ticketId = db.get_ticket_id_by_thread_id(
-            interaction.message.channel.id)
-        ticketinfo = db.get_ticket_info(ticketId)
-        ticketClosedBy = interaction.user.display_name
-        memberName = interaction.guild.get_member(ticketinfo[2])
-        moderatorName = interaction.guild.get_member(ticketinfo[3])
-
-        embed = Embed(title=f"🔒 Ticket wurde geschlossen")
-        embed.add_field(name="🎫 Ticket ID",
-                        value=f'{ticketinfo[0]}', inline=False)
-        embed.add_field(name="🎫 Thread ID",
-                        value=f'{ticketinfo[1]}', inline=False)
-        embed.add_field(name="👤 Ticket geöffnet von",
-                        value=f'{memberName}', inline=False)
-        embed.add_field(name="✅ Ticket geclaimt von",
-                        value=f'{moderatorName}', inline=False)
-        embed.add_field(name="🔒 Ticket geschlossen von",
-                        value=f'{ticketClosedBy}', inline=False)
-
-        await channel.send(embed=embed, view=TicketLogsView())
-        await thread.edit(archived=True, locked=True)
-        await interaction.response.defer()
+        await interaction.response.pong()
+        await interaction.channel.delete()
 
     @ui.button(label="Claim Ticket", style=ButtonStyle.primary)
     async def second_button_callback(self, button, interaction: Interaction):
         staffrole = interaction.guild.get_role(1072489048515559506)
-
-        thread = interaction.guild.get_thread(interaction.message.channel.id)
-        count = db.get_ticket_id_by_thread_id(interaction.message.channel.id)
-
         if staffrole not in interaction.user.roles:
             await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
             return
-        db.update_claimed_ticket(interaction.user.id, count)
         embed = Embed(title="Ticket Status geändert: Wir sind dabei!",
-                      description=f"<@{interaction.user.id}> kümmert sich um dein Ticket.")
+                      description=f"<@{interaction.user.id}> kümmert sich um dein Ticket")
         embed.author.name = interaction.user.display_name
         embed.author.icon_url = interaction.user.display_avatar
         await interaction.response.send_message(embed=embed)
-        await thread.edit(name=f"{count} - {interaction.user.name}")
-
-
-class TicketLogsView(ui.View):
-    @ui.button(label="🔓 Ticket erneut öffnen", style=ButtonStyle.primary)
-    async def reopenTicket(self, button,  interaction: Interaction):
-
-        thread = interaction.guild.get_thread(
-            int(interaction.message.embeds[0].fields[1].value))
-
-        print(thread)
-
-        await thread.edit(archived=False, locked=False)
-        await interaction.response.send_message(f"<#{thread.id}> Ticket wurde wieder geöffnet", ephemeral=True)
 
 
 class SupportModal(ui.Modal):
@@ -82,12 +39,11 @@ class SupportModal(ui.Modal):
             label="Wo benötigst du Hilfe?", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
-        await interaction.response.defer()
         embed = Embed(
             title="Anliegen", description="✅ Danke, dass du dich an den Support gewandt hast. Unser Team wird sich gut darum kümmern!")
         embed.add_field(name="Wo benötigst du Hilfe?",
                         value=self.children[0].value)
-        channel = await interaction.guild.fetch_channel(1072473811162771486)
+        category = await interaction.guild.fetch_channel(1075698931205427262)
 
         create_date = datetime.datetime.now()
 
@@ -95,17 +51,21 @@ class SupportModal(ui.Modal):
                          round(create_date.timestamp()))
         count = db.get_ticket_id(round(create_date.timestamp()))
 
-        response = await channel.create_thread(name=f"{count} - {interaction.user.display_name}", type=ChannelType.private_thread)
-        print(response)
-        variableManager.threadID = response.id
-        thread = interaction.guild.get_thread(variableManager.threadID)
-        print(thread)
+        staffrole = interaction.guild.get_role(1072489048515559506)
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name} - {count}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            staffrole: PermissionOverwrite(read_messages=True)
+        })
+
+        print(ticketchannel)
 
         db.update_ticket(variableManager.threadID, count)
         print("update_ticket done")
 
-        await interaction.response.send_message(f"Ticket eröffnet in <#{variableManager.threadID}>", ephemeral=True)
-        await thread.send(f"<@{interaction.user.id}> <@&{1072489048515559506}>", embed=embed, view=TicketManageView())
+        await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@&{staffrole.id}>", embed=embed, view=TicketManageView())
 
 
 class TeamComplaintModal(ui.Modal):

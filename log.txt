@@ -1,4 +1,4 @@
--- Logs begin at Sun 2023-02-05 14:01:37 UTC, end at Mon 2023-02-13 14:49:32 UTC. --
+-- Logs begin at Wed 2023-02-08 02:33:48 UTC, end at Thu 2023-02-16 14:22:07 UTC. --
 Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]: Traceback (most recent call last):
 Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
 Feb 13 07:32:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[541006]:     from PIL import Image, ImageDraw, ImageFont
@@ -595,3 +595,482 @@ Feb 13 14:48:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574877]: Game Town#4930
 Feb 13 14:48:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.client:logging in using static token
 Feb 13 14:48:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
 Feb 13 14:48:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-lclg",{"micros":93545,"calls":["id_created",{"micros":1209,"calls":[]},"session_lookup_time",{"micros":10640,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-32",{"micros":80570,"calls":["start_session",{"micros":79078,"calls":["discord-api-6cd4fdbbb8-vw4t7",{"micros":71208,"calls":["get_user",{"micros":17624},"get_guilds",{"micros":2941},"send_scheduled_deletion_message",{"micros":7},"guild_join_requests",{"micros":4541},"authorized_ip_coro",{"micros":8}]}]},"starting_guild_connect",{"micros":57,"calls":[]},"presence_started",{"micros":285,"calls":[]},"guilds_started",{"micros":156,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":960,"calls":[]},"connect_finished",{"micros":966,"calls":[]},"build_ready",{"micros":23,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":2,"calls":[]}]}]}] (Session ID: b7f922083903ce4d085a439639cc9e0f).
+Feb 13 14:49:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:49:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 14:49:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:49:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: INFO:discord.client:Closing the event loop.
+Feb 13 14:49:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[574987]: Game Town#4930 is connected
+Feb 13 14:49:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.client:logging in using static token
+Feb 13 14:49:37 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:49:37 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-l1f7",{"micros":149594,"calls":["id_created",{"micros":1183,"calls":[]},"session_lookup_time",{"micros":299,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-26",{"micros":147713,"calls":["start_session",{"micros":90702,"calls":["discord-api-6cd4fdbbb8-2zhvd",{"micros":84771,"calls":["get_user",{"micros":29913},"get_guilds",{"micros":6593},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":61,"calls":[]},"presence_started",{"micros":204,"calls":[]},"guilds_started",{"micros":150,"calls":[]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":56565,"calls":[]},"connect_finished",{"micros":56571,"calls":[]},"build_ready",{"micros":22,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 497b12efdd3f01116cc551a7690bc312).
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.client:Cleaning up tasks.
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: INFO:discord.client:Closing the event loop.
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575068]: Game Town#4930 is connected
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.client:logging in using static token
+Feb 13 14:49:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 14:49:52 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-63kj",{"micros":86188,"calls":["id_created",{"micros":2426,"calls":[]},"session_lookup_time",{"micros":287,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-66",{"micros":83079,"calls":["start_session",{"micros":80766,"calls":["discord-api-6cd4fdbbb8-jxdpp",{"micros":71063,"calls":["get_user",{"micros":16558},"get_guilds",{"micros":4131},"send_scheduled_deletion_message",{"micros":13},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":55,"calls":[]},"presence_started",{"micros":285,"calls":[]},"guilds_started",{"micros":135,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1794,"calls":[]},"connect_finished",{"micros":1800,"calls":[]},"build_ready",{"micros":34,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 1de634e71effa2b38e1df5a4095d5329).
+Feb 13 18:02:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:02:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 18:02:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:02:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: INFO:discord.client:Closing the event loop.
+Feb 13 18:02:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[575105]: Game Town#4930 is connected
+Feb 13 18:02:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.client:logging in using static token
+Feb 13 18:02:56 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:02:56 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-x0cv",{"micros":95193,"calls":["id_created",{"micros":2550,"calls":[]},"session_lookup_time",{"micros":383,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-196",{"micros":91554,"calls":["start_session",{"micros":89064,"calls":["discord-api-6cd4fdbbb8-cdtld",{"micros":78364,"calls":["get_user",{"micros":23810},"get_guilds",{"micros":14574},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":418},"authorized_ip_coro",{"micros":11}]}]},"starting_guild_connect",{"micros":55,"calls":[]},"presence_started",{"micros":301,"calls":[]},"guilds_started",{"micros":168,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1937,"calls":[]},"connect_finished",{"micros":1942,"calls":[]},"build_ready",{"micros":20,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 8734dc8c1572aeecf638a11e615b4b86).
+Feb 13 18:03:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:03:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 13 18:03:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:03:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: INFO:discord.client:Closing the event loop.
+Feb 13 18:03:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590048]: Game Town#4930 is connected
+Feb 13 18:03:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.client:logging in using static token
+Feb 13 18:03:27 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:03:27 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-2qkt",{"micros":74569,"calls":["id_created",{"micros":1481,"calls":[]},"session_lookup_time",{"micros":391,"calls":[]},"session_lookup_finished",{"micros":17,"calls":[]},"discord-sessions-blue-prd-2-297",{"micros":72177,"calls":["start_session",{"micros":48485,"calls":["discord-api-6cd4fdbbb8-tz6dn",{"micros":42083,"calls":["get_user",{"micros":11406},"get_guilds",{"micros":3937},"send_scheduled_deletion_message",{"micros":14},"guild_join_requests",{"micros":694},"authorized_ip_coro",{"micros":14}]}]},"starting_guild_connect",{"micros":55,"calls":[]},"presence_started",{"micros":3443,"calls":[]},"guilds_started",{"micros":198,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":19971,"calls":[]},"connect_finished",{"micros":19976,"calls":[]},"build_ready",{"micros":17,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 98dacf9e9c9a34aea0e231a2d45d2363).
+Feb 13 18:09:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:09:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 18:09:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:09:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: INFO:discord.client:Closing the event loop.
+Feb 13 18:09:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590108]: Game Town#4930 is connected
+Feb 13 18:09:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.client:logging in using static token
+Feb 13 18:09:49 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:09:49 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-cd2w",{"micros":55844,"calls":["id_created",{"micros":1315,"calls":[]},"session_lookup_time",{"micros":373,"calls":[]},"session_lookup_finished",{"micros":22,"calls":[]},"discord-sessions-blue-prd-2-145",{"micros":53525,"calls":["start_session",{"micros":49075,"calls":["discord-api-6cd4fdbbb8-dhv4w",{"micros":43572,"calls":["get_user",{"micros":9114},"get_guilds",{"micros":4312},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":3610},"authorized_ip_coro",{"micros":11}]}]},"starting_guild_connect",{"micros":55,"calls":[]},"presence_started",{"micros":294,"calls":[]},"guilds_started",{"micros":121,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":3956,"calls":[]},"connect_finished",{"micros":3960,"calls":[]},"build_ready",{"micros":17,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 8e9ebc1ecb0098909dfbba813c1e0982).
+Feb 13 18:10:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:10:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.client:Cleaning up after 2 tasks.
+Feb 13 18:10:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:10:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: INFO:discord.client:Closing the event loop.
+Feb 13 18:10:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590602]: Game Town#4930 is connected
+Feb 13 18:10:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.client:logging in using static token
+Feb 13 18:10:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:10:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-scpl",{"micros":97099,"calls":["id_created",{"micros":2594,"calls":[]},"session_lookup_time",{"micros":7939,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-13",{"micros":86135,"calls":["start_session",{"micros":82239,"calls":["discord-api-6cd4fdbbb8-sl45m",{"micros":74917,"calls":["get_user",{"micros":16481},"get_guilds",{"micros":5993},"send_scheduled_deletion_message",{"micros":8},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":9}]}]},"starting_guild_connect",{"micros":56,"calls":[]},"presence_started",{"micros":366,"calls":[]},"guilds_started",{"micros":195,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":3243,"calls":[]},"connect_finished",{"micros":3249,"calls":[]},"build_ready",{"micros":26,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: da07fc1f53346cad7a20582e6f98c3db).
+Feb 13 18:10:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:10:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 18:10:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:10:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: INFO:discord.client:Closing the event loop.
+Feb 13 18:10:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590662]: Game Town#4930 is connected
+Feb 13 18:10:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.client:logging in using static token
+Feb 13 18:10:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:10:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-vld7",{"micros":118617,"calls":["id_created",{"micros":964,"calls":[]},"session_lookup_time",{"micros":337,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-56",{"micros":115992,"calls":["start_session",{"micros":42881,"calls":["discord-api-6cd4fdbbb8-bxtxl",{"micros":37028,"calls":["get_user",{"micros":9750},"get_guilds",{"micros":3771},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":593},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":53,"calls":[]},"presence_started",{"micros":26925,"calls":[]},"guilds_started",{"micros":147,"calls":[]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":45957,"calls":[]},"connect_finished",{"micros":45964,"calls":[]},"build_ready",{"micros":19,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 934254b40a08e150c058286a971d7700).
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: INFO:discord.client:Closing the event loop.
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590671]: Game Town#4930 is connected
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.client:logging in using static token
+Feb 13 18:10:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:10:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-88pk",{"micros":101503,"calls":["id_created",{"micros":1914,"calls":[]},"session_lookup_time",{"micros":2373,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-175",{"micros":96735,"calls":["start_session",{"micros":76932,"calls":["discord-api-6cd4fdbbb8-2n8sk",{"micros":71154,"calls":["get_user",{"micros":18186},"get_guilds",{"micros":7241},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":1999},"authorized_ip_coro",{"micros":7}]}]},"starting_guild_connect",{"micros":54,"calls":[]},"presence_started",{"micros":315,"calls":[]},"guilds_started",{"micros":154,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":19245,"calls":[]},"connect_finished",{"micros":19250,"calls":[]},"build_ready",{"micros":26,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":2,"calls":[]}]}]}] (Session ID: afde623d93dacd1829a66cc5f80699af).
+Feb 13 18:10:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: WARNING:discord.http:We are being rate limited. Retrying in 22.46 seconds. Handled under the bucket "None:None:/applications/{application_id}/commands"
+Feb 13 18:11:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.client:Cleaning up tasks.
+Feb 13 18:11:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 13 18:11:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.client:All tasks finished cancelling.
+Feb 13 18:11:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: INFO:discord.client:Closing the event loop.
+Feb 13 18:11:50 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590682]: Game Town#4930 is connected
+Feb 13 18:11:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:logging in using static token
+Feb 13 18:11:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 13 18:11:51 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-684f",{"micros":69772,"calls":["id_created",{"micros":843,"calls":[]},"session_lookup_time",{"micros":1378,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":66328,"calls":["start_session",{"micros":48559,"calls":["discord-api-6cd4fdbbb8-n5qkx",{"micros":42505,"calls":["get_user",{"micros":9690},"get_guilds",{"micros":5571},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":10}]}]},"starting_guild_connect",{"micros":65,"calls":[]},"presence_started",{"micros":17066,"calls":[]},"guilds_started",{"micros":208,"calls":[]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":396,"calls":[]},"connect_finished",{"micros":402,"calls":[]},"build_ready",{"micros":24,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: a1db3d974d7bc4119cee74297445fc5b).
+Feb 13 18:45:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 13 18:45:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 13 18:45:48 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 13 18:45:49 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-kp37",{"micros":4861,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":4616,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 13 19:23:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 13 19:23:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 13 19:23:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-klvs",{"micros":612,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":277,"calls":[]},"session_lookup_finished",{"micros":15,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":27}]}].
+Feb 13 23:12:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 13 23:12:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 13 23:12:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-9h3h",{"micros":770,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":410,"calls":[]},"session_lookup_finished",{"micros":15,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":27}]}].
+Feb 14 00:32:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 00:32:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 00:32:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-bfkr",{"micros":745,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":379,"calls":[]},"session_lookup_finished",{"micros":15,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":21}]}].
+Feb 14 00:53:56 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 00:53:56 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 00:53:56 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-kr6l",{"micros":4483,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":4153,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 14 01:28:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 01:28:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 01:28:55 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-p1zr",{"micros":692,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":326,"calls":[]},"session_lookup_finished",{"micros":53,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":21}]}].
+Feb 14 02:31:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 02:31:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 02:31:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 02:31:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-4twh",{"micros":844,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":431,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":27}]}].
+Feb 14 03:58:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 03:58:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 03:58:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-dm2s",{"micros":665,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":333,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":23}]}].
+Feb 14 05:30:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: WARNING:discord.gateway:Can't keep up, shard ID None websocket is 13.2s behind.
+Feb 14 06:00:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 06:00:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 06:00:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-brv9",{"micros":595,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":259,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":26}]}].
+Feb 14 09:29:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 09:29:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 09:29:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-1llq",{"micros":640,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":355,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":21}]}].
+Feb 14 12:44:46 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 12:44:46 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 12:44:47 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-llj8",{"micros":1049,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":298,"calls":[]},"session_lookup_finished",{"micros":17,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":26}]}].
+Feb 14 14:39:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 14:39:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 14:39:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 14:39:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-019z",{"micros":788,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":427,"calls":[]},"session_lookup_finished",{"micros":20,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":34}]}].
+Feb 14 15:08:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 15:08:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 15:08:41 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 15:08:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-qzws",{"micros":1977,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":1708,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":22}]}].
+Feb 14 15:23:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 15:23:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 15:23:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 15:23:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-j5dj",{"micros":588,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":304,"calls":[]},"session_lookup_finished",{"micros":22,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":19}]}].
+Feb 14 16:07:05 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 16:07:05 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 16:07:05 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 16:07:05 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-vlw2",{"micros":842,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":455,"calls":[]},"session_lookup_finished",{"micros":20,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":22}]}].
+Feb 14 16:37:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 16:37:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 16:37:38 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 16:37:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-9pd0",{"micros":680,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":337,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":21}]}].
+Feb 14 17:08:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 17:08:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 17:08:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 17:08:21 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-hdh6",{"micros":9180,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":8924,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":26}]}].
+Feb 14 19:18:13 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 19:18:13 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 19:18:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-lr49",{"micros":1266,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":835,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":23}]}].
+Feb 14 19:58:03 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 19:58:03 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 19:58:03 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-q7xc",{"micros":751,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":392,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":28}]}].
+Feb 14 20:32:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with 1001, attempting a reconnect.
+Feb 14 20:32:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 20:32:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 20:32:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-v11s",{"micros":617,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":326,"calls":[]},"session_lookup_finished",{"micros":19,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":24}]}].
+Feb 14 21:48:24 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 14 21:48:24 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 14 21:48:24 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 14 21:48:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-gk2w",{"micros":17357,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":4156,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 15 00:24:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 00:24:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 00:24:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-f4jz",{"micros":642,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":305,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":30}]}].
+Feb 15 03:56:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 15 03:56:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 03:56:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 03:56:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-00kb",{"micros":654,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":297,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":22}]}].
+Feb 15 04:17:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 04:17:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 04:17:42 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-2jsz",{"micros":748,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":342,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":20}]}].
+Feb 15 04:47:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 15 04:47:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 04:47:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 04:47:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-xq0c",{"micros":681,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":331,"calls":[]},"session_lookup_finished",{"micros":19,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 15 08:42:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 15 08:42:25 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 08:42:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 08:42:26 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-lx6q",{"micros":389,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":171,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":21}]}].
+Feb 15 11:16:27 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 11:16:27 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 11:16:27 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-gn1w",{"micros":669,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":330,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":20}]}].
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Ignoring exception in on_member_join
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Traceback (most recent call last):
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 378, in _run_event
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:     await coro(*args, **kwargs)
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 146, in on_member_join
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:     await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: AttributeError: 'NoneType' object has no attribute 'send'
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 12:43:20 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-m1dq",{"micros":505,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":308,"calls":[]},"session_lookup_finished",{"micros":21,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":22}]}].
+Feb 15 12:56:28 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 15 12:56:28 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 12:56:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 12:56:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-b-d9s5",{"micros":553,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":237,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 15 14:45:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 14:45:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 14:45:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-nc56",{"micros":718,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":370,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":24}]}].
+Feb 15 17:39:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 15 17:39:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 17:39:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 17:39:14 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-jhkn",{"micros":639,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":283,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":21}]}].
+Feb 15 18:21:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 18:21:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 18:21:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-tc9r",{"micros":810,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":398,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":50}]}].
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Ignoring exception in on_member_join
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Traceback (most recent call last):
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 378, in _run_event
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:     await coro(*args, **kwargs)
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 146, in on_member_join
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:     await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: AttributeError: 'NoneType' object has no attribute 'send'
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Ignoring exception in on_member_join
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Traceback (most recent call last):
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 378, in _run_event
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:     await coro(*args, **kwargs)
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 146, in on_member_join
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]:     await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: AttributeError: 'NoneType' object has no attribute 'send'
+Feb 15 21:40:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 21:40:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 21:40:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-mkxx",{"micros":679,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":379,"calls":[]},"session_lookup_finished",{"micros":17,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":23}]}].
+Feb 15 22:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 15 22:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 15 22:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-wrdb",{"micros":836,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":432,"calls":[]},"session_lookup_finished",{"micros":16,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 16 00:13:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 16 00:13:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 16 00:13:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 16 00:13:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-0xp7",{"micros":660,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":318,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 16 01:50:03 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 16 01:50:04 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 16 01:50:04 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-l1f7",{"micros":742,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":395,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":19}]}].
+Feb 16 04:41:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 16 04:41:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 16 04:41:36 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-d-wrdb",{"micros":625,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":326,"calls":[]},"session_lookup_finished",{"micros":17,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":25}]}].
+Feb 16 07:21:28 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Websocket closed with WSCloseCode.ABNORMAL_CLOSURE, attempting a reconnect.
+Feb 16 07:21:28 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 16 07:21:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 16 07:21:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.gateway:Shard ID None has successfully RESUMED session a1db3d974d7bc4119cee74297445fc5b under trace ["gateway-prd-us-east1-c-gn1w",{"micros":850,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":486,"calls":[]},"session_lookup_finished",{"micros":20,"calls":[]},"discord-sessions-blue-prd-2-220",{"micros":19}]}].
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Cleaning up tasks.
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: INFO:discord.client:Closing the event loop.
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: Game Town#4930 is connected
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: FUCK MY LIFE
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: FUCK MY LIFE
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[590796]: FUCK MY LIFE
+Feb 16 08:18:57 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.client:logging in using static token
+Feb 16 08:18:58 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 08:18:58 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-dtzp",{"micros":79611,"calls":["id_created",{"micros":882,"calls":[]},"session_lookup_time",{"micros":282,"calls":[]},"session_lookup_finished",{"micros":15,"calls":[]},"discord-sessions-blue-prd-2-282",{"micros":77473,"calls":["start_session",{"micros":66547,"calls":["discord-api-84f95ff6b5-jdb8h",{"micros":60620,"calls":["get_user",{"micros":14251},"get_guilds",{"micros":5390},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":424},"authorized_ip_coro",{"micros":12}]}]},"starting_guild_connect",{"micros":50,"calls":[]},"presence_started",{"micros":323,"calls":[]},"guilds_started",{"micros":161,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":10360,"calls":[]},"connect_finished",{"micros":10366,"calls":[]},"build_ready",{"micros":22,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 320997afb1391ff42c2d2cc24caf1c3f).
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: Ignoring exception in on_member_join
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: Traceback (most recent call last):
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 378, in _run_event
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:     await coro(*args, **kwargs)
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 146, in on_member_join
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:     await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: AttributeError: 'NoneType' object has no attribute 'send'
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.client:Got a request to RESUME the websocket.
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+Feb 16 11:10:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.gateway:Shard ID None has successfully RESUMED session 320997afb1391ff42c2d2cc24caf1c3f under trace ["gateway-prd-us-east1-c-4mdc",{"micros":612,"calls":["id_created",{"micros":0,"calls":[]},"session_lookup_time",{"micros":293,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-blue-prd-2-282",{"micros":24}]}].
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: Ignoring exception in on_member_join
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: Traceback (most recent call last):
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:   File "/usr/local/lib/python3.8/dist-packages/discord/client.py", line 378, in _run_event
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:     await coro(*args, **kwargs)
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 146, in on_member_join
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]:     await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: AttributeError: 'NoneType' object has no attribute 'send'
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.client:Cleaning up tasks.
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: INFO:discord.client:Closing the event loop.
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: Game Town#4930 is connected
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: FUCK MY LIFE
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[854722]: FUCK MY LIFE
+Feb 16 13:35:11 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.client:logging in using static token
+Feb 16 13:35:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 13:35:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-h4cr",{"micros":69850,"calls":["id_created",{"micros":1488,"calls":[]},"session_lookup_time",{"micros":2866,"calls":[]},"session_lookup_finished",{"micros":28,"calls":[]},"discord-sessions-blue-prd-2-158",{"micros":65198,"calls":["start_session",{"micros":50213,"calls":["discord-api-84f95ff6b5-tjr4q",{"micros":44829,"calls":["get_user",{"micros":10331},"get_guilds",{"micros":6124},"send_scheduled_deletion_message",{"micros":14},"guild_join_requests",{"micros":1075},"authorized_ip_coro",{"micros":13}]}]},"starting_guild_connect",{"micros":50,"calls":[]},"presence_started",{"micros":211,"calls":[]},"guilds_started",{"micros":158,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":14540,"calls":[]},"connect_finished",{"micros":14545,"calls":[]},"build_ready",{"micros":19,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 62ce4a3e223b3f99932f8fa7fcc80909).
+Feb 16 13:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.client:Cleaning up tasks.
+Feb 16 13:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 13:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 13:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: INFO:discord.client:Closing the event loop.
+Feb 16 13:51:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[876390]: Game Town#4930 is connected
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]: Traceback (most recent call last):
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/usr/local/lib/python3.8/dist-packages/discord/__init__.py", line 27, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     from . import abc, opus, sinks, ui, utils
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/usr/local/lib/python3.8/dist-packages/discord/abc.py", line 57, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     from .voice_client import VoiceClient, VoiceProtocol
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/usr/local/lib/python3.8/dist-packages/discord/voice_client.py", line 54, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     from .gateway import *
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/usr/local/lib/python3.8/dist-packages/discord/gateway.py", line 38, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     import aiohttp
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/usr/local/lib/python3.8/dist-packages/aiohttp/__init__.py", line 6, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     from .client import (
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:   File "/usr/local/lib/python3.8/dist-packages/aiohttp/client.py", line 32, in <module>
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]:     import attr
+Feb 16 13:51:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911159]: ModuleNotFoundError: No module named 'attr'
+Feb 16 13:51:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911195]: Traceback (most recent call last):
+Feb 16 13:51:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911195]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:51:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911195]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:51:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911195]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:52:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911278]: Traceback (most recent call last):
+Feb 16 13:52:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911278]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:52:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911278]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:52:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911278]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:53:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911372]: Traceback (most recent call last):
+Feb 16 13:53:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911372]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:53:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911372]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:53:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[911372]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:54:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912002]: Traceback (most recent call last):
+Feb 16 13:54:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912002]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:54:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912002]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:54:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912002]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:54:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912030]: Traceback (most recent call last):
+Feb 16 13:54:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912030]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:54:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912030]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:54:39 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912030]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:55:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912129]: Traceback (most recent call last):
+Feb 16 13:55:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912129]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:55:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912129]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:55:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912129]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:56:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912199]: Traceback (most recent call last):
+Feb 16 13:56:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912199]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:56:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912199]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:56:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912199]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:57:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912278]: Traceback (most recent call last):
+Feb 16 13:57:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912278]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:57:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912278]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:57:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912278]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:58:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912356]: Traceback (most recent call last):
+Feb 16 13:58:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912356]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 6, in <module>
+Feb 16 13:58:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912356]:     from discord import (ApplicationContext, Bot, Embed,
+Feb 16 13:58:22 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912356]: ModuleNotFoundError: No module named 'discord'
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912430]: Traceback (most recent call last):
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912430]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912430]:     from PIL import Image, ImageDraw, ImageFont
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912430]: ModuleNotFoundError: No module named 'PIL'
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912448]: Traceback (most recent call last):
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912448]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912448]:     from PIL import Image, ImageDraw, ImageFont
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912448]: ModuleNotFoundError: No module named 'PIL'
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912450]: Traceback (most recent call last):
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912450]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912450]:     from PIL import Image, ImageDraw, ImageFont
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912450]: ModuleNotFoundError: No module named 'PIL'
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912453]: Traceback (most recent call last):
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912453]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912453]:     from PIL import Image, ImageDraw, ImageFont
+Feb 16 13:59:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912453]: ModuleNotFoundError: No module named 'PIL'
+Feb 16 13:59:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912456]: Traceback (most recent call last):
+Feb 16 13:59:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912456]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 11, in <module>
+Feb 16 13:59:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912456]:     from PIL import Image, ImageDraw, ImageFont
+Feb 16 13:59:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912456]: ModuleNotFoundError: No module named 'PIL'
+Feb 16 14:02:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.client:logging in using static token
+Feb 16 14:02:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:02:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-clmb",{"micros":110109,"calls":["id_created",{"micros":914,"calls":[]},"session_lookup_time",{"micros":315,"calls":[]},"session_lookup_finished",{"micros":18,"calls":[]},"discord-sessions-blue-prd-2-124",{"micros":107875,"calls":["start_session",{"micros":105512,"calls":["discord-api-84f95ff6b5-9rqpc",{"micros":98151,"calls":["get_user",{"micros":23391},"get_guilds",{"micros":9150},"send_scheduled_deletion_message",{"micros":13},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":13}]}]},"starting_guild_connect",{"micros":42,"calls":[]},"presence_started",{"micros":363,"calls":[]},"guilds_started",{"micros":168,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1763,"calls":[]},"connect_finished",{"micros":1768,"calls":[]},"build_ready",{"micros":19,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 35abf4b5d6767c085090845dbbda40e1).
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: INFO:discord.client:Closing the event loop.
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912671]: Game Town#4930 is connected
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.client:logging in using static token
+Feb 16 14:03:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:03:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-st1m",{"micros":162330,"calls":["id_created",{"micros":1396,"calls":[]},"session_lookup_time",{"micros":288,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-282",{"micros":159597,"calls":["start_session",{"micros":114915,"calls":["discord-api-84f95ff6b5-fpgdj",{"micros":102804,"calls":["get_user",{"micros":24483},"get_guilds",{"micros":12768},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":1233},"authorized_ip_coro",{"micros":32}]}]},"starting_guild_connect",{"micros":88,"calls":[]},"presence_started",{"micros":294,"calls":[]},"guilds_started",{"micros":198,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":44063,"calls":[]},"connect_finished",{"micros":44068,"calls":[]},"build_ready",{"micros":29,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: c977c40086efdc8a875af891abd818ef).
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: INFO:discord.client:Closing the event loop.
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[912802]: Game Town#4930 is connected
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]: Traceback (most recent call last):
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 9, in <module>
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     from pytimeparse.timeparse import timeparse
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/local/lib/python3.10/dist-packages/pytimeparse/__init__.py", line 28, in <module>
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     from .timeparse import timeparse as parse
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/local/lib/python3.10/dist-packages/pytimeparse/timeparse.py", line 81, in <module>
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     COMPILED_TIMEFORMATS = [re.compile(r'\s*' + timefmt + r'\s*$', re.I)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/local/lib/python3.10/dist-packages/pytimeparse/timeparse.py", line 81, in <listcomp>
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     COMPILED_TIMEFORMATS = [re.compile(r'\s*' + timefmt + r'\s*$', re.I)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/re.py", line 251, in compile
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     return _compile(pattern, flags)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/re.py", line 303, in _compile
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     p = sre_compile.compile(pattern, flags)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/sre_compile.py", line 792, in compile
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     code = _code(p, flags)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/sre_compile.py", line 628, in _code
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     _compile_info(code, p, flags)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/sre_compile.py", line 564, in _compile_info
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     lo, hi = pattern.getwidth()
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/sre_parse.py", line 199, in getwidth
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     i, j = av[2].getwidth()
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:   File "/usr/lib/python3.10/sre_parse.py", line 187, in getwidth
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]:     j = max(j, h)
+Feb 16 14:11:00 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913385]: KeyboardInterrupt
+Feb 16 14:11:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913388]: Traceback (most recent call last):
+Feb 16 14:11:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913388]:   File "/Application/Elia_GameDimensionBot/code/bot.py", line 8, in <module>
+Feb 16 14:11:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913388]: ModuleNotFoundError: No module named 'enums'
+Feb 16 14:11:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913391]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:01 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913394]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913429]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913431]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913433]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913435]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:12 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913437]: /usr/bin/python3.10: can't open file '/Application/Elia_GameDimensionBot/code/bot.py': [Errno 2] No such file or directory
+Feb 16 14:11:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.client:logging in using static token
+Feb 16 14:11:29 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:11:30 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-jk83",{"micros":89849,"calls":["id_created",{"micros":2258,"calls":[]},"session_lookup_time",{"micros":290,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-197",{"micros":86846,"calls":["start_session",{"micros":63838,"calls":["discord-api-84f95ff6b5-hb9zw",{"micros":59978,"calls":["get_user",{"micros":16938},"get_guilds",{"micros":2063},"send_scheduled_deletion_message",{"micros":8},"guild_join_requests",{"micros":4525},"authorized_ip_coro",{"micros":10}]}]},"starting_guild_connect",{"micros":61,"calls":[]},"presence_started",{"micros":5730,"calls":[]},"guilds_started",{"micros":160,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":17032,"calls":[]},"connect_finished",{"micros":17037,"calls":[]},"build_ready",{"micros":17,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: ff43244a1d579c9896c44dd8412e2ba8).
+Feb 16 14:12:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:12:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 16 14:12:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:12:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: INFO:discord.client:Closing the event loop.
+Feb 16 14:12:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913461]: Game Town#4930 is connected
+Feb 16 14:12:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.client:logging in using static token
+Feb 16 14:12:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:12:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-1c2m",{"micros":168529,"calls":["id_created",{"micros":1290,"calls":[]},"session_lookup_time",{"micros":3904,"calls":[]},"session_lookup_finished",{"micros":21,"calls":[]},"discord-sessions-blue-prd-2-88",{"micros":162968,"calls":["start_session",{"micros":87473,"calls":["discord-api-84f95ff6b5-xpm8f",{"micros":81250,"calls":["get_user",{"micros":19500},"get_guilds",{"micros":5902},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":321},"authorized_ip_coro",{"micros":10}]}]},"starting_guild_connect",{"micros":51,"calls":[]},"presence_started",{"micros":24380,"calls":[]},"guilds_started",{"micros":131,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":50895,"calls":[]},"connect_finished",{"micros":50900,"calls":[]},"build_ready",{"micros":30,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 653bfbdc03a0b0fbc0ea343f412f7cee).
+Feb 16 14:12:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:12:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 14:12:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:12:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: INFO:discord.client:Closing the event loop.
+Feb 16 14:12:15 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913542]: Game Town#4930 is connected
+Feb 16 14:12:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.client:logging in using static token
+Feb 16 14:12:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:12:16 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-jk83",{"micros":81633,"calls":["id_created",{"micros":1562,"calls":[]},"session_lookup_time",{"micros":4730,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-287",{"micros":69899,"calls":["start_session",{"micros":69334,"calls":["discord-api-84f95ff6b5-jmzxd",{"micros":62022,"calls":["get_user",{"micros":10926},"get_guilds",{"micros":10382},"send_scheduled_deletion_message",{"micros":8},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":7}]}]},"starting_guild_connect",{"micros":52,"calls":[]},"presence_started",{"micros":182,"calls":[]},"guilds_started",{"micros":115,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":189,"calls":[]},"connect_finished",{"micros":194,"calls":[]},"build_ready",{"micros":20,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 5f114377dce8f1ab8f75e0379421fb9f).
+Feb 16 14:12:53 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:12:53 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.client:Cleaning up after 2 tasks.
+Feb 16 14:12:53 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:12:53 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: INFO:discord.client:Closing the event loop.
+Feb 16 14:12:53 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913569]: Game Town#4930 is connected
+Feb 16 14:12:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.client:logging in using static token
+Feb 16 14:12:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:12:54 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-9gjl",{"micros":75538,"calls":["id_created",{"micros":1394,"calls":[]},"session_lookup_time",{"micros":2289,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-blue-prd-2-164",{"micros":71052,"calls":["start_session",{"micros":69313,"calls":["discord-api-84f95ff6b5-cxrf5",{"micros":60514,"calls":["get_user",{"micros":18347},"get_guilds",{"micros":4827},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":114},"authorized_ip_coro",{"micros":9}]}]},"starting_guild_connect",{"micros":49,"calls":[]},"presence_started",{"micros":245,"calls":[]},"guilds_started",{"micros":127,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1287,"calls":[]},"connect_finished",{"micros":1292,"calls":[]},"build_ready",{"micros":23,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: a6a32ce81083cd8c6d474cfad73b6c91).
+Feb 16 14:18:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:18:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 16 14:18:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:18:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: INFO:discord.client:Closing the event loop.
+Feb 16 14:18:17 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[913630]: Game Town#4930 is connected
+Feb 16 14:18:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.client:logging in using static token
+Feb 16 14:18:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:18:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-23zh",{"micros":56819,"calls":["id_created",{"micros":1700,"calls":[]},"session_lookup_time",{"micros":7403,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-194",{"micros":46717,"calls":["start_session",{"micros":44101,"calls":["discord-api-84f95ff6b5-548tw",{"micros":39096,"calls":["get_user",{"micros":9115},"get_guilds",{"micros":3118},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":505},"authorized_ip_coro",{"micros":10}]}]},"starting_guild_connect",{"micros":60,"calls":[]},"presence_started",{"micros":252,"calls":[]},"guilds_started",{"micros":143,"calls":[]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":2127,"calls":[]},"connect_finished",{"micros":2132,"calls":[]},"build_ready",{"micros":24,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 2725d76b28d0e15e2cc69181be945982).
+Feb 16 14:19:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:19:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 14:19:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:19:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: INFO:discord.client:Closing the event loop.
+Feb 16 14:19:08 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914040]: Game Town#4930 is connected
+Feb 16 14:19:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.client:logging in using static token
+Feb 16 14:19:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:19:09 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-n1zr",{"micros":69981,"calls":["id_created",{"micros":1544,"calls":[]},"session_lookup_time",{"micros":319,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-68",{"micros":67228,"calls":["start_session",{"micros":39857,"calls":["discord-api-84f95ff6b5-zjqff",{"micros":34945,"calls":["get_user",{"micros":8941},"get_guilds",{"micros":3254},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":1194},"authorized_ip_coro",{"micros":11}]}]},"starting_guild_connect",{"micros":48,"calls":[]},"presence_started",{"micros":279,"calls":[]},"guilds_started",{"micros":176,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":26837,"calls":[]},"connect_finished",{"micros":26843,"calls":[]},"build_ready",{"micros":22,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: d619bddb7f2845dcd8cebd1129dfdc9c).
+Feb 16 14:19:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:19:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 14:19:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:19:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: INFO:discord.client:Closing the event loop.
+Feb 16 14:19:33 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914116]: Game Town#4930 is connected
+Feb 16 14:19:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.client:logging in using static token
+Feb 16 14:19:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:19:34 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-nx26",{"micros":110468,"calls":["id_created",{"micros":1571,"calls":[]},"session_lookup_time",{"micros":1927,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-261",{"micros":105848,"calls":["start_session",{"micros":41013,"calls":["discord-api-84f95ff6b5-mk55p",{"micros":36474,"calls":["get_user",{"micros":9020},"get_guilds",{"micros":5472},"send_scheduled_deletion_message",{"micros":6},"guild_join_requests",{"micros":386},"authorized_ip_coro",{"micros":8}]}]},"starting_guild_connect",{"micros":54,"calls":[]},"presence_started",{"micros":255,"calls":[]},"guilds_started",{"micros":177,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":64320,"calls":[]},"connect_finished",{"micros":64325,"calls":[]},"build_ready",{"micros":20,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 42ac6e30261294ddceef04ddf2dcaff4).
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: INFO:discord.client:Closing the event loop.
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: Game Town#4930 is connected
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914162]: test
+Feb 16 14:20:18 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.client:logging in using static token
+Feb 16 14:20:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:20:19 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-m1dq",{"micros":67240,"calls":["id_created",{"micros":1556,"calls":[]},"session_lookup_time",{"micros":3120,"calls":[]},"session_lookup_finished",{"micros":17,"calls":[]},"discord-sessions-blue-prd-2-265",{"micros":62008,"calls":["start_session",{"micros":37498,"calls":["discord-api-84f95ff6b5-2vdmf",{"micros":33877,"calls":["get_user",{"micros":8588},"get_guilds",{"micros":2901},"send_scheduled_deletion_message",{"micros":9},"guild_join_requests",{"micros":514},"authorized_ip_coro",{"micros":9}]}]},"starting_guild_connect",{"micros":59,"calls":[]},"presence_started",{"micros":338,"calls":[]},"guilds_started",{"micros":160,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":23918,"calls":[]},"connect_finished",{"micros":23924,"calls":[]},"build_ready",{"micros":24,"calls":[]},"clean_ready",{"micros":2,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: fd59876b10cb1fdd33773c4bd1b8346d).
+Feb 16 14:20:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:20:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 14:20:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:20:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: INFO:discord.client:Closing the event loop.
+Feb 16 14:20:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914226]: Game Town#4930 is connected
+Feb 16 14:20:31 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.client:logging in using static token
+Feb 16 14:20:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:20:32 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-c-f56h",{"micros":84591,"calls":["id_created",{"micros":2362,"calls":[]},"session_lookup_time",{"micros":2207,"calls":[]},"session_lookup_finished",{"micros":14,"calls":[]},"discord-sessions-blue-prd-2-98",{"micros":79018,"calls":["start_session",{"micros":43861,"calls":["discord-api-84f95ff6b5-sgvnv",{"micros":38411,"calls":["get_user",{"micros":10927},"get_guilds",{"micros":5074},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":1},"authorized_ip_coro",{"micros":9}]}]},"starting_guild_connect",{"micros":47,"calls":[]},"presence_started",{"micros":223,"calls":[]},"guilds_started",{"micros":132,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":34728,"calls":[]},"connect_finished",{"micros":34733,"calls":[]},"build_ready",{"micros":19,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 65fd2847f9bed80c764b5518b36de3da).
+Feb 16 14:21:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:21:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.client:Cleaning up after 1 tasks.
+Feb 16 14:21:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:21:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: INFO:discord.client:Closing the event loop.
+Feb 16 14:21:44 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914263]: Game Town#4930 is connected
+Feb 16 14:21:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.client:logging in using static token
+Feb 16 14:21:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:21:45 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-b-mgln",{"micros":169619,"calls":["id_created",{"micros":1357,"calls":[]},"session_lookup_time",{"micros":438,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-208",{"micros":167017,"calls":["start_session",{"micros":48570,"calls":["discord-api-84f95ff6b5-8q26m",{"micros":40530,"calls":["get_user",{"micros":11410},"get_guilds",{"micros":3668},"send_scheduled_deletion_message",{"micros":11},"guild_join_requests",{"micros":590},"authorized_ip_coro",{"micros":11}]}]},"starting_guild_connect",{"micros":60,"calls":[]},"presence_started",{"micros":40790,"calls":[]},"guilds_started",{"micros":177,"calls":[]},"guilds_connect",{"micros":3,"calls":[]},"presence_connect",{"micros":77389,"calls":[]},"connect_finished",{"micros":77396,"calls":[]},"build_ready",{"micros":21,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: c56ab2c99e888dd1be07b572391243cc).
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.client:Cleaning up after 3 tasks.
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.client:All tasks finished cancelling.
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: INFO:discord.client:Closing the event loop.
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: Game Town#4930 is connected
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914362]: test
+Feb 16 14:22:06 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914403]: INFO:discord.client:logging in using static token
+Feb 16 14:22:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914403]: INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+Feb 16 14:22:07 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914403]: INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-us-east1-d-2jsz",{"micros":111040,"calls":["id_created",{"micros":1177,"calls":[]},"session_lookup_time",{"micros":832,"calls":[]},"session_lookup_finished",{"micros":13,"calls":[]},"discord-sessions-blue-prd-2-231",{"micros":108418,"calls":["start_session",{"micros":90875,"calls":["discord-api-84f95ff6b5-j8kff",{"micros":85089,"calls":["get_user",{"micros":13022},"get_guilds",{"micros":6747},"send_scheduled_deletion_message",{"micros":8},"guild_join_requests",{"micros":270},"authorized_ip_coro",{"micros":10}]}]},"starting_guild_connect",{"micros":44,"calls":[]},"presence_started",{"micros":388,"calls":[]},"guilds_started",{"micros":130,"calls":[]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":16950,"calls":[]},"connect_finished",{"micros":16954,"calls":[]},"build_ready",{"micros":22,"calls":[]},"clean_ready",{"micros":2,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":1,"calls":[]}]}]}] (Session ID: 8b7907772b64e936b540aef0060930c4).
+Feb 16 14:22:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914403]: INFO:discord.client:Cleaning up tasks.
+Feb 16 14:22:10 ubuntu-2gb-nbg1-14 Elia_GameDimensionBot[914403]: INFO:discord.client:Cleaning up after 1 tasks.
