@@ -33,7 +33,7 @@ class TicketManageView(ui.View):
 
 class SupportModal(ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, timeout=None)
 
         self.add_item(ui.InputText(
             label="Wo benötigst du Hilfe?", style=InputTextStyle.long))
@@ -66,7 +66,7 @@ class SupportModal(ui.Modal):
 
 class TeamComplaintModal(ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, timeout=None)
 
         self.add_item(ui.InputText(
             label="Was für eine Team Beschwerde hast du?", style=InputTextStyle.long))
@@ -98,7 +98,7 @@ class TeamComplaintModal(ui.Modal):
 
 class BewerbungModal(ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, timeout=None)
 
         self.add_item(ui.InputText(
             label="Als was möchtest du dich bewerben?", style=InputTextStyle.long))
@@ -131,7 +131,7 @@ class BewerbungModal(ui.Modal):
 
 class ReportUserModal(ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, timeout=None)
 
         self.add_item(ui.InputText(
             label="Welchen Spieler möchtest du melden?", style=InputTextStyle.long))
@@ -164,7 +164,7 @@ class ReportUserModal(ui.Modal):
 
 class MinecraftSupportModal(ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs, timeout=None)
 
         self.add_item(ui.InputText(
             label="Wo auf dem Server brauchst du Hilfe?", style=InputTextStyle.long))
@@ -196,6 +196,9 @@ class MinecraftSupportModal(ui.Modal):
 
 
 class SupportTicketCreateView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
     @ ui.button(emoji="🆘", label="Anliegen", style=ButtonStyle.primary)
     async def first_button_callback(self, button, interaction):
         await interaction.response.send_modal(SupportModal(title="Anliegen"))
@@ -210,6 +213,9 @@ class SupportTicketCreateView(ui.View):
 
 
 class MinecraftTicketCreateView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
     @ ui.button(emoji="⛔", label="Spieler Melden", style=ButtonStyle.danger)
     async def first_button_callback(self, button, interaction):
         await interaction.response.send_modal(ReportUserModal(title="Spieler Melden"))

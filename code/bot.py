@@ -258,7 +258,7 @@ async def supportticket(interaction: ApplicationContext):
     await interaction.channel.send(embed=embed, view=SupportTicketCreateView())
 
 
-@bot.slash_command(description="adminticket")
+@bot.slash_command(description="Minecraft Support")
 async def minecraftticket(interaction: ApplicationContext):
     embed = Embed(
         title=f'Minecraft Support Ticket',
