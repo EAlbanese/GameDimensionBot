@@ -29,7 +29,7 @@ db = database.Database("bot.db")
 db.create_moderation_table()
 db.create_ticket_table()
 
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO)
 
 
 @bot.event
@@ -341,6 +341,31 @@ async def suggestion(interaction: ApplicationContext):
     )
     await interaction.respond("Danke für den Vorschlag!", ephemeral=True)
     await interaction.channel.send(embed=embed, view=SuggestionView())
+
+
+# Autoroles
+memberrole = 1072489393228628048
+customtitlerole = 1072490631164870746
+leveltitlerole = 1072491006546673724
+aboutmerole = 1072489315973738578
+pingtitlerole = 1072491189435105310
+mcinforole = 1072572623092990022
+boostertitlerole = 1072490552563617883
+
+
+@bot.event
+async def on_member_join(member):
+    # Get the special role by ID
+    member_role = member.guild.get_role(memberrole)
+    customtitle_role = member.guild.get_role(customtitlerole)
+    leveltitle_role = member.guild.get_role(leveltitlerole)
+    aboutme_role = member.guild.get_role(aboutmerole)
+    pingtitle_role = member.guild.get_role(pingtitlerole)
+    mcinfo_role = member.guild.get_role(mcinforole)
+    boostertitle_role = member.guild.get_role(boostertitlerole)
+
+    # Give the member the special role
+    await member.add_roles(member_role, customtitle_role, leveltitle_role, aboutme_role, pingtitle_role, mcinfo_role, boostertitle_role)
 
 
 bot.run(TOKEN)
