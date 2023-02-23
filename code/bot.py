@@ -35,7 +35,7 @@ db.create_ticket_table()
 @bot.event
 async def on_ready():
     print(f'{bot.user} is connected')
-    await bot.change_presence(activity=Game(''))
+    await bot.change_presence(activity=Game('auf Game Town'))
 
 
 # Moderation commands
@@ -176,10 +176,19 @@ async def introduction(interaction: ApplicationContext):
             ),
         ],
     )
+    embedLinksTitle = Embed(
+        title='Folge uns auf unseren Social Medias ❤️')
+    embedTikTok = Embed(
+        title='TikTok', url='https://www.tiktok.com/@gametown.discord')
+    embedInsta = Embed(
+        title='Instagram', url='https://www.instagram.com/gametowndiscord.official/')
+    embedYouTube = Embed(
+        title='YouTube', url='https://www.youtube.com/channel/UCTbE7j6_2rXmYrhr-eTfT-Q')
+
     embed.set_thumbnail(
         url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616')
     await interaction.respond("Created introduction embed", ephemeral=True)
-    await interaction.channel.send(embed=embed)
+    await interaction.channel.send(embed=embed, embed=embedLinksTitle, embed=embedTikTok, embed=embedInsta, embed=embedYouTube)
 
 
 @bot.slash_command(description="Regelwerk")
@@ -223,9 +232,7 @@ async def team(interaction: ApplicationContext):
             EmbedField(
                 name='Owner', value=f'⟫<@479537494384181248> \n⟫<@187599309070401541>'),
             EmbedField(name='Administrator',
-                       value=f'Nicht besetzt'),
-            EmbedField(
-                name='Head Manager', value=f'Nicht besetzt'),
+                       value=f'<@797593357655343154>'),
             EmbedField(
                 name='Manager', value=f'Nicht besetzt'),
             EmbedField(
@@ -234,6 +241,8 @@ async def team(interaction: ApplicationContext):
                 name='Moderator', value=f'Nicht besetzt'),
             EmbedField(
                 name='Test-Supporter / Supporter', value=f'Nicht besetzt'),
+            EmbedField(
+                name='Builder', value=f'<@350346477257621504>'),
             EmbedField(
                 name='Content Creator', value=f'Nicht besetzt'),
             EmbedField(
@@ -366,6 +375,21 @@ async def on_member_join(member):
 
     # Give the member the special role
     await member.add_roles(member_role, customtitle_role, leveltitle_role, aboutme_role, pingtitle_role, mcinfo_role, boostertitle_role)
+
+
+# Minecraft Server IP
+@bot.slash_command(description="Minecraft Server IP-Adresse")
+async def minecraftip(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Join auf unseren Minecraft Server',
+        description='Wir wünschen dir und deinen Freunden viel Spass ❤',
+    )
+    embed.add_field(name="IP-Adresse",
+                    value="eu4789457.g-portal.game", inline=False)
+    embed.add_field(name="Brauchst du Hilfe?",
+                    value="Falls du Hilfe brauchst oder Fragen hast, dann kannst du jeder Zeit ein <#1072479021008429066> Ticket erstellen. Unser Team kümmert sich um dich.", inline=False)
+    await interaction.respond("Viel Spass auf dem Minecraft Server!", ephemeral=True)
+    await interaction.channel.send(embed=embed)
 
 
 bot.run(TOKEN)
