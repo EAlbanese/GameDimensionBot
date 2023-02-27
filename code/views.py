@@ -13,6 +13,9 @@ class variableManager(ui.View):
 
 
 class TicketManageView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
     @ui.button(label="Ticket schliessen", style=ButtonStyle.primary)
     async def first_button_callback(self, button,  interaction: Interaction):
         await interaction.response.pong()
