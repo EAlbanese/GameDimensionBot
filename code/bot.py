@@ -27,6 +27,7 @@ db = database.Database("bot.db")
 
 # db.drop_db()
 db.create_moderation_table()
+db.create_team_table()
 db.create_ticket_table()
 
 # logging.basicConfig(level=logging.INFO)
@@ -136,6 +137,115 @@ async def ban(
         return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu bannen.')
 
     await punish(interaction, PunishmentType.BAN, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
+
+# Add new Teammember & Team Embed
+
+
+async def addteammember(interaction: ApplicationContext, member: Member, role: str):
+    db.create_member(member.id, role)
+
+    embed = Embed(
+        title=f'{member.display_name} wurde als {role} in das Team hinzugefügt',
+        fields=[
+            EmbedField(
+                name='Neues Teammitglied',
+                value=member.display_name + " " + role
+            )
+        ]
+    )
+
+    await interaction.respond(embed=embed, ephemeral=True)
+
+
+@bot.slash_command(description="Teammitglied hinzufügen")
+async def addtoteam(
+    interaction: ApplicationContext,
+    member: Option(Member, 'Select the user'),
+    role: Option(str, 'Rolle (Manager ist 1 und Designer 7)')
+):
+    await addteammember(interaction, member, role)
+
+
+@ bot.slash_command(description="Team")
+async def team(interaction: ApplicationContext):
+
+    manager_list = db.get_member_by_manager("manager")
+    if len(manager_list) > 0:
+        manager_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in manager_list])
+    else:
+        manager_value = "Nicht besetzt"
+
+    headmod_list = db.get_member_by_headmod("headmod")
+    if len(headmod_list) > 0:
+        headmod_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in headmod_list])
+    else:
+        headmod_value = "Nicht besetzt"
+
+    mod_list = db.get_member_by_mod("mod")
+    if len(mod_list) > 0:
+        mod_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in mod_list])
+    else:
+        mod_value = "Nicht besetzt"
+
+    supp_list = db.get_member_by_supp("supp")
+    if len(supp_list) > 0:
+        supp_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in supp_list])
+    else:
+        supp_value = "Nicht besetzt"
+
+    builder_list = db.get_member_by_builder("builder")
+    if len(builder_list) > 0:
+        builder_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in builder_list])
+    else:
+        builder_value = "Nicht besetzt"
+
+    content_list = db.get_member_by_content("content")
+    if len(content_list) > 0:
+        content_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in content_list])
+    else:
+        content_value = "Nicht besetzt"
+
+    designer_list = db.get_member_by_designer("designer")
+    if len(designer_list) > 0:
+        designer_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in designer_list])
+    else:
+        designer_value = "Nicht besetzt"
+
+    embed = Embed(
+        title=f'Game Town Team',
+        fields=[
+            EmbedField(
+                name='Owner', value=f'⟫<@479537494384181248> \n⟫<@187599309070401541>'),
+            EmbedField(name='Administrator',
+                       value=f'⟫<@797593357655343154>'),
+            EmbedField(
+                name='Manager', value=manager_value),
+            EmbedField(
+                name='Head Moderator',  value=headmod_value),
+            EmbedField(
+                name='Moderator',  value=mod_value),
+            EmbedField(
+                name='Test-Supporter / Supporter',  value=supp_value),
+            EmbedField(
+                name='Builder',  value=builder_value),
+            EmbedField(
+                name='Content Creator',  value=content_value),
+            EmbedField(
+                name='Designer', value=designer_value + f'\n \n \n Wenn du Hilfe brauchst, kannst du eine <#1072473811162771486> eröffnen und unsere Mitarbeiter werden sich um dein Anliegen kümmern.'),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616'),
+    await interaction.respond("Created rules embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
+
 # Welcomer
 
 
@@ -188,7 +298,7 @@ async def introduction(interaction: ApplicationContext):
     embed.set_thumbnail(
         url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616')
     await interaction.respond("Created introduction embed", ephemeral=True)
-    await interaction.channel.send(embed=embed, embed=embedLinksTitle, embed=embedTikTok, embed=embedInsta, embed=embedYouTube)
+    await interaction.channel.send(embed=embed)
 
 
 @bot.slash_command(description="Regelwerk")
@@ -223,36 +333,6 @@ async def rules(interaction: ApplicationContext):
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
-
-@ bot.slash_command(description="Team")
-async def team(interaction: ApplicationContext):
-    embed = Embed(
-        title=f'Game Town Team',
-        fields=[
-            EmbedField(
-                name='Owner', value=f'⟫<@479537494384181248> \n⟫<@187599309070401541>'),
-            EmbedField(name='Administrator',
-                       value=f'<@797593357655343154>'),
-            EmbedField(
-                name='Manager', value=f'Nicht besetzt'),
-            EmbedField(
-                name='Head Moderator', value=f'Nicht besetzt'),
-            EmbedField(
-                name='Moderator', value=f'Nicht besetzt'),
-            EmbedField(
-                name='Test-Supporter / Supporter', value=f'Nicht besetzt'),
-            EmbedField(
-                name='Builder', value=f'<@350346477257621504>'),
-            EmbedField(
-                name='Content Creator', value=f'Nicht besetzt'),
-            EmbedField(
-                name='Designer', value=f'Nicht besetzt \n \n \n Wenn du Hilfe brauchst, kannst du eine <#1072473811162771486> eröffnen und unsere Mitarbeiter werden sich um dein Anliegen kümmern.'),
-        ],
-    )
-    embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616'),
-    await interaction.respond("Created rules embed", ephemeral=True)
-    await interaction.channel.send(embed=embed)
 
 # Ticket System
 

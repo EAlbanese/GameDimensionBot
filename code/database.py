@@ -46,6 +46,67 @@ class Database:
             f'SELECT * FROM penalties WHERE server_id={server_id} AND user_id={user_id} ORDER BY id DESC LIMIT 25;').fetchall()
 
 
+# Teammember
+
+
+    def create_team_table(self):
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(
+                'CREATE TABLE IF NOT EXISTS team (id INTEGER PRIMARY KEY AUTOINCREMENT, userid INTEGER NOT NULL, role TEXT NOT NULL);')
+
+            self.connection.commit()
+        except Exception as ex:
+            print(f'EXCEPTION: {ex}')
+
+    def create_member(self, userid: int, role: str):
+        cursor = self.connection.cursor()
+
+        cursor.execute(
+            f'INSERT INTO team (userid, role) VALUES (?, ?);', (userid, role))
+        self.connection.commit()
+
+    def get_member_by_manager(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_headmod(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_mod(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_supp(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_builder(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_content(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_designer(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_all_member(self):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team ').fetchall()
+
+
 # Ticket
 
     def drop_db(self):
