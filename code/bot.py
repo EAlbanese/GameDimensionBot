@@ -7,7 +7,7 @@ from discord import (ApplicationContext, Bot, Embed,
                      EmbedField, Member, Option, Permissions, Button, PartialEmoji, Game, File, Intents)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
-from views import SupportTicketCreateView, MinecraftTicketCreateView, ReportUserModal, SupportModal, BugReportCreateView, SuggestionView
+from views import SupportTicketCreateView, MinecraftTicketCreateView, ReportUserModal, SupportModal, BugReportCreateView, SuggestionView, BanappealModal, BannappealView
 from PIL import Image, ImageDraw, ImageFont
 # import requests
 import io
@@ -130,6 +130,17 @@ async def ban(
     reason: Option(str, 'Grund für den Bann', max_length=100),
     duration: Option(str, 'Dauer des Bannes', max_length=10)
 ):
+    banneduser = await interaction.bot.fetch_user(member.id)
+
+    embed = Embed(
+        title=f'Du wurdest von Game Town gebannt.')
+    embed.add_field(
+        name="📝 Grund", value=reason)
+    embed.add_field(
+        name="⏰ Dauer", value=duration)
+    await interaction.respond(f"{member.id} wurde gebannt", ephemeral=True)
+    await banneduser.send(embed=embed)
+
     punishment_end = parse_duration_end(duration)
     try:
         await member.ban(reason=reason, delete_message_days=7)
@@ -138,9 +149,19 @@ async def ban(
 
     await punish(interaction, PunishmentType.BAN, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 
+
+@bot.slash_command(description="Unban Member", default_member_permissions=Permissions.none())
+async def unban(
+    interaction: ApplicationContext,
+    member: Option(Member, 'Select the user')
+):
+    try:
+        await member.unban(delete_message_days=7)
+    except:
+        return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu bannen.')
+
+
 # Add new Teammember & Team Embed
-
-
 async def addteammember(interaction: ApplicationContext, member: Member, role: str):
     db.create_member(member.id, role)
 

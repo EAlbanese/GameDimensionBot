@@ -326,3 +326,36 @@ class SuggestionView(ui.View):
     @ui.button(emoji="📬", label="Vorschlag erstellen", style=ButtonStyle.success)
     async def report_bug(self, button, interaction):
         await interaction.response.send_modal(SuggestionModal(title="Vorschlag erstellen"))
+
+
+# Entbannungsantrag
+class BanappealModal(ui.Modal):
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs, timeout=None)
+
+        self.add_item(ui.InputText(
+            label="Dein Username (Username#0000)", style=InputTextStyle.short))
+        self.add_item(ui.InputText(
+            label="Wieso bist du auf unserem Discord Server?", style=InputTextStyle.short))
+        self.add_item(ui.InputText(
+            label="Wieso möchtest du entbannt werden?", style=InputTextStyle.long))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(title="📬 Neuer Entbannungantrag 📬")
+        embed.add_field(
+            name="Username", value=self.children[0].value, inline=False)
+        embed.add_field(
+            name="Wieso bist du auf unserem Discord Server?", value=self.children[1].value, inline=False)
+        embed.add_field(
+            name="Entbannungsantrag", value=self.children[2].value, inline=False)
+
+        channel = await interaction.client.fetch_user(1072584972256419901)
+
+        await interaction.response.send_message(f"✅ Entbannungsantrag wurde erfolgreich gesendet. Sobald wir eine Antwort, wirst du über diesen Chat benachrichtigt!", ephemeral=True)
+        await channel.send(embed=embed)
+
+
+class BannappealView(ui.View):
+    @ui.button(emoji="📬", label="Entbannungsantrag", style=ButtonStyle.primary)
+    async def report_bug(self, button, interaction):
+        await interaction.response.send_modal(BanappealModal(title="Entbannungsantrag schreiben"))
