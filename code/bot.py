@@ -157,6 +157,24 @@ async def addteammember(interaction: ApplicationContext, member: Member, role: s
     await interaction.respond(embed=embed, ephemeral=True)
 
 
+async def delteammember(interaction: ApplicationContext, member: Member):
+    print(member.id)
+    print(db.get_all_member())
+    db.delete_member(member.id)
+
+    embed = Embed(
+        title=f'{member.display_name} wurde aus dem Team entfernt',
+        fields=[
+            EmbedField(
+                name='Teammitglied gelöscht',
+                value=member.display_name
+            )
+        ]
+    )
+
+    await interaction.respond(embed=embed, ephemeral=True)
+
+
 @bot.slash_command(description="Teammitglied hinzufügen")
 async def addtoteam(
     interaction: ApplicationContext,
@@ -164,6 +182,14 @@ async def addtoteam(
     role: Option(str, 'Rolle (Manager ist 1 und Designer 7)')
 ):
     await addteammember(interaction, member, role)
+
+
+@bot.slash_command(description="Teammitglied löschen")
+async def delfromteam(
+    interaction: ApplicationContext,
+    member: Option(Member, 'Select the user')
+):
+    await delteammember(interaction, member)
 
 
 @ bot.slash_command(description="Team")

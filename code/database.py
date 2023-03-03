@@ -66,6 +66,12 @@ class Database:
             f'INSERT INTO team (userid, role) VALUES (?, ?);', (userid, role))
         self.connection.commit()
 
+    def delete_member(self, userid: int):
+        cursor = self.connection.cursor()
+        cursor.execute(
+            f'DELETE FROM team WHERE userid={userid};')
+        self.connection.commit()
+
     def get_member_by_manager(self, role: str):
         cursor = self.connection.cursor()
         return cursor.execute(
