@@ -25,7 +25,7 @@ intents.members = True
 bot = Bot(debug_guild=DEBUG_GUILDS, intents=intents)
 db = database.Database("bot.db")
 
-db.drop_db()
+# db.drop_db()
 db.create_moderation_table()
 db.create_team_table()
 db.create_ticket_table()
