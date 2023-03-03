@@ -143,7 +143,7 @@ async def ban(
 
     punishment_end = parse_duration_end(duration)
     try:
-        await member.ban(reason=reason, delete_message_days=7)
+        await member.ban(reason=reason, delete_message_seconds=60)
     except:
         return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu bannen.')
 
