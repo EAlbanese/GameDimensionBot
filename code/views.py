@@ -18,6 +18,28 @@ class TicketManageView(ui.View):
 
     @ui.button(label="Ticket schliessen", style=ButtonStyle.primary)
     async def first_button_callback(self, button,  interaction: Interaction):
+        ticketlogs = await interaction.guild.fetch_channel(1072486758157135922)
+
+        ticketId = db.get_ticket_id_by_channel_id(
+            interaction.message.channel.id)
+        ticketinfo = db.get_ticket_info(ticketId)
+        ticketClosedBy = interaction.user.display_name
+        memberName = interaction.guild.get_member(ticketinfo[2])
+        moderatorName = interaction.guild.get_member(ticketinfo[3])
+
+        embed = Embed(title=f"🔒 Ticket wurde geschlossen")
+        embed.add_field(name="🎫 Ticket ID",
+                        value=f'{ticketinfo[0]}', inline=False)
+        embed.add_field(name="🎫 Channel ID",
+                        value=f'{ticketinfo[1]}', inline=False)
+        embed.add_field(name="👤 Ticket geöffnet von",
+                        value=f'{memberName}', inline=False)
+        embed.add_field(name="✅ Ticket geclaimt von",
+                        value=f'{moderatorName}', inline=False)
+        embed.add_field(name="🔒 Ticket geschlossen von",
+                        value=f'{ticketClosedBy}', inline=False)
+
+        await ticketlogs.send(embed=embed)
         await interaction.response.pong()
         await interaction.channel.delete()
 
@@ -61,7 +83,7 @@ class SupportModal(ui.Modal):
             staffrole: PermissionOverwrite(read_messages=True)
         })
 
-        db.update_ticket(variableManager.threadID, count)
+        db.update_ticket(ticketchannel.id, count)
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
         await ticketchannel.send(f"<@{interaction.user.id}> <@&{staffrole.id}>", embed=embed, view=TicketManageView())
@@ -93,7 +115,7 @@ class TeamComplaintModal(ui.Modal):
             adminrole: PermissionOverwrite(read_messages=True)
         })
 
-        db.update_ticket(variableManager.threadID, count)
+        db.update_ticket(ticketchannel.id, count)
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
         await ticketchannel.send(f"<@{interaction.user.id}> <@&{adminrole.id}>", embed=embed, view=TicketManageView())
@@ -126,7 +148,7 @@ class BewerbungModal(ui.Modal):
             adminrole: PermissionOverwrite(read_messages=True)
         })
 
-        db.update_ticket(variableManager.threadID, count)
+        db.update_ticket(ticketchannel.id, count)
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
         await ticketchannel.send(f"<@{interaction.user.id}> <@&{adminrole.id}>", embed=embed, view=TicketManageView())
@@ -159,7 +181,7 @@ class ReportUserModal(ui.Modal):
             adminrole: PermissionOverwrite(read_messages=True)
         })
 
-        db.update_ticket(variableManager.threadID, count)
+        db.update_ticket(ticketchannel.id, count)
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
         await ticketchannel.send(f"<@{interaction.user.id}> <@&{adminrole.id}>", embed=embed, view=TicketManageView())
@@ -192,7 +214,7 @@ class MinecraftSupportModal(ui.Modal):
             adminrole: PermissionOverwrite(read_messages=True)
         })
 
-        db.update_ticket(variableManager.threadID, count)
+        db.update_ticket(ticketchannel.id, count)
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
         await ticketchannel.send(f"<@{interaction.user.id}> <@&{adminrole.id}>", embed=embed, view=TicketManageView())
