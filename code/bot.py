@@ -7,7 +7,7 @@ from discord import (ApplicationContext, Bot, Embed,
                      EmbedField, Member, Option, Permissions, Button, PartialEmoji, Game, File, Intents)
 from enums import PunishmentType
 from pytimeparse.timeparse import timeparse
-from views import SupportTicketCreateView, MinecraftTicketCreateView, ReportUserModal, SupportModal, BugReportCreateView, SuggestionView, BanappealModal, BannappealView
+from views import SupportTicketCreateView, MinecraftTicketCreateView, ReportUserModal, SupportModal, BugReportCreateView, SuggestionView, BanappealModal, BannappealView, UnbanSupportTicketCreateView
 from PIL import Image, ImageDraw, ImageFont
 # import requests
 import io
@@ -25,10 +25,12 @@ intents.members = True
 bot = Bot(debug_guild=DEBUG_GUILDS, intents=intents)
 db = database.Database("bot.db")
 
-# db.drop_db()
+# db.drop_ticketdb()
+# db.drop_appealdb()
 db.create_moderation_table()
 db.create_team_table()
 db.create_ticket_table()
+db.create_appeal_table()
 
 # logging.basicConfig(level=logging.INFO)
 
@@ -135,9 +137,11 @@ async def ban(
     embed = Embed(
         title=f'Du wurdest von Game Town gebannt.')
     embed.add_field(
-        name="📝 Grund", value=reason)
+        name="📝 Grund", value=reason, inline=False)
     embed.add_field(
-        name="⏰ Dauer", value=duration)
+        name="⏰ Dauer", value=duration, inline=False)
+    embed.add_field(
+        name="Unban Server", value="[discord.gg/unban](https://discord.gg/Vwzxzpff)", inline=False)
     await interaction.respond(f"{member.id} wurde gebannt", ephemeral=True)
     await banneduser.send(embed=embed)
 
@@ -518,6 +522,28 @@ async def minecraftip(interaction: ApplicationContext):
     await interaction.respond("Viel Spass auf dem Minecraft Server!", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
+
+# Entbannungsantrag Embed
+@bot.slash_command(description="Entbannungsantrag Embed")
+async def appeal(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Entbannungsantrag schreiben',
+        description='Schreibe einen Entbannungsantrag, um deinen Bann zu beheben. \n\n Bei Fragen einfach ein <#1081241923412566016>',
+    )
+    await interaction.respond("Created appeal embed", ephemeral=True)
+    await interaction.channel.send(embed=embed, view=BannappealView())
+
+# Unban Server Ticket Embed
+
+
+@bot.slash_command(description="Server Support")
+async def unbanticket(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Support Ticket',
+        description='Falls du Hilfe brauchst, jemanden aus dem Team melden oder dich Bewerben möchtest, dann öffne eines der folgenden Tickets. Ein Teammitglied wird in kürze bei dir sein. \n \n ⛔ Für das missbrauchen des Ticket-Systems gibt es Verwarnungen.',
+    )
+    await interaction.respond("Created ticket embed", ephemeral=True)
+    await interaction.channel.send(embed=embed, view=UnbanSupportTicketCreateView())
 
 bot.run(TOKEN)
 db.connection.close()

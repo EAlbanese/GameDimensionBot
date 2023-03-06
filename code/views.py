@@ -23,7 +23,7 @@ class TicketManageView(ui.View):
         ticketId = db.get_ticket_id_by_channel_id(
             interaction.message.channel.id)
         ticketinfo = db.get_ticket_info(ticketId)
-        ticketClosedBy = interaction.user.display_name
+        ticketClosedBy = interaction.guild.get_member(interaction.user.id)
         memberName = interaction.guild.get_member(ticketinfo[2])
         moderatorName = interaction.guild.get_member(ticketinfo[3])
 
@@ -53,6 +53,12 @@ class TicketManageView(ui.View):
                       description=f"<@{interaction.user.id}> kümmert sich um dein Ticket")
         embed.author.name = interaction.user.display_name
         embed.author.icon_url = interaction.user.display_avatar
+
+        ticketId = db.get_ticket_id_by_channel_id(
+            interaction.message.channel.id)
+        ticketinfo = db.get_ticket_info(ticketId)
+        db.update_claimed_ticket(interaction.user.id, ticketinfo[1])
+
         await interaction.response.send_message(embed=embed)
 
 
@@ -329,6 +335,63 @@ class SuggestionView(ui.View):
 
 
 # Entbannungsantrag
+
+class AppealManageView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
+    @ui.button(label="Antrag schliessen", style=ButtonStyle.primary)
+    async def first_button_callback(self, button,  interaction: Interaction):
+        appeallogs = await interaction.guild.fetch_channel(1081255325476323458)
+
+        appealId = db.get_appeal_id_by_channel_id(
+            interaction.message.channel.id)
+        appealinfo = db.get_appeal_info(appealId)
+        appealClosedBy = interaction.guild.get_member(interaction.user.id)
+        memberName = interaction.guild.get_member(appealinfo[2])
+        moderatorName = interaction.guild.get_member(appealinfo[3])
+
+        embed = Embed(title=f"🔒 Entbannungsantrag wurde geschlossen")
+        embed.add_field(name="🎫 Antrag ID",
+                        value=f'{appealinfo[0]}', inline=False)
+        embed.add_field(name="🎫 Channel ID",
+                        value=f'{appealinfo[1]}', inline=False)
+        embed.add_field(name="👤 Antrag geöffnet von",
+                        value=f'{memberName}', inline=False)
+        embed.add_field(name="✅ Antrag geclaimt von",
+                        value=f'{moderatorName}', inline=False)
+        embed.add_field(name="🔒 Antrag geschlossen von",
+                        value=f'{appealClosedBy}', inline=False)
+
+        await appeallogs.send(embed=embed)
+        await interaction.response.pong()
+        await interaction.channel.delete()
+
+    @ui.button(label="Claim Antrag", style=ButtonStyle.primary)
+    async def second_button_callback(self, button, interaction: Interaction):
+        staffrole = interaction.guild.get_role(1081267406325948446)
+        if staffrole not in interaction.user.roles:
+            await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
+            return
+
+        appealId = db.get_appeal_id_by_channel_id(
+            interaction.message.channel.id)
+        appealinfo = db.get_appeal_info(appealId)
+        db.update_claimed_appeal(interaction.user.display_name, appealinfo[1])
+
+        embed = Embed(title="Antrag Status geändert: Wir sind dabei!",
+                      description=f"<@{interaction.user.id}> kümmert sich um deinen Antrag")
+        embed.author.name = interaction.user.display_name
+        embed.author.icon_url = interaction.user.display_avatar
+
+        appealId = db.get_appeal_id_by_channel_id(
+            interaction.message.channel.id)
+        appealinfo = db.get_appeal_info(appealId)
+        db.update_claimed_appeal(interaction.user.id, appealinfo[1])
+
+        await interaction.response.send_message(embed=embed)
+
+
 class BanappealModal(ui.Modal):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs, timeout=None)
@@ -341,21 +404,128 @@ class BanappealModal(ui.Modal):
             label="Wieso möchtest du entbannt werden?", style=InputTextStyle.long))
 
     async def callback(self, interaction: Interaction):
-        embed = Embed(title="📬 Neuer Entbannungantrag 📬")
+        embed = Embed(title="📬 Entbannungantrag 📬")
         embed.add_field(
             name="Username", value=self.children[0].value, inline=False)
         embed.add_field(
             name="Wieso bist du auf unserem Discord Server?", value=self.children[1].value, inline=False)
         embed.add_field(
-            name="Entbannungsantrag", value=self.children[2].value, inline=False)
+            name="Entbannungsantrag", value=self.children[2].value + "\n\n ✅ Unser Team wird sich in kürze darum kümmern!", inline=False)
 
-        channel = await interaction.client.fetch_user(1072584972256419901)
+        category = await interaction.guild.fetch_channel(1081265979398570095)
+        staffrole = interaction.guild.get_role(1081267406325948446)
 
-        await interaction.response.send_message(f"✅ Entbannungsantrag wurde erfolgreich gesendet. Sobald wir eine Antwort, wirst du über diesen Chat benachrichtigt!", ephemeral=True)
-        await channel.send(embed=embed)
+        create_date = datetime.datetime.now()
+        db.create_appeal(interaction.user.id, round(create_date.timestamp()))
+        count = db.get_appeal_id(round(create_date.timestamp()))
+
+        appealchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name} - {count}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            staffrole: PermissionOverwrite(read_messages=True)
+        })
+
+        db.update_appeal(appealchannel.id, count)
+
+        await interaction.response.send_message(f"Entbannungsantrag eröffnet in <#{appealchannel.id}>", ephemeral=True)
+        await appealchannel.send(f"<@{interaction.user.id}> <@&{staffrole.id}>", embed=embed, view=AppealManageView())
 
 
 class BannappealView(ui.View):
     @ui.button(emoji="📬", label="Entbannungsantrag", style=ButtonStyle.primary)
     async def report_bug(self, button, interaction):
         await interaction.response.send_modal(BanappealModal(title="Entbannungsantrag schreiben"))
+
+
+# Ticket Unban Server
+class UnbanTicketManageView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
+    @ui.button(label="Ticket schliessen", style=ButtonStyle.primary)
+    async def first_button_callback(self, button,  interaction: Interaction):
+        ticketlogs = await interaction.guild.fetch_channel(1081255258119995482)
+
+        ticketId = db.get_ticket_id_by_channel_id(
+            interaction.message.channel.id)
+        ticketinfo = db.get_ticket_info(ticketId)
+        ticketClosedBy = interaction.guild.get_member(interaction.user.id)
+        memberName = interaction.guild.get_member(ticketinfo[2])
+        moderatorName = interaction.guild.get_member(ticketinfo[3])
+
+        embed = Embed(title=f"🔒 Ticket wurde geschlossen")
+        embed.add_field(name="🎫 Ticket ID",
+                        value=f'{ticketinfo[0]}', inline=False)
+        embed.add_field(name="🎫 Channel ID",
+                        value=f'{ticketinfo[1]}', inline=False)
+        embed.add_field(name="👤 Ticket geöffnet von",
+                        value=f'{memberName}', inline=False)
+        embed.add_field(name="✅ Ticket geclaimt von",
+                        value=f'{moderatorName}', inline=False)
+        embed.add_field(name="🔒 Ticket geschlossen von",
+                        value=f'{ticketClosedBy}', inline=False)
+
+        await ticketlogs.send(embed=embed)
+        await interaction.response.pong()
+        await interaction.channel.delete()
+
+    @ui.button(label="Claim Ticket", style=ButtonStyle.primary)
+    async def second_button_callback(self, button, interaction: Interaction):
+        staffrole = interaction.guild.get_role(1081267406325948446)
+        if staffrole not in interaction.user.roles:
+            await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
+            return
+        embed = Embed(title="Ticket Status geändert: Wir sind dabei!",
+                      description=f"<@{interaction.user.id}> kümmert sich um dein Ticket")
+        embed.author.name = interaction.user.display_name
+        embed.author.icon_url = interaction.user.display_avatar
+
+        ticketId = db.get_ticket_id_by_channel_id(
+            interaction.message.channel.id)
+        ticketinfo = db.get_ticket_info(ticketId)
+        db.update_claimed_ticket(interaction.user.id, ticketinfo[1])
+
+        await interaction.response.send_message(embed=embed)
+
+
+class UnbanSupportModal(ui.Modal):
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs, timeout=None)
+
+        self.add_item(ui.InputText(
+            label="Wo benötigst du Hilfe?", style=InputTextStyle.long))
+
+    async def callback(self, interaction: Interaction):
+        embed = Embed(
+            title="Anliegen", description="✅ Danke, dass du dich an den Support gewandt hast. Unser Team wird sich gut darum kümmern!")
+        embed.add_field(name="Wo benötigst du Hilfe?",
+                        value=self.children[0].value)
+        category = await interaction.guild.fetch_channel(1081265751064850553)
+
+        create_date = datetime.datetime.now()
+        db.create_ticket(interaction.user.id,
+                         round(create_date.timestamp()))
+        count = db.get_ticket_id(round(create_date.timestamp()))
+
+        staffrole = interaction.guild.get_role(1081267406325948446)
+        ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name} - {count}", category=category, overwrites={
+            interaction.user: PermissionOverwrite(read_messages=True),
+            interaction.guild.default_role: PermissionOverwrite(
+                read_messages=False),
+            staffrole: PermissionOverwrite(read_messages=True)
+        })
+
+        db.update_ticket(ticketchannel.id, count)
+
+        await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
+        await ticketchannel.send(f"<@{interaction.user.id}> <@&{staffrole.id}>", embed=embed, view=UnbanTicketManageView())
+
+
+class UnbanSupportTicketCreateView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
+    @ ui.button(emoji="📩", label="Anliegen", style=ButtonStyle.primary)
+    async def first_button_callback(self, button, interaction):
+        await interaction.response.send_modal(UnbanSupportModal(title="Anliegen"))
