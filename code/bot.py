@@ -347,7 +347,7 @@ async def introduction(interaction: ApplicationContext):
         title='YouTube', url='https://www.youtube.com/channel/UCTbE7j6_2rXmYrhr-eTfT-Q')
 
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616')
+        url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616')
     await interaction.respond("Created introduction embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
@@ -380,7 +380,7 @@ async def rules(interaction: ApplicationContext):
         ],
     )
     embed.set_thumbnail(
-        url='https://media.discordapp.net/attachments/1019566455601238017/1072935031779102871/LogoV1.jpg?width=616&height=616'),
+        url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616'),
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
