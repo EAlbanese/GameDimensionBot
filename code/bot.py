@@ -301,10 +301,30 @@ async def team(interaction: ApplicationContext):
 
 
 @bot.event
-async def on_member_join(member):
-    print("FUCK MY LIFE")
-    channel = bot.get_channel(1038812807216496640)
-    await channel.send(f'Hey <@{member.user.id}>, willkommen auf **Game Town**!')
+async def on_member_join(member: Member):
+    embed = Embed(
+        title=f'Herzlich willkommen auf Game Town 🥳',
+        description=f'Hey <@{member.id}> <:pikachu_love:1042727900996173884> \n \n Lies dir bitte die <#1072470105776193586> und das <#1072470606706126848> durch',
+        fields=[
+            EmbedField(
+                name='Wir wünschen dir viel Spass ! ❤️',
+                value=''
+            ),
+        ],
+    )
+
+    welcome = bot.get_channel(1072468729855746078)
+    channel = bot.get_channel(1072478704724344873)
+    await welcome.send(embed=embed)
+    await channel.send(f'**Hey <@{member.id}> herzlich willkommen** <:pikachu_love:1042727900996173884>')
+
+
+# @bot.event
+# async def on_member_join(member: Member):
+#     print("member joined")
+#     channel = bot.get_channel(1072468729855746078)
+#     await channel.send(f'Hey <@{member.id}>, willkommen auf **Game Town**!')
+
 
 # Information category Embeds
 
