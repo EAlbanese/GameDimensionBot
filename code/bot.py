@@ -92,6 +92,29 @@ async def warn(
     member: Option(Member, 'Select the user'),
     reason: Option(str, 'Grund für den Warn', max_length=100)
 ):
+    embed = Embed(
+        title=f'⚖️ Warn | {member.display_name}',
+        fields=[
+            EmbedField(
+                name='User',
+                value=f'<@{member.id}>'
+            ),
+            EmbedField(
+                name='Moderator',
+                value=f'<@{interaction.user.id}>'
+            ),
+            EmbedField(
+                name='Grund',
+                value=reason
+            )
+        ]
+    )
+    embed.set_footer(
+        text=f"ID: {member.id}")
+
+    channel = bot.get_channel(1072486683813093396)
+    await channel.send(embed=embed)
+
     await punish(interaction, PunishmentType.WARN, interaction.guild_id, member, interaction.author.id, reason)
 
 
@@ -107,6 +130,33 @@ async def timeout(
         await member.timeout(punishment_end, reason=reason)
     except:
         return await interaction.respond('Sieht so aus als hätte ich keine Berechtigungen um den Member zu timeouten.')
+
+    embed = Embed(
+        title=f'⚖️ Timeout | {member.display_name}',
+        fields=[
+            EmbedField(
+                name='User',
+                value=f'<@{member.id}>'
+            ),
+            EmbedField(
+                name='Moderator',
+                value=f'<@{interaction.user.id}>'
+            ),
+            EmbedField(
+                name='Grund',
+                value=reason
+            ),
+            EmbedField(
+                name='Dauer',
+                value=duration
+            )
+        ]
+    )
+    embed.set_footer(
+        text=f"ID: {member.id}")
+
+    channel = bot.get_channel(1072486683813093396)
+    await channel.send(embed=embed)
 
     await punish(interaction, PunishmentType.TIMEOUT, interaction.guild_id, member, interaction.author.id, reason, punishment_end)
 
@@ -144,6 +194,33 @@ async def ban(
         name="Unban Server", value="[discord.gg/unban](https://discord.gg/Vwzxzpff)", inline=False)
     await interaction.respond(f"{member.id} wurde gebannt", ephemeral=True)
     await banneduser.send(embed=embed)
+
+    modlogembed = Embed(
+        title=f'⚖️ Ban | {member.display_name}',
+        fields=[
+            EmbedField(
+                name='User',
+                value=f'<@{member.id}>'
+            ),
+            EmbedField(
+                name='Moderator',
+                value=f'<@{interaction.user.id}>'
+            ),
+            EmbedField(
+                name='Grund',
+                value=reason
+            ),
+            EmbedField(
+                name='Dauer',
+                value=duration
+            )
+        ]
+    )
+    modlogembed.set_footer(
+        text=f"ID: {member.id}")
+
+    channel = bot.get_channel(1083025423836917790)
+    await channel.send(embed=modlogembed)
 
     punishment_end = parse_duration_end(duration)
     try:
