@@ -433,6 +433,9 @@ class BanappealModal(ui.Modal):
 
 
 class BannappealView(ui.View):
+    def __init__(self):
+        super().__init__(timeout=None)
+
     @ui.button(emoji="📬", label="Entbannungsantrag", style=ButtonStyle.primary)
     async def report_bug(self, button, interaction):
         await interaction.response.send_modal(BanappealModal(title="Entbannungsantrag schreiben"))
