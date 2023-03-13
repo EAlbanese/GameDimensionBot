@@ -276,6 +276,8 @@ async def delteammember(interaction: ApplicationContext, member: Member):
 
     await interaction.respond(embed=embed, ephemeral=True)
 
+# Manager=>manger | Head Moderator=> headmod | Moderator=> mod | Test Supporter/Supporter=> supp
+
 
 @bot.slash_command(description="Teammitglied hinzufügen")
 async def addtoteam(
@@ -373,35 +375,6 @@ async def team(interaction: ApplicationContext):
         url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616'),
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
-
-# Welcomer
-
-
-@bot.event
-async def on_member_join(member: Member):
-    embed = Embed(
-        title=f'Herzlich willkommen auf Game Town 🥳',
-        description=f'Hey <@{member.id}> <:pikachu_love:1042727900996173884> \n \n Lies dir bitte die <#1072470105776193586> und das <#1072470606706126848> durch',
-        fields=[
-            EmbedField(
-                name='Wir wünschen dir viel Spass ! ❤️',
-                value=''
-            ),
-        ],
-    )
-
-    welcome = bot.get_channel(1072468729855746078)
-    channel = bot.get_channel(1072478704724344873)
-    await welcome.send(embed=embed)
-    await channel.send(f'**Hey <@{member.id}> herzlich willkommen** <:pikachu_love:1042727900996173884>')
-
-
-# @bot.event
-# async def on_member_join(member: Member):
-#     print("member joined")
-#     channel = bot.get_channel(1072468729855746078)
-#     await channel.send(f'Hey <@{member.id}>, willkommen auf **Game Town**!')
-
 
 # Information category Embeds
 
@@ -603,6 +576,23 @@ async def on_member_join(member):
 
     # Give the member the special role
     await member.add_roles(member_role, customtitle_role, leveltitle_role, aboutme_role, pingtitle_role, mcinfo_role, boostertitle_role)
+
+    # welcomer embed
+    embed = Embed(
+        title=f'Herzlich willkommen auf Game Town 🥳',
+        description=f'Hey <@{member.id}> <:pikachu_love:1042727900996173884> \n \n Lies dir bitte die <#1072470105776193586> und das <#1072470606706126848> durch',
+        fields=[
+            EmbedField(
+                name='Wir wünschen dir viel Spass ! ❤️',
+                value=''
+            ),
+        ],
+    )
+
+    welcome = bot.get_channel(1072468729855746078)
+    channel = bot.get_channel(1072478704724344873)
+    await welcome.send(embed=embed)
+    await channel.send(f'**Hey <@{member.id}> herzlich willkommen** <:pikachu_love:1042727900996173884>')
 
 
 # Minecraft Server IP
