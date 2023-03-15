@@ -140,6 +140,10 @@ class BewerbungModal(ui.Modal):
         embed.add_field(
             name="Als was möchtest du dich bewerben?", value=self.children[0].value)
 
+        formembed = Embed(title="Bewerbung einreichen",
+                          description="Wir bitten dich das folgenden Formular auszufüllen, damit unser Team sich deine Bewerbung anschauen kann.")
+        formembed.add_field(
+            name='Google Forms:', value='[Bewerbungs Formular](https://forms.gle/mt5sfLnahoHdm3pv6)')
         category = await interaction.guild.fetch_channel(1075698931205427262)
         adminrole = interaction.guild.get_role(1075709143207387160)
 
@@ -158,6 +162,7 @@ class BewerbungModal(ui.Modal):
 
         await interaction.response.send_message(f"Ticket eröffnet in <#{ticketchannel.id}>", ephemeral=True)
         await ticketchannel.send(f"<@{interaction.user.id}> <@&{adminrole.id}>", embed=embed, view=TicketManageView())
+        await ticketchannel.send(embed=formembed)
 
 
 class ReportUserModal(ui.Modal):
