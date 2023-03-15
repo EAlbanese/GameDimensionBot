@@ -580,7 +580,7 @@ async def on_member_join(member):
     # welcomer embed
     embed = Embed(
         title=f'Herzlich willkommen auf Game Town 🥳',
-        description=f'Hey <@{member.id}> <:pikachu_love:1042727900996173884> \n \n Lies dir bitte die <#1072470105776193586> und das <#1072470606706126848> durch',
+        description=f'Hey <@{member.id}> ❤️ \n \n Lies dir bitte die <#1072470105776193586> und das <#1072470606706126848> durch',
         fields=[
             EmbedField(
                 name='Wir wünschen dir viel Spass ! ❤️',
@@ -592,7 +592,7 @@ async def on_member_join(member):
     welcome = bot.get_channel(1072468729855746078)
     channel = bot.get_channel(1072478704724344873)
     await welcome.send(embed=embed)
-    await channel.send(f'**Hey <@{member.id}> herzlich willkommen** <:pikachu_love:1042727900996173884>')
+    await channel.send(f'**Hey <@{member.id}> herzlich willkommen** ❤️')
 
 
 # Minecraft Server IP
