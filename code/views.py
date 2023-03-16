@@ -27,6 +27,14 @@ class TicketManageView(ui.View):
         memberName = interaction.guild.get_member(ticketinfo[2])
         moderatorName = interaction.guild.get_member(ticketinfo[3])
 
+        if ticketinfo[3] is None:
+            await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
+            return
+
+        if ticketinfo[3] is interaction.user.id:
+            await interaction.response.send_message("⛔ Das Ticket kann nur durch den claimer dieses Ticket geschlossen werden.", ephemeral=True)
+            return
+
         embed = Embed(title=f"🔒 Ticket wurde geschlossen")
         embed.add_field(name="🎫 Ticket ID",
                         value=f'{ticketinfo[0]}', inline=False)
