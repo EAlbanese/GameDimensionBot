@@ -574,11 +574,11 @@ class BoosterRolesView(ui.View):
                 value='4'
             ),
             SelectOption(
-                label="💛",
+                label="☀️",
                 value='5'
             ),
             SelectOption(
-                label=":purple_heart:",
+                label="💜",
                 value='6'
             ),
         ]
