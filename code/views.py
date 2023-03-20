@@ -558,11 +558,11 @@ class BoosterRolesView(ui.View):
         max_values=1,
         options=[
             SelectOption(
-                label="⛄",
+                label="🤍",
                 value='1'
             ),
             SelectOption(
-                label="🧊",
+                label="💙",
                 value='2'
             ),
             SelectOption(
@@ -570,11 +570,11 @@ class BoosterRolesView(ui.View):
                 value='3'
             ),
             SelectOption(
-                label="🍊",
+                label="🧡",
                 value='4'
             ),
             SelectOption(
-                label="☀️",
+                label="💛",
                 value='5'
             ),
             SelectOption(
