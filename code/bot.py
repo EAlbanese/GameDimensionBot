@@ -300,14 +300,14 @@ async def delfromteam(
 @ bot.slash_command(description="Team")
 async def team(interaction: ApplicationContext):
 
-    coowner_list = db.get_member_by_manager("coowner")
+    coowner_list = db.get_member_by_coowner("coowner")
     if len(coowner_list) > 0:
         coowner_value = "\n".join(
             [f"⟫<@{m[1]}>" for m in coowner_list])
     else:
         coowner_value = "Nicht besetzt"
 
-    admin_list = db.get_member_by_manager("admin")
+    admin_list = db.get_member_by_admin("admin")
     if len(admin_list) > 0:
         admin_value = "\n".join(
             [f"⟫<@{m[1]}>" for m in admin_list])
@@ -321,7 +321,7 @@ async def team(interaction: ApplicationContext):
     else:
         manager_value = "Nicht besetzt"
 
-    eventmanager_list = db.get_member_by_manager("eventmanager")
+    eventmanager_list = db.get_member_by_eventmanager("eventmanager")
     if len(eventmanager_list) > 0:
         eventmanager_value = "\n".join(
             [f"⟫<@{m[1]}>" for m in eventmanager_list])
@@ -375,10 +375,14 @@ async def team(interaction: ApplicationContext):
         fields=[
             EmbedField(
                 name='Owner', value=f'⟫<@479537494384181248> \n⟫<@187599309070401541>'),
+            EmbedField(
+                name='Co.Owner', value=coowner_value),
             EmbedField(name='Administrator',
-                       value=f'⟫<@797593357655343154>'),
+                       value=admin_value),
             EmbedField(
                 name='Manager', value=manager_value),
+            EmbedField(
+                name='Event Manager', value=eventmanager_value),
             EmbedField(
                 name='Head Moderator',  value=headmod_value),
             EmbedField(
@@ -388,7 +392,7 @@ async def team(interaction: ApplicationContext):
             EmbedField(
                 name='Builder',  value=builder_value),
             EmbedField(
-                name='Content Creator',  value=content_value),
+                name='Cutter',  value=cutter_value),
             EmbedField(
                 name='Designer', value=designer_value + f'\n \n \n Wenn du Hilfe brauchst, kannst du eine <#1072473811162771486> eröffnen und unsere Mitarbeiter werden sich um dein Anliegen kümmern.'),
         ],
