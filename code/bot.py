@@ -719,7 +719,7 @@ async def interface(interaction: ApplicationContext):
 async def teamrules(interaction: ApplicationContext):
     embed = Embed(
         title=f'Regelwerk',
-        description='Mit dem Beitritt zum Game Town Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde dies bitte an unser <@&1072489048515559506> und wir werden es überprüfen.',
+        description='Unserem Team ist eine gute und erfolgreiche Zusammenarbeit sehr wichtig. Das Ziel ist es den Server stets am laufen zu halten, dies geht jedoch nur, wenn man im Team alles dementsprechend organisiert und regelt. Dies geht nur bei der Einhaltung folgender Regeln. Der Rest wird ein Kinderspiel 😄',
         fields=[
             EmbedField(
                 name='1) Verdacht auf Preisgabe interner Informationen', value=f'Bei Verdacht, dass ein Teammitglied eine Informationslücke darstellen könnte, wird mit dem Betroffenen ein Gespräch gesucht und versucht die Angelegenheit zu klären. Bei Bestätigung des Verdachts kann es zu einem down rank oder Rauswurf führen.'),
