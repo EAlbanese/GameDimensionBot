@@ -31,7 +31,7 @@ class TicketManageView(ui.View):
             await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
             return
 
-        if ticketinfo[3] is interaction.user.id:
+        if ticketinfo[3] != interaction.user.id:
             await interaction.response.send_message("⛔ Das Ticket kann nur durch den claimer dieses Ticket geschlossen werden.", ephemeral=True)
             return
 
