@@ -277,7 +277,7 @@ async def delteammember(interaction: ApplicationContext, member: Member):
 
     await interaction.respond(embed=embed, ephemeral=True)
 
-# Manager=>manger | Head Moderator=> headmod | Moderator=> mod | Test Supporter/Supporter=> supp
+# Co.Owner => coowner | Admin => admin Manager=>manger | Event Manager => eventmanager | Head Moderator=> headmod | Moderator=> mod | Test Supporter/Supporter=> supp | Designer => designer | Cutter => cutter
 
 
 @bot.slash_command(description="Teammitglied hinzufügen")
@@ -300,12 +300,33 @@ async def delfromteam(
 @ bot.slash_command(description="Team")
 async def team(interaction: ApplicationContext):
 
+    coowner_list = db.get_member_by_manager("coowner")
+    if len(coowner_list) > 0:
+        coowner_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in coowner_list])
+    else:
+        coowner_value = "Nicht besetzt"
+
+    admin_list = db.get_member_by_manager("admin")
+    if len(admin_list) > 0:
+        admin_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in admin_list])
+    else:
+        admin_value = "Nicht besetzt"
+
     manager_list = db.get_member_by_manager("manager")
     if len(manager_list) > 0:
         manager_value = "\n".join(
             [f"⟫<@{m[1]}>" for m in manager_list])
     else:
         manager_value = "Nicht besetzt"
+
+    eventmanager_list = db.get_member_by_manager("eventmanager")
+    if len(eventmanager_list) > 0:
+        eventmanager_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in eventmanager_list])
+    else:
+        eventmanager_value = "Nicht besetzt"
 
     headmod_list = db.get_member_by_headmod("headmod")
     if len(headmod_list) > 0:
@@ -335,12 +356,12 @@ async def team(interaction: ApplicationContext):
     else:
         builder_value = "Nicht besetzt"
 
-    content_list = db.get_member_by_content("content")
-    if len(content_list) > 0:
-        content_value = "\n".join(
-            [f"⟫<@{m[1]}>" for m in content_list])
+    cutter_list = db.get_member_by_cutter("cutter")
+    if len(cutter_list) > 0:
+        cutter_value = "\n".join(
+            [f"⟫<@{m[1]}>" for m in cutter_list])
     else:
-        content_value = "Nicht besetzt"
+        cutter_value = "Nicht besetzt"
 
     designer_list = db.get_member_by_designer("designer")
     if len(designer_list) > 0:
@@ -687,6 +708,36 @@ async def interface(interaction: ApplicationContext):
 
     await interaction.respond("Interface wurde erstellt", ephemeral=True)
     await interaction.send(embed=embed, view=ChannelSettingsButtonView())
+
+
+# Team Regelwerk
+@bot.slash_command(description="Team Regelwerk")
+async def teamrules(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Regelwerk',
+        description='Mit dem Beitritt zum Game Town Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde dies bitte an unser <@&1072489048515559506> und wir werden es überprüfen.',
+        fields=[
+            EmbedField(
+                name='1) Verdacht auf Preisgabe interner Informationen', value=f'Bei Verdacht, dass ein Teammitglied eine Informationslücke darstellen könnte, wird mit dem Betroffenen ein Gespräch gesucht und versucht die Angelegenheit zu klären. Bei Bestätigung des Verdachts kann es zu einem down rank oder Rauswurf führen.'),
+            EmbedField(name='2) Einhalten der Rangordnung', value=f'Im Team ist es sehr wichtig, dass die Rangordnung eingehalten wird, sodass kein Chaos entsteht. Bei Problemen empfehlen wir, dass man sich dem nächsthöheren widmet und sein Anliegen erläutert. Bei wichtigen Anliegen jeglicher Art ist es auch möglich, sich bei einem Admin oder Owner zu melden.'),
+            EmbedField(
+                name='3) Ticket claiming', value=f'Damit die Ordnung bestehen bleibt, bitten wir euch, dass nur die Person, welche ein Ticket claimed auch reinschreibt. Ausnahmen gibt es nur, wenn der Supporter nach Unterstützung bittet, dann hat das gefragte Teammitglied die Berechtigung ins Ticket zu schreiben.'),
+            EmbedField(
+                name='4) Herausgeben von persönlichen Informationen Anderer', value=f'Bei Herausgabe persönlicher Daten anderer Teammitglieder ohne Einverständnis kann mit einem sofortigen Rauswurf oder einem Ban bestraft werden, da Datenschutz sehr wichtig ist in unserer Community. (Bsp. RL-Name, Adresse und weitere Leaks)'),
+            EmbedField(
+                name='5) Rank abusing', value=f'Wir bitten alle Teammitglieder stets Souverän und Seriös gegenüber anderen zu sein und nicht seine Position auszunutzen. Bei unbegründeten kicks, stumm Schaltungen, time Outs oder anderen Fällen, kann es zu einem down rank oder Rauswurf führen.'),
+            EmbedField(
+                name='6) Inaktivität als Teammitglied', value=f'Wenn ein Teammitglied inaktiv ist und sich dabei ebenfalls nicht abmeldet oder irgendwie erwähnt, dass dieser für eine bestimmte Zeit nicht aktiv sein wird, kann es zu einem down rank führen. Bei Abmeldung wird dies jedoch kein Problem darstellen. Eine kurze Nachricht an jemanden des High-Teams reicht bereits als Abmeldung.'),
+            EmbedField(
+                name='7) Verbreiten von Fake-Informationen Anderer', value=f'Bei absichtlicher Verbreitung von falschen Informationen, um der betroffenen Person Schaden zuzufügen, kann ein sofortiger Rauswurf oder Ban folgen.'),
+            EmbedField(
+                name='', value=f'*Bei weiteren Fragen oder Anliegen steht das High-Team oder Management euch gerne zur Verfügung. *'),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616'),
+    await interaction.respond("Created rules embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
 
 
 bot.run(TOKEN)

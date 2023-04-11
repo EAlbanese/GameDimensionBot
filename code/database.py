@@ -70,7 +70,22 @@ class Database:
             f'DELETE FROM team WHERE userid={userid};')
         self.connection.commit()
 
+    def get_member_by_coowner(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_admin(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
     def get_member_by_manager(self, role: str):
+        cursor = self.connection.cursor()
+        return cursor.execute(
+            f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
+
+    def get_member_by_eventmanager(self, role: str):
         cursor = self.connection.cursor()
         return cursor.execute(
             f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
@@ -95,7 +110,7 @@ class Database:
         return cursor.execute(
             f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
 
-    def get_member_by_content(self, role: str):
+    def get_member_by_cutter(self, role: str):
         cursor = self.connection.cursor()
         return cursor.execute(
             f'SELECT * FROM team WHERE role=?', (role,)).fetchall()
