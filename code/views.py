@@ -57,6 +57,12 @@ class TicketManageView(ui.View):
         if staffrole not in interaction.user.roles:
             await interaction.response.send_message("⛔ Keine Berechtigung!", ephemeral=True)
             return
+
+        button.disabled = True
+        button.label = f"Claimed von {interaction.user.name}"
+
+        await interaction.response.edit_message(view=self)
+
         embed = Embed(title="Ticket Status geändert: Wir sind dabei!",
                       description=f"<@{interaction.user.id}> kümmert sich um dein Ticket")
         embed.author.name = interaction.user.display_name
@@ -67,7 +73,8 @@ class TicketManageView(ui.View):
         ticketinfo = db.get_ticket_info(ticketId)
         db.update_claimed_ticket(interaction.user.id, ticketinfo[1])
 
-        await interaction.response.send_message(embed=embed)
+        channel = interaction.channel
+        await channel.send(embed=embed)
 
 
 class SupportModal(ui.Modal):
@@ -89,7 +96,7 @@ class SupportModal(ui.Modal):
                          round(create_date.timestamp()))
         count = db.get_ticket_id(round(create_date.timestamp()))
 
-        staffrole = interaction.guild.get_role(1072489048515559506)
+        staffrole = interaction.guild.get_role(1095606000981131274)
         ticketchannel = await interaction.guild.create_text_channel(f"{interaction.user.display_name} - {count}", category=category, overwrites={
             interaction.user: PermissionOverwrite(read_messages=True),
             interaction.guild.default_role: PermissionOverwrite(
@@ -116,7 +123,7 @@ class TeamComplaintModal(ui.Modal):
         embed.add_field(name="Was für eine Team Beschwerde hast du?",
                         value=self.children[0].value)
         category = await interaction.guild.fetch_channel(1075698931205427262)
-        adminrole = interaction.guild.get_role(1075709143207387160)
+        adminrole = interaction.guild.get_role(1095606029615628298)
 
         create_date = datetime.datetime.now()
         db.create_ticket(interaction.user.id, round(create_date.timestamp()))
@@ -153,7 +160,7 @@ class BewerbungModal(ui.Modal):
         formembed.add_field(
             name='Google Forms:', value='[Bewerbungs Formular](https://forms.gle/mt5sfLnahoHdm3pv6)')
         category = await interaction.guild.fetch_channel(1075698931205427262)
-        adminrole = interaction.guild.get_role(1075709143207387160)
+        adminrole = interaction.guild.get_role(1095606000981131274)
 
         create_date = datetime.datetime.now()
         db.create_ticket(interaction.user.id, round(create_date.timestamp()))
@@ -187,7 +194,7 @@ class ReportUserModal(ui.Modal):
             name="Welchen Spieler möchtest du melden?", value=self.children[0].value)
 
         category = await interaction.guild.fetch_channel(1075698931205427262)
-        adminrole = interaction.guild.get_role(1075709143207387160)
+        adminrole = interaction.guild.get_role(1095606000981131274)
 
         create_date = datetime.datetime.now()
         db.create_ticket(interaction.user.id, round(create_date.timestamp()))
@@ -220,7 +227,7 @@ class MinecraftSupportModal(ui.Modal):
             name="Wo auf dem Server brauchst du Hilfe?", value=self.children[0].value)
 
         category = await interaction.guild.fetch_channel(1075698931205427262)
-        adminrole = interaction.guild.get_role(1075709143207387160)
+        adminrole = interaction.guild.get_role(1095606000981131274)
 
         create_date = datetime.datetime.now()
         db.create_ticket(interaction.user.id, round(create_date.timestamp()))
