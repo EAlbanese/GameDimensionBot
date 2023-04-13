@@ -409,7 +409,7 @@ async def team(interaction: ApplicationContext):
 async def introduction(interaction: ApplicationContext):
     embed = Embed(
         title=f'Einführung',
-        description='Willkommen auf Game Town <:pikachu_love:1042727900996173884> \n \n Wir sind ein Community-Server, wo du mit deinen Freunden Spaß haben kannst.',
+        description='Willkommen auf Game Town 💘 \n \n Wir sind ein Community-Server, wo du mit deinen Freunden Spaß haben kannst.',
         fields=[
             EmbedField(
                 name='Regeln',
@@ -436,13 +436,13 @@ async def introduction(interaction: ApplicationContext):
     embedLinksTitle = Embed(
         title='Folge uns auf unseren Social Medias ❤️')
     embedTikTok = Embed(
-        title='TikTok', url='https://www.tiktok.com/@gametown.discord')
+        title='TikTok', description='https://www.tiktok.com/@gametown.discord')
     embedInsta = Embed(
-        title='Instagram', url='https://www.instagram.com/gametowndiscord.official/')
+        title='Instagram', description='https://www.instagram.com/gametowndiscord.official/')
     embedYouTube = Embed(
-        title='YouTube', url='https://www.youtube.com/channel/UCTbE7j6_2rXmYrhr-eTfT-Q')
-    embedYouTube = Embed(
-        title='Website', url='https://game-town.xyz/')
+        title='YouTube', description='https://www.youtube.com/channel/UCTbE7j6_2rXmYrhr-eTfT-Q')
+    embedWebsite = Embed(
+        title='Website', description='https://game-town.xyz/')
 
     embed.set_thumbnail(
         url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616')
@@ -452,7 +452,7 @@ async def introduction(interaction: ApplicationContext):
     await interaction.channel.send(embed=embedTikTok)
     await interaction.channel.send(embed=embedInsta)
     await interaction.channel.send(embed=embedYouTube)
-    await interaction.channel.send(embed=embedYouTube)
+    await interaction.channel.send(embed=embedWebsite)
 
 
 @bot.slash_command(description="Regelwerk")
@@ -764,7 +764,7 @@ async def spende(interaction: ApplicationContext):
             EmbedField(
                 name='Custom Rolle', value=f'Bei einer Spende von **10 €** kannst du dir deine eigene Custom Rolle erstellen.'),
             EmbedField(
-                name='Spende Link', url='https://ko-fi.com/gametown'),
+                name='Spende Link', value='https://ko-fi.com/gametown'),
         ],
     )
     embed.set_thumbnail(
@@ -781,7 +781,7 @@ async def unbanserver(interaction: ApplicationContext):
         description='Falls ihr oder ein Freund von euch gebannt wurde und ein Entbannungsantrag schreiben möchtet, dann joint bitte auf unseren Unban-Server. \n\n Wenn jemand aus dem Team gespamt wird oder beleidigt wird, so wird der User keinen Unban bekommen. \n\n Bei Fragen könnt ihr hier oder auf dem Unban Server jederzeit ein Ticket erstellen!',
         fields=[
             EmbedField(
-                name='Server Link', url='https://discord.gg/dvWnFEH3bB'),
+                name='Server Link', value='[Unban Server](https://discord.gg/dvWnFEH3bB)'),
         ],
     )
     await interaction.respond("Created unban server embed", ephemeral=True)
