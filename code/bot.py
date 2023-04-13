@@ -441,18 +441,25 @@ async def introduction(interaction: ApplicationContext):
         title='Instagram', url='https://www.instagram.com/gametowndiscord.official/')
     embedYouTube = Embed(
         title='YouTube', url='https://www.youtube.com/channel/UCTbE7j6_2rXmYrhr-eTfT-Q')
+    embedYouTube = Embed(
+        title='Website', url='https://game-town.xyz/')
 
     embed.set_thumbnail(
         url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616')
     await interaction.respond("Created introduction embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
+    await interaction.channel.send(embed=embedLinksTitle)
+    await interaction.channel.send(embed=embedTikTok)
+    await interaction.channel.send(embed=embedInsta)
+    await interaction.channel.send(embed=embedYouTube)
+    await interaction.channel.send(embed=embedYouTube)
 
 
 @bot.slash_command(description="Regelwerk")
 async def rules(interaction: ApplicationContext):
     embed = Embed(
         title=f'Regelwerk',
-        description='Mit dem Beitritt zum Game Town Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde dies bitte an unser <@&1072489048515559506> und wir werden es überprüfen.',
+        description='Mit dem Beitritt zum Game Town Server akzeptierst du alle unten stehenden Regeln. Wenn sich jemand nicht an die Regeln hält, melde dies bitte an unser <@&1095606000981131274> und wir werden es überprüfen.',
         fields=[
             EmbedField(
                 name='1) Sei respektvoll', value=f'Sei respektvoll, freundlich und einladend zu allen Mitgliedern auf dem Server, um den Server zu einer angenehmen Erfahrung für alle zu machen. Beleidigungen, Diskriminierung, Mobbing oder unangemessene Reaktionen sind Gründe für einen permanenten Bann.'),
@@ -743,6 +750,42 @@ async def teamrules(interaction: ApplicationContext):
     await interaction.respond("Created rules embed", ephemeral=True)
     await interaction.channel.send(embed=embed)
 
+
+# Spenden
+@bot.slash_command(description="Spende Embed")
+async def spende(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Eure Spende',
+        description='Unterstützt unsere zukünftigen oder bereits laufenden Projekte mit einer Spende. Wir freuen uns sehr über jegliche Spenden. ❤️',
+        fields=[
+            EmbedField(
+                name='Unsere Projekte', value=f'⟫ Minecraft Server\n⟫ Minecraft Challanges\n⟫ Valorant Turniere / Events\n⟫ Valorant E-Sports Team\n'),
+            EmbedField(name='Spender Vorteile', value=f'Jeder, der uns etwas spendet, bekommt die <@&1095628123439124502> Rolle. Wöchentlich wird überprüft, wer den grössten Spendenbetrag hat. Dieser bekommt als Dankeschön die <@&1095628325344509953> Rolle.'),
+            EmbedField(
+                name='Custom Rolle', value=f'Bei einer Spende von **10 €** kannst du dir deine eigene Custom Rolle erstellen.'),
+            EmbedField(
+                name='Spende Link', url='https://ko-fi.com/gametown'),
+        ],
+    )
+    embed.set_thumbnail(
+        url='https://media.discordapp.net/attachments/1019566455601238017/1078045460931031171/icon2test.gif?width=616&height=616'),
+    await interaction.respond("Created spende embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
+
+
+# Unban Server Embed
+@bot.slash_command(description="Unban Server Embed")
+async def unbanserver(interaction: ApplicationContext):
+    embed = Embed(
+        title=f'Unban Server',
+        description='Falls ihr oder ein Freund von euch gebannt wurde und ein Entbannungsantrag schreiben möchtet, dann joint bitte auf unseren Unban-Server. \n\n Wenn jemand aus dem Team gespamt wird oder beleidigt wird, so wird der User keinen Unban bekommen. \n\n Bei Fragen könnt ihr hier oder auf dem Unban Server jederzeit ein Ticket erstellen!',
+        fields=[
+            EmbedField(
+                name='Server Link', url='https://discord.gg/dvWnFEH3bB'),
+        ],
+    )
+    await interaction.respond("Created unban server embed", ephemeral=True)
+    await interaction.channel.send(embed=embed)
 
 bot.run(TOKEN)
 db.connection.close()
